@@ -1,9 +1,11 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/textfield.dart';
 
 class RegisterPage extends StatelessWidget {
+  // controllers
   final emailEditingController = TextEditingController();
   final passwordEditingController = TextEditingController();
   final repeatPasswordEditingController = TextEditingController();
@@ -26,6 +28,7 @@ class RegisterPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // title
                   Text(
                     'Sing Up',
                     style: TextStyle(
@@ -34,11 +37,16 @@ class RegisterPage extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
+
+                  //
                   SizedBox(height: 32),
+
+                  // Form
                   Form(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // email title
                         Text(
                           'Email',
                           style: TextStyle(
@@ -48,6 +56,7 @@ class RegisterPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 4),
+                        // email field
                         MyTextField(
                           onChanged: (value) => print(value),
                           controller: emailEditingController,
@@ -59,7 +68,10 @@ class RegisterPage extends StatelessWidget {
                           inputTextColor: Colors.white,
                           textInputAction: TextInputAction.continueAction,
                         ),
+
                         SizedBox(height: 32),
+
+                        // password title
                         Text(
                           'Password',
                           style: TextStyle(
@@ -69,6 +81,7 @@ class RegisterPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 4),
+                        // password field
                         Container(
                           decoration: BoxDecoration(
                             color: Colors.grey,
@@ -86,7 +99,10 @@ class RegisterPage extends StatelessWidget {
                             textInputAction: TextInputAction.continueAction,
                           ),
                         ),
+
                         SizedBox(height: 32),
+
+                        // repeat password title
                         Text(
                           'Repeat Password',
                           style: TextStyle(
@@ -96,6 +112,7 @@ class RegisterPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 4),
+                        // repeat password field
                         Container(
                           decoration: BoxDecoration(
                             color: Colors.grey,
@@ -116,19 +133,41 @@ class RegisterPage extends StatelessWidget {
                       ],
                     ),
                   ),
+
+                  //
                   SizedBox(height: 32),
-                  Text(
-                    'Forgot password?',
-                    style: TextStyle(
-                      color: blue,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
+
+                  // terms
+                  RichText(
+                    text: new TextSpan(
+                      text: 'By pressing continue, you agree to ',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                      children: [
+                        new TextSpan(
+                          text: 'N+1\'s User Agreement',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: blue,
+                          ),
+                          recognizer: new TapGestureRecognizer()
+                            ..onTap = () => print('N+1\'s User Agreement'),
+                        )
+                      ],
                     ),
                   ),
+
+                  //
                   Spacer(),
+
+                  // кнопка sign up
                   LongFilledButton(
                     buttonColor: blue,
-                    textValue: 'SING UP',
+                    textValue: 'Sign up',
                     textColor: Colors.white,
                     onPressed: () {
                       print("login");

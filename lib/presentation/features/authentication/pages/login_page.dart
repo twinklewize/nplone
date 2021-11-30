@@ -108,14 +108,19 @@ class LoginPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 32),
-                  Text(
-                    'Forgot password?',
-                    style: TextStyle(
-                      color: blue,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
+                  SizedBox(height: 24),
+                  TextButton(
+                    child: Text(
+                      'Forgot password?',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: blue,
+                      ),
                     ),
+                    onPressed: () {
+                      print('Forgot password?');
+                    },
                   ),
                   Spacer(),
                   LongFilledButton(
