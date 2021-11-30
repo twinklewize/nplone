@@ -1,10 +1,146 @@
 import 'package:flutter/material.dart';
+import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
+import 'package:n_plus_one/presentation/ui_kit/widgets/textfield.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  final emailEditingController = TextEditingController();
+  final passwordEditingController = TextEditingController();
+  final repeatPasswordEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: background_black,
+        elevation: 0,
+      ),
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        color: background_black,
+        child: SafeArea(
+          child: Container(
+            color: background_black,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Sing Up',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 32),
+                  Form(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Email',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        MyTextField(
+                          onChanged: (value) => print(value),
+                          controller: emailEditingController,
+                          fillColor: background_black,
+                          labelText: 'Email here',
+                          maxLines: 1,
+                          minLines: 1,
+                          keyboardType: TextInputType.emailAddress,
+                          inputTextColor: Colors.white,
+                          textInputAction: TextInputAction.continueAction,
+                        ),
+                        SizedBox(height: 32),
+                        Text(
+                          'Password',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(14.0),
+                          ),
+                          child: MyTextField(
+                            onChanged: (value) => print(value),
+                            controller: passwordEditingController,
+                            fillColor: background_black,
+                            labelText: 'Password here',
+                            maxLines: 1,
+                            minLines: 1,
+                            keyboardType: TextInputType.emailAddress,
+                            inputTextColor: Colors.white,
+                            textInputAction: TextInputAction.continueAction,
+                          ),
+                        ),
+                        SizedBox(height: 32),
+                        Text(
+                          'Repeat Password',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(14.0),
+                          ),
+                          child: MyTextField(
+                            onChanged: (value) => print(value),
+                            controller: repeatPasswordEditingController,
+                            fillColor: background_black,
+                            labelText: 'Password here',
+                            maxLines: 1,
+                            minLines: 1,
+                            keyboardType: TextInputType.emailAddress,
+                            inputTextColor: Colors.white,
+                            textInputAction: TextInputAction.continueAction,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 32),
+                  Text(
+                    'Forgot password?',
+                    style: TextStyle(
+                      color: blue,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  Spacer(),
+                  LongFilledButton(
+                    buttonColor: blue,
+                    textValue: 'SING UP',
+                    textColor: Colors.white,
+                    onPressed: () {
+                      print("login");
+                    },
+                  ),
+                  SizedBox(height: 24),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
