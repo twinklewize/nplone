@@ -43,6 +43,5 @@ class LongFilledButton extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
