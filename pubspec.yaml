@@ -19,14 +19,15 @@ dev_dependencies:
     sdk: flutter
   linter: ^1.15.0
 
+
 # The following section is specific to Flutter.
 flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/logo_n+1.svg
-    - assets/images/angle_gradient.png
+    - assets/images/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

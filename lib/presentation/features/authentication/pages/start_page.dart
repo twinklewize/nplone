@@ -112,10 +112,23 @@ class StartPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: LongFilledButton(
                   buttonColor: blue,
-                  textValue: 'Sign up with Google',
-                  textColor: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset('assets/icons/google_icon.svg'),
+                      SizedBox(width: 12),
+                      Text(
+                        'Continue with Google',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
                   onPressed: () {
-                    print("Sign up with Google");
+                    print("Continue with Google");
                   },
                 ),
               ),
@@ -124,8 +137,21 @@ class StartPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: LongFilledButton(
                   buttonColor: blue,
-                  textValue: 'Sign up with Email',
-                  textColor: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset('assets/icons/email_icon.svg'),
+                      SizedBox(width: 12),
+                      Text(
+                        'Sign up with Email',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
                   onPressed: () {
                     print("Sign up with Email");
                     Navigator.of(context).push(

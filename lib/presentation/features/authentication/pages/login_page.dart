@@ -125,8 +125,14 @@ class LoginPage extends StatelessWidget {
                   Spacer(),
                   LongFilledButton(
                     buttonColor: blue,
-                    textValue: 'Login',
-                    textColor: Colors.white,
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
                     onPressed: () {
                       print("login");
                     },

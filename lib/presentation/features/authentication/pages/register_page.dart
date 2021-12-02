@@ -167,8 +167,14 @@ class RegisterPage extends StatelessWidget {
                   // кнопка sign up
                   LongFilledButton(
                     buttonColor: blue,
-                    textValue: 'Sign up',
-                    textColor: Colors.white,
+                    child: Text(
+                      'Sign up',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
                     onPressed: () {
                       print("login");
                     },
