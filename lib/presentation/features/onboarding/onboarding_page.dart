@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:n_plus_one/presentation/features/bank_account_adding/bank_account_adding_page.dart';
 import 'package:n_plus_one/presentation/features/onboarding/widgets/onboarding_screen.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_empty_button.dart';
@@ -64,6 +65,7 @@ class _OnboardingPageState extends State<OnboardingPage>
             _loadScreen(story: widget.screens[_currentIndex]);
           } else {
             // Здесь должен быть переход на следующую страницу
+
             _currentIndex = 0;
             _loadScreen(story: widget.screens[_currentIndex]);
           }
@@ -81,11 +83,16 @@ class _OnboardingPageState extends State<OnboardingPage>
 
   @override
   Widget build(BuildContext context) {
+    Function nextPage = () {
+      return Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => BankAccountAddingPage()));
+    };
     final Widget screen = widget.screens[_currentIndex];
+
     return Scaffold(
       backgroundColor: background_black,
       body: GestureDetector(
-        onTapDown: (details) => _onTapDown(details, screen),
+        onTapDown: (details) => _onTapDown(details, screen, nextPage),
         child: Stack(
           children: <Widget>[
             PageView.builder(
@@ -109,8 +116,9 @@ class _OnboardingPageState extends State<OnboardingPage>
                       _loadScreen(story: widget.screens[_currentIndex]);
                     } else {
                       // Здесь должен быть переход на следующую страницу
-                      _currentIndex = 0;
-                      _loadScreen(story: widget.screens[_currentIndex]);
+                      nextPage();
+                      // _currentIndex = 0;
+                      // _loadScreen(story: widget.screens[_currentIndex]);
                     }
                   });
                 },
@@ -166,7 +174,7 @@ class _OnboardingPageState extends State<OnboardingPage>
     }
   }
 
-  void _onTapDown(TapDownDetails details, Widget story) {
+  void _onTapDown(TapDownDetails details, Widget story, Function nextPage) {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double dx = details.globalPosition.dx;
     if (dx < screenWidth / 3) {
@@ -183,8 +191,9 @@ class _OnboardingPageState extends State<OnboardingPage>
           _loadScreen(story: widget.screens[_currentIndex]);
         } else {
           // Здесь должен быть переход на следующую страницу
-          _currentIndex = 0;
-          _loadScreen(story: widget.screens[_currentIndex]);
+          nextPage();
+          // _currentIndex = 0;
+          // _loadScreen(story: widget.screens[_currentIndex]);
         }
       });
     }
