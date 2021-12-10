@@ -198,7 +198,7 @@ class _SingleSpacePageState extends State<SingleSpacePage> {
         child: SafeArea(
           child: Container(
             child: Padding(
-              padding: EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 0),
+              padding: EdgeInsets.fromLTRB(0, 16.0, 0, 0),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
