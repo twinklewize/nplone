@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+
+import 'shared_zone_page_tabs/description_widget.dart';
+import 'shared_zone_page_tabs/news_widget.dart';
+import 'shared_zone_page_tabs/posted_transactions_widget.dart';
 
 class SharedZonePageWidget extends StatefulWidget {
   SharedZonePageWidget({Key? key}) : super(key: key);
@@ -34,31 +39,26 @@ class _SharedZonePageWidgetState extends State<SharedZonePageWidget>
               // height: 50,
               width: MediaQuery.of(context).size.height,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.all(5),
-                    child: TabBar(
-                      unselectedLabelColor: Colors.white,
-                      labelColor: Colors.black,
-                      indicatorColor: Colors.white,
-                      indicatorWeight: 2,
-                      indicator: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5),
+                  TabBar(
+                    isScrollable: true,
+                    unselectedLabelColor: AppColors.gray2,
+                    indicatorColor: AppColors.green,
+                    indicatorWeight: 4,
+                    indicatorSize: TabBarIndicatorSize.label,
+                    controller: tabController,
+                    tabs: [
+                      Tab(
+                        text: 'News',
                       ),
-                      controller: tabController,
-                      tabs: [
-                        Tab(
-                          text: 'News',
-                        ),
-                        Tab(
-                          text: 'Posted Transactions',
-                        ),
-                        Tab(
-                          text: 'Description',
-                        ),
-                      ],
-                    ),
+                      Tab(
+                        text: 'Posted Transactions',
+                      ),
+                      Tab(
+                        text: 'Description',
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -67,9 +67,9 @@ class _SharedZonePageWidgetState extends State<SharedZonePageWidget>
               child: TabBarView(
                 controller: tabController,
                 children: [
-                  Text('Tab 1'),
-                  Text('Tab2'),
-                  Text('Tab3'),
+                  NewsWidget(),
+                  PostedTransactionsWidget(),
+                  DescriptionWidget(),
                 ],
               ),
             )
