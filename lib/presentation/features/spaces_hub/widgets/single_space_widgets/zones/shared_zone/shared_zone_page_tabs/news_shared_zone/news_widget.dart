@@ -5,6 +5,8 @@ import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 
+import 'actions_page.dart';
+
 class NewsWidget extends StatelessWidget {
   const NewsWidget({Key? key}) : super(key: key);
 
@@ -13,6 +15,10 @@ class NewsWidget extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
+          const SizedBox(height: 16),
+          NewsButtons(),
+          const SizedBox(height: 16),
+          Divider(color: AppColors.black, height: 1),
           NewsCard(
             title: 'January News @!',
             text:
@@ -24,8 +30,63 @@ class NewsWidget extends StatelessWidget {
             viewCount: 1123,
             transaction: 20000.00,
           ),
+          Divider(color: AppColors.black),
         ],
       ),
+    );
+  }
+}
+
+class NewsButtons extends StatelessWidget {
+  const NewsButtons({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const SizedBox(width: 12),
+        // Add News Button
+        Expanded(
+          child: LongFilledButton(
+            buttonColor: AppColors.white10,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset('assets/icons/plus_icon.svg'),
+                const SizedBox(width: 8),
+                Text('News', style: AppTextStyles.medium14pt)
+              ],
+            ),
+            onPressed: () {},
+            height: 40,
+          ),
+        ),
+        const SizedBox(width: 12),
+        // Actions Button
+        Expanded(
+          child: LongFilledButton(
+            buttonColor: AppColors.white10,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset('assets/icons/vertical_more_icon.svg'),
+                const SizedBox(width: 8),
+                Text('Actions', style: AppTextStyles.medium14pt)
+              ],
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ActionsPage()),
+              );
+            },
+            height: 40,
+          ),
+        ),
+        const SizedBox(width: 12),
+      ],
     );
   }
 }
@@ -55,11 +116,12 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12),
       width: MediaQuery.of(context).size.width,
       color: AppColors.gray1,
       child: Column(
         children: [
-          SizedBox(height: 24),
+          SizedBox(height: 20),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -97,7 +159,7 @@ class NewsCard extends StatelessWidget {
                       text,
                       maxLines: 3,
                       style: AppTextStyles.regular12pt
-                          .copyWith(color: AppColors.gray2),
+                          .copyWith(color: AppColors.gray2nd),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -157,7 +219,7 @@ class NewsCard extends StatelessWidget {
               messageCount: messageCount,
               shareCount: shareCount,
               viewCount: viewCount),
-          const SizedBox(height: 24),
+          const SizedBox(height: 20),
         ],
       ),
     );
@@ -315,24 +377,34 @@ class InformationCards extends StatelessWidget {
 
   Widget informationCard(String assetName, String count) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 4,
-      ),
-      height: 32,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
         color: AppColors.white.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(16),
       ),
-      child: Row(
-        children: [
-          SvgPicture.asset(assetName),
-          const SizedBox(width: 4),
-          Text(
-            count,
-            style: AppTextStyles.medium14pt.copyWith(color: AppColors.gray2),
-          )
-        ],
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () {},
+          borderRadius: BorderRadius.circular(16),
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 10,
+              vertical: 4,
+            ),
+            height: 32,
+            child: Row(
+              children: [
+                SvgPicture.asset(assetName),
+                const SizedBox(width: 4),
+                Text(
+                  count,
+                  style: AppTextStyles.medium14pt
+                      .copyWith(color: AppColors.gray2nd),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
