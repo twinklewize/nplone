@@ -8,8 +8,8 @@ abstract class BankAccountsLocalDataSource {
   /// the user had an internet connection.
   ///
   /// Throws [CacheException] if no cached data is present.
-  Future<List<BankAccoutModel>> getLastBankAccountsFromCache();
-  Future<void> bankAccountsToCache(List<BankAccoutModel> bankAccounts);
+  Future<List<BankAccountModel>> getLastBankAccountsFromCache();
+  Future<void> bankAccountsToCache(List<BankAccountModel> bankAccounts);
 }
 
 // ignore: constant_identifier_names
@@ -21,14 +21,14 @@ class BankAccountsLocalDataSourceImpl implements BankAccountsLocalDataSource {
   BankAccountsLocalDataSourceImpl({required this.sharedPreferences});
 
   @override
-  Future<List<BankAccoutModel>> getLastBankAccountsFromCache() {
+  Future<List<BankAccountModel>> getLastBankAccountsFromCache() {
     final jsonBankAccountsList =
         sharedPreferences.getStringList(CACHED_BANK_ACCOUNTS_LIST);
     if (jsonBankAccountsList!.isNotEmpty) {
       print('Get Persons from Cache: ${jsonBankAccountsList.length}');
       return Future.value(jsonBankAccountsList
           .map((bankAccount) =>
-              BankAccoutModel.fromJson(json.decode(bankAccount)))
+              BankAccountModel.fromJson(json.decode(bankAccount)))
           .toList());
     } else {
       throw CacheException();
@@ -36,7 +36,7 @@ class BankAccountsLocalDataSourceImpl implements BankAccountsLocalDataSource {
   }
 
   @override
-  Future<List<String>> bankAccountsToCache(List<BankAccoutModel> persons) {
+  Future<List<String>> bankAccountsToCache(List<BankAccountModel> persons) {
     final List<String> jsonBankAccountList = persons
         .map((bankAccount) => json.encode(bankAccount.toJson()))
         .toList();

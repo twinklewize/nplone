@@ -27,8 +27,8 @@ class BankAccountsRepositoryImpl implements BankAccountsRepository {
     });
   }
 
-  Future<Either<Failure, List<BankAccoutModel>>> _getBankAccouts(
-      Future<List<BankAccoutModel>> Function() getBankAccounts) async {
+  Future<Either<Failure, List<BankAccountModel>>> _getBankAccouts(
+      Future<List<BankAccountModel>> Function() getBankAccounts) async {
     if (await networkInfo.isConnected) {
       try {
         final remoteBankAccounts = await getBankAccounts();

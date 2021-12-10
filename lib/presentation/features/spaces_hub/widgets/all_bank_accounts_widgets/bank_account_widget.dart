@@ -130,7 +130,7 @@ class BankAccountWidget extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
                 child: Image.network(
-                  bankAccount.bank.imageURL,
+                  bankAccount.bank.imageUrl,
                   fit: BoxFit.cover,
                 ),
               ),

@@ -6,7 +6,7 @@ class BankModel extends BankEntity {
     required imageUrl,
   }) : super(
           name: name,
-          imageURL: imageUrl,
+          imageUrl: imageUrl,
         );
 
   factory BankModel.fromJson(Map<String, dynamic> json) {
@@ -20,7 +20,7 @@ class BankModel extends BankEntity {
   Map<String, dynamic> toJson() {
     return {
       'name': name,
-      'imageUrl': imageURL,
+      'imageUrl': imageUrl,
     };
   }
 }

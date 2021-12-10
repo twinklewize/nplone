@@ -5,13 +5,13 @@ class BankEntity extends Equatable {
   String name;
 
   /// Bank's avatar
-  String imageURL;
+  String imageUrl;
 
   BankEntity({
     required this.name,
-    required this.imageURL,
+    required this.imageUrl,
   });
 
   @override
-  List<Object?> get props => [name, imageURL];
+  List<Object?> get props => [name, imageUrl];
 }

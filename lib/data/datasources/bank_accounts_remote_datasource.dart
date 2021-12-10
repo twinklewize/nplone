@@ -7,10 +7,12 @@ import '../models/bank_accout_model.dart';
 var dummyResponse = jsonEncode(
   [
     {
-      "bankName": "Tinkoff",
       "name": "Tinkoff",
-      "imageURL":
-          "https://helpcapital.ru/media/k2/items/cache/a42a2aa6c7440291c38ba9adc5892a56_XL.jpg",
+      "bank": {
+        "name": "Tinkoff",
+        "imageUrl":
+            "https://helpcapital.ru/media/k2/items/cache/a42a2aa6c7440291c38ba9adc5892a56_XL.jpg",
+      },
       "status": "reconnected",
       "spaces": [
         {
@@ -22,25 +24,54 @@ var dummyResponse = jsonEncode(
         },
       ],
       "howMuchMoneyInDollars": 5012.10,
-    },
-    {
-      "bankName": "Sber",
-      "name": "Sber",
-      "imageURL":
-          "https://46tv.ru/uploads/posts/2021-01/1609606542_aa35faf8-8251-40ec-b771-d4f23bed6d68.jpeg",
-      "status": "reconnected",
-      "spaces": [
+      "transactions": [
         {
-          "id": "id999999",
-          "name": "My 2nd space",
-          "imageUrl":
-              "https://avatars.mds.yandex.net/get-zen_doc/3414453/pub_5ff1c737fe4e686f6adb9a7b_5ff1c858fe4e686f6add5b5a/scale_1200",
-          "privacy": "openPublicSpace",
-          "howManyPeopleInSpace": 2000,
+          "contragent": {
+            "id": "contragentId",
+            "name": "The Rock",
+            "imageUrl":
+                "https://i.pinimg.com/736x/59/68/88/596888565d98b359612ae60a85487d0b.jpg",
+            "bankAccount": {
+              "bank": {
+                "name": "Sber",
+                "imageUrl":
+                    "https://46tv.ru/uploads/posts/2021-01/1609606542_aa35faf8-8251-40ec-b771-d4f23bed6d68.jpeg",
+              },
+              "name": "Sber",
+              "status": "reconnected",
+              "spaces": [],
+              "howMuchMoneyInDollars": 0.00,
+              "transactions": [],
+            },
+          },
+          "transactionAmountInDollars": 1000000.00,
+          "isPublished": true,
+          "whenItWas": DateTime.now().toIso8601String(),
+          "whenItWasPublished": DateTime.now().toIso8601String(),
+          "whereItWas": 'San Diego, California',
+          "transactionType": "Gift",
+          "comments": [],
         },
       ],
-      "howMuchMoneyInDollars": 30166.10,
     },
+    // {
+    //   "bankName": "Sber",
+    //   "name": "Sber",
+    //   "imageURL":
+    //       "https://46tv.ru/uploads/posts/2021-01/1609606542_aa35faf8-8251-40ec-b771-d4f23bed6d68.jpeg",
+    //   "status": "reconnected",
+    //   "spaces": [
+    //     {
+    //       "id": "id999999",
+    //       "name": "My 2nd space",
+    //       "imageUrl":
+    //           "https://avatars.mds.yandex.net/get-zen_doc/3414453/pub_5ff1c737fe4e686f6adb9a7b_5ff1c858fe4e686f6add5b5a/scale_1200",
+    //       "privacy": "openPublicSpace",
+    //       "howManyPeopleInSpace": 2000,
+    //     },
+    //   ],
+    //   "howMuchMoneyInDollars": 30166.10,
+    // },
   ],
 );
 
@@ -48,7 +79,7 @@ abstract class BankAccountsRemoteDataSource {
   /// Calls the https://rickandmortyapi.com/api/character/?page=1 endpoint.
   ///
   /// Throws a [ServerException] for all error codes.
-  Future<List<BankAccoutModel>> getBankAccouts(String userId);
+  Future<List<BankAccountModel>> getBankAccouts(String userId);
 }
 
 class BankAccountsRemoteDataSourceImpl implements BankAccountsRemoteDataSource {
@@ -58,11 +89,11 @@ class BankAccountsRemoteDataSourceImpl implements BankAccountsRemoteDataSource {
 
   // TODO change url
   @override
-  Future<List<BankAccoutModel>> getBankAccouts(String userId) =>
+  Future<List<BankAccountModel>> getBankAccouts(String userId) =>
       _getBankAccountsFromUrl(
           'https://rickandmortyapi.com/api/character/?page=$userId');
 
-  Future<List<BankAccoutModel>> _getBankAccountsFromUrl(String url) async {
+  Future<List<BankAccountModel>> _getBankAccountsFromUrl(String url) async {
     // print(url);
     // final response = await client
     //     .get(Uri.parse(url), headers: {'Content-Type': 'application/json'});
@@ -70,7 +101,7 @@ class BankAccountsRemoteDataSourceImpl implements BankAccountsRemoteDataSource {
     //final bankAccounts = json.decode(response.body);
     final bankAccounts = jsonDecode(dummyResponse);
     return (bankAccounts as List)
-        .map((account) => BankAccoutModel.fromJson(account))
+        .map((account) => BankAccountModel.fromJson(account))
         .toList();
 
     //} else {
