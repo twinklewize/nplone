@@ -21,46 +21,50 @@ class DescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CoverWithImageWidget(
-          coverUrl: coverUrl,
-          imageUrl: imageUrl,
-        ),
-        const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+    return Expanded(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SmallButton(
-              assetName: 'assets/icons/edit_icon.svg',
-              text: 'Edit',
-              onPressed: editFunction,
+            CoverWithImageWidget(
+              coverUrl: coverUrl,
+              imageUrl: imageUrl,
             ),
-            const SizedBox(width: 8),
-            SmallButton(
-              assetName: 'assets/icons/share_icon.svg',
-              onPressed: shareFunction,
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SmallButton(
+                  assetName: 'assets/icons/edit_icon.svg',
+                  text: 'Edit',
+                  onPressed: editFunction,
+                ),
+                const SizedBox(width: 8),
+                SmallButton(
+                  assetName: 'assets/icons/share_icon.svg',
+                  onPressed: shareFunction,
+                ),
+              ],
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+              child: Text(title, style: AppTextStyles.bold24pt),
+            ),
+            TextWithIcon('assets/icons/place_icon.svg', street),
+            const SizedBox(height: 12),
+            TextWithIcon('assets/icons/screp_icon.svg', link),
+            const SizedBox(height: 16),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12),
+              child: Text(
+                text,
+                style: AppTextStyles.regular14pt,
+              ),
+            ),
+            const SizedBox(height: 32),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-          child: Text(title, style: AppTextStyles.bold24pt),
-        ),
-        TextWithIcon('assets/icons/place_icon.svg', street),
-        const SizedBox(height: 12),
-        TextWithIcon('assets/icons/screp_icon.svg', link),
-        const SizedBox(height: 16),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12),
-          child: Text(
-            text,
-            style: AppTextStyles.regular14pt,
-          ),
-        ),
-        const SizedBox(height: 32),
-      ],
+      ),
     );
   }
 
@@ -129,8 +133,8 @@ class SmallButton extends StatelessWidget {
   final Function() onPressed;
   const SmallButton({
     Key? key,
-    required this.assetName,
     required this.onPressed,
+    this.assetName = '',
     this.text = '',
   }) : super(key: key);
 
@@ -154,13 +158,13 @@ class SmallButton extends StatelessWidget {
             height: 32,
             child: Row(
               children: [
-                SvgPicture.asset(assetName),
-                text != ''
+                assetName == '' ? SizedBox() : SvgPicture.asset(assetName),
+                text != '' && assetName != ''
                     ? const SizedBox(width: 4)
                     : const SizedBox(width: 0),
                 text != ''
                     ? Text(
-                        'Edit',
+                        text,
                         style: AppTextStyles.medium14pt
                             .copyWith(color: AppColors.gray2nd),
                       )

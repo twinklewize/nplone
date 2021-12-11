@@ -30,54 +30,51 @@ class _SharedZonePageWidgetState extends State<SharedZonePageWidget>
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: [
-            Container(
-              width: MediaQuery.of(context).size.height,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TabBar(
-                    isScrollable: true,
-                    unselectedLabelColor: AppColors.gray2nd,
-                    indicatorColor: AppColors.green,
-                    indicatorWeight: 4,
-                    indicatorSize: TabBarIndicatorSize.label,
-                    controller: tabController,
-                    tabs: [
-                      Tab(
-                        text: 'News',
-                        height: 48,
-                      ),
-                      Tab(
-                        text: 'Posted Transactions',
-                        height: 48,
-                      ),
-                      Tab(
-                        text: 'Description',
-                        height: 48,
-                      ),
-                    ],
-                  ),
-                  Divider(height: 1, color: AppColors.white10),
-                ],
-              ),
+    return Expanded(
+      child: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.height,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TabBar(
+                  isScrollable: true,
+                  unselectedLabelColor: AppColors.gray2nd,
+                  indicatorColor: AppColors.green,
+                  indicatorWeight: 4,
+                  indicatorSize: TabBarIndicatorSize.label,
+                  controller: tabController,
+                  tabs: [
+                    Tab(
+                      text: 'News',
+                      height: 48,
+                    ),
+                    Tab(
+                      text: 'Posted Transactions',
+                      height: 48,
+                    ),
+                    Tab(
+                      text: 'Description',
+                      height: 48,
+                    ),
+                  ],
+                ),
+                Divider(height: 1, color: AppColors.white10),
+              ],
             ),
-            Expanded(
-              child: TabBarView(
-                controller: tabController,
-                children: [
-                  NewsWidget(),
-                  PostedTransactionsWidget(),
-                  DescriptionWidget(),
-                ],
-              ),
-            )
-          ],
-        ),
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: tabController,
+              children: [
+                NewsWidget(),
+                PostedTransactionsWidget(),
+                DescriptionWidget(),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
