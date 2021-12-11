@@ -12,7 +12,31 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+
+  # UI
   flutter_svg: ^0.23.0+1
+  badges: ^2.0.2
+  expandable: ^5.0.1
+
+  # state-managment
+  flutter_bloc: ^8.0.0
+
+  # compare objects with Properties
+  equatable: ^2.0.3
+
+  # обработка ошибок
+  dartz: ^0.10.1
+
+  # проверка интернет-соединения
+  internet_connection_checker: ^0.0.1+3
+
+  # локальное хранилище данных
+  shared_preferences: ^2.0.9
+
+  # DI
+  get_it: ^7.2.0
+  intl: ^0.17.0
+  grouped_list: ^4.1.0
 
 dev_dependencies:
   flutter_test:
