@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/zones/shared_zone/shared_zone_access_pages.dart/admins_page.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/zones/shared_zone/shared_zone_access_pages.dart/admins_or_participants_page.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/custom_sircle_avatar.dart';
@@ -51,7 +51,9 @@ class _SharedZoneAccessWidgetState extends State<SharedZoneAccessWidget> {
               onRightsButton: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AdminsPage()),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          AdminsOrParticipantsPage(admins: true)),
                 );
               },
             ),

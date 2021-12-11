@@ -4,6 +4,8 @@ import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
+import 'admins_or_participants_page.dart';
+
 class ClosedGroupRightsPage extends StatelessWidget {
   const ClosedGroupRightsPage({Key? key}) : super(key: key);
 
@@ -48,7 +50,14 @@ class ClosedGroupRightsPage extends StatelessWidget {
                 'https://i.ibb.co/6R5n7ZP/unsplash-VVEw-JJRRHgk.jpg',
               ],
               onLinkButton: () {},
-              onEditButton: () {},
+              onViewAllButton: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          AdminsOrParticipantsPage(admins: false)),
+                );
+              },
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(12, 32, 12, 8),

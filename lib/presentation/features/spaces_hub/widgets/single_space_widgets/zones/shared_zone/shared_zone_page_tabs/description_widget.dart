@@ -21,49 +21,48 @@ class DescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CoverWithImageWidget(
-              coverUrl: coverUrl,
-              imageUrl: imageUrl,
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                SmallButton(
-                  assetName: 'assets/icons/edit_icon.svg',
-                  text: 'Edit',
-                  onPressed: editFunction,
-                ),
-                const SizedBox(width: 8),
-                SmallButton(
-                  assetName: 'assets/icons/share_icon.svg',
-                  onPressed: shareFunction,
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-              child: Text(title, style: AppTextStyles.bold24pt),
-            ),
-            TextWithIcon('assets/icons/place_icon.svg', street),
-            const SizedBox(height: 12),
-            TextWithIcon('assets/icons/screp_icon.svg', link),
-            const SizedBox(height: 16),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12),
-              child: Text(
-                text,
-                style: AppTextStyles.regular14pt,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CoverWithImageWidget(
+            coverUrl: coverUrl,
+            imageUrl: imageUrl,
+          ),
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SmallButton(
+                assetName: 'assets/icons/edit_icon.svg',
+                text: 'Edit',
+                onPressed: editFunction,
               ),
+              const SizedBox(width: 8),
+              SmallButton(
+                assetName: 'assets/icons/share_icon.svg',
+                onPressed: shareFunction,
+              ),
+              const SizedBox(width: 12),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+            child: Text(title, style: AppTextStyles.bold24pt),
+          ),
+          TextWithIcon('assets/icons/place_icon.svg', street),
+          const SizedBox(height: 12),
+          TextWithIcon('assets/icons/screp_icon.svg', link),
+          const SizedBox(height: 16),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            child: Text(
+              text,
+              style: AppTextStyles.regular14pt,
             ),
-            const SizedBox(height: 32),
-          ],
-        ),
+          ),
+          const SizedBox(height: 32),
+        ],
       ),
     );
   }
@@ -131,18 +130,22 @@ class SmallButton extends StatelessWidget {
   final String assetName;
   final String text;
   final Function() onPressed;
+  final Color color;
+  final Color textColor;
   const SmallButton({
     Key? key,
     required this.onPressed,
     this.assetName = '',
     this.text = '',
+    this.color = AppColors.white10,
+    this.textColor = AppColors.gray2nd,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.white.withOpacity(0.1),
+        color: color,
         borderRadius: BorderRadius.circular(6),
       ),
       child: Material(
@@ -158,15 +161,20 @@ class SmallButton extends StatelessWidget {
             height: 32,
             child: Row(
               children: [
-                assetName == '' ? SizedBox() : SvgPicture.asset(assetName),
+                assetName == ''
+                    ? SizedBox()
+                    : SvgPicture.asset(
+                        assetName,
+                        color: textColor,
+                      ),
                 text != '' && assetName != ''
                     ? const SizedBox(width: 4)
                     : const SizedBox(width: 0),
                 text != ''
                     ? Text(
                         text,
-                        style: AppTextStyles.medium14pt
-                            .copyWith(color: AppColors.gray2nd),
+                        style:
+                            AppTextStyles.medium14pt.copyWith(color: textColor),
                       )
                     : const SizedBox(width: 0),
               ],

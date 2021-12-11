@@ -8,8 +8,13 @@ import 'package:n_plus_one/presentation/ui_kit/widgets/custom_sircle_avatar.dart
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/search_bar.dart';
 
-class AdminsPage extends StatefulWidget {
-  AdminsPage({Key? key}) : super(key: key);
+class AdminsOrParticipantsPage extends StatefulWidget {
+  AdminsOrParticipantsPage({
+    Key? key,
+    required this.admins,
+  }) : super(key: key);
+
+  final bool admins;
 
   final Function() inventationButton = () {};
   final Function() addPersonButton = () {};
@@ -31,7 +36,7 @@ class AdminsPage extends StatefulWidget {
       instagramUrl: '',
       linkedInUrl: '',
       facebookInUrl: '',
-      editButton: () {},
+      button: () {},
     ),
     new AdminEntity(
       imageUrl: 'https://i.ibb.co/vqrHQC8/Avatar-2.jpg',
@@ -40,7 +45,7 @@ class AdminsPage extends StatefulWidget {
       instagramUrl: '',
       linkedInUrl: '',
       facebookInUrl: '',
-      editButton: () {},
+      button: () {},
     ),
     new AdminEntity(
       imageUrl: 'https://i.ibb.co/qmcRq7S/Avatar-3.jpg',
@@ -49,7 +54,7 @@ class AdminsPage extends StatefulWidget {
       instagramUrl: '',
       linkedInUrl: '',
       facebookInUrl: '',
-      editButton: () {},
+      button: () {},
     ),
     new AdminEntity(
       imageUrl: 'https://i.ibb.co/ZKgHKKb/Avatar-4.jpg',
@@ -57,15 +62,15 @@ class AdminsPage extends StatefulWidget {
       instagramUrl: '',
       linkedInUrl: '',
       facebookInUrl: '',
-      editButton: () {},
+      button: () {},
     ),
   ];
 
   @override
-  State<AdminsPage> createState() => _AdminsPageState();
+  State<AdminsOrParticipantsPage> createState() => _AdminsPageState();
 }
 
-class _AdminsPageState extends State<AdminsPage> {
+class _AdminsPageState extends State<AdminsOrParticipantsPage> {
   late List<AdminEntity> adminsList;
 
   @override
@@ -95,7 +100,10 @@ class _AdminsPageState extends State<AdminsPage> {
     return Scaffold(
       backgroundColor: AppColors.gray1,
       appBar: AppBar(
-        title: Text('Admins', style: AppTextStyles.medium16pt),
+        title: widget.admins
+            ? Text('Admins', style: AppTextStyles.medium16pt)
+            : Text('Participants: ${widget.adminsList.length}',
+                style: AppTextStyles.medium16pt),
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -114,13 +122,17 @@ class _AdminsPageState extends State<AdminsPage> {
             padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             child: SearchBar(onSearch: onSearch),
           ),
-          const SizedBox(height: 24),
-          AdminsButtons(
-            addPersonButton: widget.addPersonButton,
-            inventationButton: widget.inventationButton,
-          ),
+          const SizedBox(height: 12),
+          widget.admins
+              ? AdminsButtons(
+                  addPersonButton: widget.addPersonButton,
+                  inventationButton: widget.inventationButton,
+                )
+              : ParticipantButtons(
+                  inventationButton: widget.inventationButton,
+                ),
           const SizedBox(height: 16),
-          AdminsListView(adminsList: adminsList),
+          AdminsListView(adminsList: adminsList, admins: widget.admins),
         ],
       ),
     );
@@ -129,9 +141,11 @@ class _AdminsPageState extends State<AdminsPage> {
 
 class AdminsListView extends StatelessWidget {
   final List<AdminEntity> adminsList;
+  final bool admins;
   const AdminsListView({
     Key? key,
     required this.adminsList,
+    required this.admins,
   }) : super(key: key);
 
   @override
@@ -201,7 +215,7 @@ class AdminsListView extends StatelessWidget {
                         Spacer(),
 
                         // Edit Button
-                        adminsList[index].isMe
+                        adminsList[index].isMe || !admins
                             ? SizedBox()
                             : SmallButton(
                                 assetName: 'assets/icons/edit_icon.svg',
@@ -217,6 +231,19 @@ class AdminsListView extends StatelessWidget {
                                       ),
                                     ),
                                   );
+                                },
+                              ),
+
+                        // Dismiss Button
+                        adminsList[index].isMe || admins
+                            ? SizedBox()
+                            : SmallButton(
+                                color: AppColors.red20,
+                                textColor: AppColors.red,
+                                assetName: 'assets/icons/dismiss_icon.svg',
+                                text: 'Dismiss',
+                                onPressed: () {
+                                  adminsList[index].button!();
                                 },
                               ),
                       ],
@@ -296,7 +323,7 @@ class AdminEntity {
   final String linkedInUrl;
   final String facebookInUrl;
   final bool isMe;
-  Function()? editButton;
+  Function()? button;
 
   AdminEntity({
     required this.imageUrl,
@@ -306,7 +333,7 @@ class AdminEntity {
     required this.facebookInUrl,
     this.position = '',
     this.isMe = false,
-    this.editButton,
+    this.button,
   });
 }
 
@@ -369,6 +396,46 @@ class AdminsButtons extends StatelessWidget {
           ),
           onPressed: () => addPersonButton,
           height: 40,
+        ),
+        SizedBox(width: 12),
+      ],
+    );
+  }
+}
+
+class ParticipantButtons extends StatelessWidget {
+  final Function() inventationButton;
+  const ParticipantButtons({
+    Key? key,
+    required this.inventationButton,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        SizedBox(width: 12),
+        Expanded(
+          child: LongFilledButton(
+            buttonColor: AppColors.green20,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  'assets/icons/copy.svg',
+                  color: AppColors.green,
+                ),
+                // SizedBox(width: 8),
+                Text(
+                  'Copy Inventation Link',
+                  style:
+                      AppTextStyles.medium14pt.copyWith(color: AppColors.green),
+                )
+              ],
+            ),
+            onPressed: () => inventationButton,
+            height: 40,
+          ),
         ),
         SizedBox(width: 12),
       ],

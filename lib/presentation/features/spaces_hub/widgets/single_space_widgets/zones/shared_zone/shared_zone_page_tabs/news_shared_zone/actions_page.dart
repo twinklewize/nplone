@@ -28,20 +28,24 @@ class ActionsPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         child: Column(
           children: [
-            actionsButton(context, 'split', 'Split transaction(s)', true),
+            actionsButton(
+                context, 'split', 'Split transaction(s)', true, () {}),
+            SizedBox(height: 8),
+            actionsButton(context, 'donate', 'Collect money from participant',
+                true, () {}),
+            SizedBox(height: 8),
+            actionsButton(context, 'plus', 'Create invoice', true, () {}),
+            SizedBox(height: 8),
+            actionsButton(context, 'auction', 'Start auction', true, () {}),
             SizedBox(height: 8),
             actionsButton(
-                context, 'donate', 'Collect money from participant', true),
+                context, 'doc', 'Publish financial statement', false, () {}),
             SizedBox(height: 8),
-            actionsButton(context, 'plus', 'Create invoice', true),
+            actionsButton(
+                context, 'statistic', 'Publish statistic', false, () {}),
             SizedBox(height: 8),
-            actionsButton(context, 'auction', 'Start auction', true),
-            SizedBox(height: 8),
-            actionsButton(context, 'doc', 'Publish financial statement', false),
-            SizedBox(height: 8),
-            actionsButton(context, 'statistic', 'Publish statistic', false),
-            SizedBox(height: 8),
-            actionsButton(context, 'requiring_solutions', 'Start poll', false),
+            actionsButton(
+                context, 'requiring_solutions', 'Start poll', false, () {}),
           ],
         ),
       ),
@@ -49,7 +53,12 @@ class ActionsPage extends StatelessWidget {
   }
 
   LongFilledButton actionsButton(
-      BuildContext context, String icon, String text, bool pro) {
+    BuildContext context,
+    String icon,
+    String text,
+    bool pro,
+    Function() function,
+  ) {
     return LongFilledButton(
       buttonColor: AppColors.white10,
       child: Row(
@@ -73,7 +82,7 @@ class ActionsPage extends StatelessWidget {
           const SizedBox(width: 16),
         ],
       ),
-      onPressed: () {},
+      onPressed: () => function(),
     );
   }
 }

@@ -173,13 +173,13 @@ class AccessCard extends StatelessWidget {
 class AccessCardWithParticipants extends StatelessWidget {
   final List<String> userAvatars;
   final Function() onLinkButton;
-  final Function() onEditButton;
+  final Function() onViewAllButton;
 
   AccessCardWithParticipants({
     Key? key,
     required this.onLinkButton,
     this.userAvatars = const [],
-    required this.onEditButton,
+    required this.onViewAllButton,
   }) : super(key: key);
 
   @override
@@ -205,7 +205,8 @@ class AccessCardWithParticipants extends StatelessWidget {
               ),
               SmallButton(
                 text: 'View All',
-                onPressed: () {},
+                color: AppColors.white.withOpacity(0.1),
+                onPressed: () => onViewAllButton(),
               ),
             ],
           ),
