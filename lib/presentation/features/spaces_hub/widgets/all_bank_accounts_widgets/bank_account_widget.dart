@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
 import 'package:n_plus_one/domain/entities/space_entity.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/single_space_page.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/space_creation_page.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 
 class BankAccountWidget extends StatelessWidget {
@@ -84,32 +85,44 @@ class BankAccountWidget extends StatelessWidget {
   Widget createSpaceButton({
     required BuildContext context,
   }) {
-    return Container(
-      width: MediaQuery.of(context).size.width / 2 - 24,
-      height: MediaQuery.of(context).size.width / 2 - 24,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(8)),
-        color: blue.withOpacity(0.25),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              '+',
-              style: TextStyle(
-                color: blue,
-                fontSize: 32,
-              ),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SpaceCreationPage()),
+          );
+        },
+        borderRadius: BorderRadius.circular(8),
+        child: Container(
+          width: MediaQuery.of(context).size.width / 2 - 24,
+          height: MediaQuery.of(context).size.width / 2 - 24,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
+            color: blue.withOpacity(0.25),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '+',
+                  style: TextStyle(
+                    color: blue,
+                    fontSize: 32,
+                  ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'New Space',
+                  style: TextStyle(
+                    color: blue,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 4),
-            Text(
-              'New Space',
-              style: TextStyle(
-                color: blue,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

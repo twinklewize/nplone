@@ -12,6 +12,7 @@ class ActionsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.gray1,
       appBar: AppBar(
+        title: Text('Actions', style: AppTextStyles.medium16pt),
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
