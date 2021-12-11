@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
@@ -40,17 +41,76 @@ class AdminEditPage extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 16, 12, 8),
-            child: Text(
-              'Options',
-              style: AppTextStyles.bold20pt,
-            ),
+            child: Text('Options', style: AppTextStyles.bold20pt),
           ),
-          Divider(
-            height: 1,
-            color: AppColors.black,
-          )
+          listTileWithSwitch(
+            'See all transactions',
+            true,
+            (value) {},
+          ),
+          listTileWithSwitch(
+            'Post transactions and news',
+            true,
+            (value) {},
+          ),
+          listTileWithSwitch(
+            'Take part in financial actions',
+            false,
+            (value) {},
+          ),
+          listTileWithSwitch(
+            'Comment posts and transactions',
+            true,
+            (value) {},
+          ),
+          listTileWithSwitch(
+            'Edit zone info and Delete Posts',
+            false,
+            (value) {},
+          ),
+          listTileWithSwitch(
+            'Delete/invite new people',
+            true,
+            (value) {},
+          ),
+          Divider(height: 1, color: AppColors.black),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 16, 12, 8),
+            child: Text('Monetization', style: AppTextStyles.bold20pt),
+          ),
+          listTileWithSwitch(
+            'Subscription fee',
+            true,
+            (value) {},
+          ),
         ],
       ),
+    );
+  }
+
+  Widget listTileWithSwitch(
+      String text, bool switchState, Function(bool value) onSwitch) {
+    return Column(
+      children: [
+        Divider(height: 1, color: AppColors.black),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 12,
+            vertical: 10,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(text, style: AppTextStyles.regular14pt),
+              CupertinoSwitch(
+                value: switchState,
+                onChanged: (value) => onSwitch(value),
+                activeColor: AppColors.green,
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
