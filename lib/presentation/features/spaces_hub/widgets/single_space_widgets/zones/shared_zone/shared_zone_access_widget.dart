@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/zones/shared_zone/shared_zone_access_pages.dart/admins_page.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
+import 'package:n_plus_one/presentation/ui_kit/widgets/custom_sircle_avatar.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 
 class SharedZoneAccessWidget extends StatefulWidget {
@@ -303,18 +304,18 @@ class ImagesWidget extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         const SizedBox(height: 40),
-        ...mapIndexed(userAvatars, (index, image) {
+        ...mapIndexed(userAvatars, (index, imageUrl) {
           if (index + 1 <= maxCount) {
             return Positioned(
               left: index * margin,
-              child: imageElement(image as String),
+              child: imageElement(imageUrl as String),
             );
           } else
             return const SizedBox();
         }).toList(),
         userAvatars.length > maxCount
             ? Positioned(
-                left: 9 * margin,
+                left: maxCount * margin,
                 child: countElement(userAvatars.length - maxCount),
               )
             : const SizedBox(),
@@ -358,22 +359,10 @@ class ImagesWidget extends StatelessWidget {
 
   Container imageElement(String imageUrl) {
     return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(width: 2, color: AppColors.gray2),
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: AppColors.gray2nd,
-          ),
-          child: Image.network(imageUrl),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(width: 2, color: AppColors.gray2),
         ),
-      ),
-    );
+        child: CustomCircleAvatar(imageUrl: imageUrl));
   }
 }
