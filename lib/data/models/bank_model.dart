@@ -11,9 +11,8 @@ class BankModel extends BankEntity {
 
   factory BankModel.fromJson(Map<String, dynamic> json) {
     return BankModel(
-      // TODO исправить метод !!!!!!!!
-      name: json['name'] as String,
-      imageUrl: json['imageUrl'] as String,
+      name: json['name'],
+      imageUrl: json['imageURL'],
     );
   }
 

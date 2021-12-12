@@ -6,7 +6,7 @@ import 'package:n_plus_one/data/datasources/bank_accounts_local_datasource.dart'
 import 'package:n_plus_one/data/datasources/bank_accounts_remote_datasource.dart';
 import 'package:n_plus_one/data/models/bank_accout_model.dart';
 import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
-import 'package:n_plus_one/domain/repositories/bank_accouts_repository.dart';
+import 'package:n_plus_one/domain/repositories/bank_accounts_repository.dart';
 
 class BankAccountsRepositoryImpl implements BankAccountsRepository {
   final BankAccountsRemoteDataSource remoteDataSource;

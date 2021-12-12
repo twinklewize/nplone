@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:n_plus_one/core/error/failure.dart';
 import 'package:n_plus_one/core/usecases/usecase.dart';
 import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
-import 'package:n_plus_one/domain/repositories/bank_accouts_repository.dart';
+import 'package:n_plus_one/domain/repositories/bank_accounts_repository.dart';
 
 class LoadUserBankAccounts
     extends UseCase<List<BankAccountEntity>, LoadBankAccoutsParams> {

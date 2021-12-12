@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:n_plus_one/presentation/features/authentication/pages/register_page.dart';
+import 'package:n_plus_one/presentation/features/onboarding/onboarding_page.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/textfield.dart';
@@ -134,7 +135,11 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      print("login");
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) => OnboardingPage(),
+                        ),
+                      );
                     },
                   ),
                   SizedBox(height: 24),
