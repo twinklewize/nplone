@@ -19,7 +19,7 @@ class BankAccountWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // image
-        InkWell(
+        GestureDetector(
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute<void>(

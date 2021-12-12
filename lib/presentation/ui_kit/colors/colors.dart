@@ -16,12 +16,16 @@ class AppColors {
   static const white10 = Color(0xFF414243);
 
   static const blue = Color(0xFF1380FF);
+  static const blue25 = Color(0xFF1F344D);
+
   static const green = Color(0xFF00D959);
   static const green2 = Color(0xFF00EA60);
   static const green20 = Color(0xFF16442A);
   static const green04 = Color(0xFF283C32);
+
   static const red = Color(0xFFFF543D);
   static const red20 = Color(0xFF492926);
+
   static const black = Color(0xFF0D0D0D);
 
   AppColors._();
