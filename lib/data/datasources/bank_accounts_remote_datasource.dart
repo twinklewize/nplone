@@ -25,7 +25,6 @@ var dummyResponse = jsonEncode(
       ],
       "howMuchMoneyInDollars": 5012.10,
       "transactions": [
-        // 1
         {
           "contragent": {
             "id": "contragentId",
@@ -46,92 +45,8 @@ var dummyResponse = jsonEncode(
             },
           },
           "transactionAmountInDollars": 1000000.00,
-          "isPublished": false,
-          "whenItWas": DateTime.now().toIso8601String(),
-          "whenItWasPublished": DateTime.now().toIso8601String(),
-          "whereItWas": 'San Diego, California',
-          "transactionType": "Gift",
-          "comments": [],
-        },
-        // 2
-        {
-          "contragent": {
-            "id": "contragentId",
-            "name": "The Rock",
-            "imageUrl":
-                "https://i.pinimg.com/736x/59/68/88/596888565d98b359612ae60a85487d0b.jpg",
-            "bankAccount": {
-              "bank": {
-                "name": "Sber",
-                "imageUrl":
-                    "https://46tv.ru/uploads/posts/2021-01/1609606542_aa35faf8-8251-40ec-b771-d4f23bed6d68.jpeg",
-              },
-              "name": "Sber",
-              "status": "reconnected",
-              "spaces": [],
-              "howMuchMoneyInDollars": 0.00,
-              "transactions": [],
-            },
-          },
-          "transactionAmountInDollars": -1000.00,
           "isPublished": true,
           "whenItWas": DateTime.now().toIso8601String(),
-          "whenItWasPublished": DateTime.now().toIso8601String(),
-          "whereItWas": 'San Diego, California',
-          "transactionType": "Gift",
-          "comments": [],
-        },
-        // 3
-        {
-          "contragent": {
-            "id": "contragentId",
-            "name": "The Rock",
-            "imageUrl":
-                "https://i.pinimg.com/736x/59/68/88/596888565d98b359612ae60a85487d0b.jpg",
-            "bankAccount": {
-              "bank": {
-                "name": "Sber",
-                "imageUrl":
-                    "https://46tv.ru/uploads/posts/2021-01/1609606542_aa35faf8-8251-40ec-b771-d4f23bed6d68.jpeg",
-              },
-              "name": "Sber",
-              "status": "reconnected",
-              "spaces": [],
-              "howMuchMoneyInDollars": 0.00,
-              "transactions": [],
-            },
-          },
-          "transactionAmountInDollars": -50.00,
-          "isPublished": true,
-          "whenItWas": DateTime.now().toIso8601String(),
-          "whenItWasPublished": DateTime.now().toIso8601String(),
-          "whereItWas": 'San Diego, California',
-          "transactionType": "Gift",
-          "comments": [],
-        },
-        // 4
-        {
-          "contragent": {
-            "id": "contragentId",
-            "name": "The Rock",
-            "imageUrl":
-                "https://i.pinimg.com/736x/59/68/88/596888565d98b359612ae60a85487d0b.jpg",
-            "bankAccount": {
-              "bank": {
-                "name": "Sber",
-                "imageUrl":
-                    "https://46tv.ru/uploads/posts/2021-01/1609606542_aa35faf8-8251-40ec-b771-d4f23bed6d68.jpeg",
-              },
-              "name": "Sber",
-              "status": "reconnected",
-              "spaces": [],
-              "howMuchMoneyInDollars": 0.00,
-              "transactions": [],
-            },
-          },
-          "transactionAmountInDollars": 500000.00,
-          "isPublished": true,
-          "whenItWas": DateTime.utc(1989, 11, 9).toIso8601String(),
           "whenItWasPublished": DateTime.now().toIso8601String(),
           "whereItWas": 'San Diego, California',
           "transactionType": "Gift",

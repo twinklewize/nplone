@@ -32,6 +32,12 @@ class AppTextStyles {
     color: AppColors.white,
   );
 
+  static const bold12pt = TextStyle(
+    fontWeight: FontWeight.w700,
+    fontSize: 12,
+    color: AppColors.white,
+  );
+
   static const medium22pt = TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 22,
@@ -41,6 +47,12 @@ class AppTextStyles {
   static const medium20pt = TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 20,
+    color: AppColors.white,
+  );
+
+  static const medium16pt = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 16,
     color: AppColors.white,
   );
 

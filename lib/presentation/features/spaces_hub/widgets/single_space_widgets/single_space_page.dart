@@ -1,12 +1,9 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
 import 'package:n_plus_one/domain/entities/space_entity.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/spaces_hub_bloc/spaces_hub_bloc.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/spaces_hub_bloc/spaces_hub_states.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/zones/private_zone/private_zone_accounts/private_zone_accouts_widget.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/zones/private_zone/private_zone_history/prvate_zone_history_widget.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/zones/private_zone/private_zone_more/prvate_zone_more_widget.dart';
@@ -117,19 +114,8 @@ class _SingleSpacePageState extends State<SingleSpacePage> {
       appBar: AppBar(
         backgroundColor: background_black,
         elevation: 0,
-        leading: Row(
+        title: Row(
           children: [
-            SizedBox(width: 12),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: Color.fromRGBO(193, 193, 193, 1),
-              ),
-            ),
-            SizedBox(width: 12),
             Container(
               width: 32,
               height: 32,
@@ -152,6 +138,20 @@ class _SingleSpacePageState extends State<SingleSpacePage> {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        leading: Row(
+          children: [
+            SizedBox(width: 12),
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: Icon(
+                Icons.arrow_back_ios,
+                color: Color.fromRGBO(193, 193, 193, 1),
               ),
             ),
           ],
@@ -199,34 +199,32 @@ class _SingleSpacePageState extends State<SingleSpacePage> {
           child: Container(
             child: Padding(
               padding: EdgeInsets.fromLTRB(0, 16.0, 0, 0),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // segmented control
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: CupertinoSlidingSegmentedControl<
-                          SegmentedControlState>(
-                        thumbColor: Color.fromRGBO(67, 69, 70, 1),
-                        children: {
-                          SegmentedControlState.privateZone: Text(
-                              'Private Zone',
-                              style: TextStyle(color: Colors.white)),
-                          SegmentedControlState.sharedZone: Text('Shared Zone',
-                              style: TextStyle(color: Colors.white)),
-                        },
-                        groupValue: _segmentedControlGroupValue,
-                        onValueChanged: (newValue) {
-                          setState(() {
-                            _segmentedControlGroupValue = newValue!;
-                          });
-                        },
-                      ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // segmented control
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child:
+                        CupertinoSlidingSegmentedControl<SegmentedControlState>(
+                      thumbColor: Color.fromRGBO(67, 69, 70, 1),
+                      children: {
+                        SegmentedControlState.privateZone: Text('Private Zone',
+                            style: TextStyle(color: Colors.white)),
+                        SegmentedControlState.sharedZone: Text('Shared Zone',
+                            style: TextStyle(color: Colors.white)),
+                      },
+                      groupValue: _segmentedControlGroupValue,
+                      onValueChanged: (newValue) {
+                        setState(() {
+                          _segmentedControlGroupValue = newValue!;
+                        });
+                      },
                     ),
-                    currentPage(context),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 8),
+                  currentPage(context),
+                ],
               ),
             ),
           ),
