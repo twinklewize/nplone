@@ -77,7 +77,6 @@ class LoginPage extends StatelessWidget {
                           minLines: 1,
                           keyboardType: TextInputType.emailAddress,
                           inputTextColor: Colors.white,
-                          textInputAction: TextInputAction.continueAction,
                         ),
                         SizedBox(height: 32),
                         Text(
@@ -103,7 +102,6 @@ class LoginPage extends StatelessWidget {
                             minLines: 1,
                             keyboardType: TextInputType.emailAddress,
                             inputTextColor: Colors.white,
-                            textInputAction: TextInputAction.continueAction,
                           ),
                         ),
                       ],
