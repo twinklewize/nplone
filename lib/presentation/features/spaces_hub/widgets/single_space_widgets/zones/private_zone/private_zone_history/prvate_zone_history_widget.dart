@@ -163,7 +163,7 @@ class PrivateZoneHistoryWidget extends StatelessWidget {
                           SvgPicture.asset(
                             'assets/icons/upload.svg',
                             color: transaction.isPublished
-                                ? AppColors.gray2
+                                ? AppColors.gray2nd
                                 : AppColors.green,
                           ),
                           SizedBox(width: 4),
@@ -171,7 +171,7 @@ class PrivateZoneHistoryWidget extends StatelessWidget {
                             'Publish',
                             style: TextStyle(
                               color: transaction.isPublished
-                                  ? AppColors.gray2
+                                  ? AppColors.gray2nd
                                   : AppColors.green,
                             ),
                           ),

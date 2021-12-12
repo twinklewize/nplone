@@ -167,7 +167,7 @@ class PrivateZoneAccountsWidget extends StatelessWidget {
                       child: SizedBox(
                         height: 40,
                         child: LongFilledButton(
-                          buttonColor: Colors.black54,
+                          buttonColor: AppColors.white10,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -247,7 +247,7 @@ class PrivateZoneAccountsWidget extends StatelessWidget {
                                     child: SizedBox(
                                       height: 40,
                                       child: LongFilledButton(
-                                        buttonColor: Colors.black54,
+                                        buttonColor: AppColors.white10,
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,

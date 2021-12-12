@@ -13,7 +13,7 @@ class AppColors {
   static const grey3rd = Color(0xFF77777B);
 
   static const white = Colors.white;
-  static const white10 = Color(0xFF323233);
+  static const white10 = Color(0xFF414243);
 
   static const blue = Color(0xFF1380FF);
   static const green = Color(0xFF00D959);
