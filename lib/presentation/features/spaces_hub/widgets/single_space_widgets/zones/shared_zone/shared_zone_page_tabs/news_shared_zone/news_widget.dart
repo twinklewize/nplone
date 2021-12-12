@@ -938,7 +938,6 @@ class PayAndViewAllButtons extends StatelessWidget {
   }) : super(key: key);
 
   String _sumToString(double number) {
-    String transactionString;
     var formatter = NumberFormat('#,##0');
     return formatter.format(number.abs());
   }

@@ -142,19 +142,14 @@ class _SingleSpacePageState extends State<SingleSpacePage> {
             ),
           ],
         ),
-        leading: Row(
-          children: [
-            SizedBox(width: 12),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: Color.fromRGBO(193, 193, 193, 1),
-              ),
-            ),
-          ],
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: AppColors.white,
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
         ),
         actions: [
           Badge(
@@ -200,11 +195,11 @@ class _SingleSpacePageState extends State<SingleSpacePage> {
             child: Padding(
               padding: EdgeInsets.fromLTRB(0, 16.0, 0, 0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // segmented control
                   SizedBox(
-                    width: MediaQuery.of(context).size.width,
+                    width: MediaQuery.of(context).size.width - 24,
                     child:
                         CupertinoSlidingSegmentedControl<SegmentedControlState>(
                       thumbColor: Color.fromRGBO(67, 69, 70, 1),

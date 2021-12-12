@@ -100,10 +100,10 @@ class BankAccountAddingPage extends StatelessWidget {
                   onTap: () {
                     BlocProvider.of<BankAccountAddingBloc>(context,
                         listen: false)
-                      ..add(BankAccountAddingBuisnessEvent());
+                      ..add(BankAccountAddingPrivateEvent());
                   },
                   child: ContainerWithCheckbox(
-                      check: state.props[1] as bool, text: 'Business'),
+                      check: !(state.props[0] as bool), text: 'Business'),
                 ),
               ),
               const Spacer(),

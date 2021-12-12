@@ -15,5 +15,3 @@ class BankAccountAddingChooseEvent extends BankAccountAddingEvent {
 }
 
 class BankAccountAddingPrivateEvent extends BankAccountAddingEvent {}
-
-class BankAccountAddingBuisnessEvent extends BankAccountAddingEvent {}

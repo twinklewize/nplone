@@ -10,28 +10,24 @@ abstract class BankAccountAddingState extends Equatable {
 
 class BankAccountAddingNoChoosenState extends BankAccountAddingState {
   final bool private;
-  final bool buisness;
 
   BankAccountAddingNoChoosenState({
     required this.private,
-    required this.buisness,
   });
 
   @override
-  List<Object> get props => [private, buisness];
+  List<Object> get props => [private];
 }
 
 class BankAccountAddingChoosenState extends BankAccountAddingState {
   final BankEntity bank;
   final bool private;
-  final bool buisness;
 
   BankAccountAddingChoosenState({
     required this.private,
-    required this.buisness,
     required this.bank,
   });
 
   @override
-  List<Object> get props => [private, buisness, bank];
+  List<Object> get props => [private, bank];
 }

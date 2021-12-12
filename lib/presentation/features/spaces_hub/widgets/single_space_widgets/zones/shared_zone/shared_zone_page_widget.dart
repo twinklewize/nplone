@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
-
 import 'shared_zone_page_tabs/description_widget.dart';
 import 'shared_zone_page_tabs/news_shared_zone/news_widget.dart';
 import 'shared_zone_page_tabs/posted_transactions_widget.dart';

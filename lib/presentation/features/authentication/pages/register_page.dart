@@ -66,7 +66,6 @@ class RegisterPage extends StatelessWidget {
                           minLines: 1,
                           keyboardType: TextInputType.emailAddress,
                           inputTextColor: Colors.white,
-                          textInputAction: TextInputAction.continueAction,
                         ),
 
                         SizedBox(height: 32),
@@ -96,7 +95,6 @@ class RegisterPage extends StatelessWidget {
                             minLines: 1,
                             keyboardType: TextInputType.emailAddress,
                             inputTextColor: Colors.white,
-                            textInputAction: TextInputAction.continueAction,
                           ),
                         ),
 
@@ -127,7 +125,6 @@ class RegisterPage extends StatelessWidget {
                             minLines: 1,
                             keyboardType: TextInputType.emailAddress,
                             inputTextColor: Colors.white,
-                            textInputAction: TextInputAction.continueAction,
                           ),
                         ),
                       ],

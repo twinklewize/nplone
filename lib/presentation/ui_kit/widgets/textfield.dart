@@ -20,7 +20,7 @@ class MyTextField extends StatelessWidget {
     required this.fillColor,
     required this.labelText,
     required this.keyboardType,
-    required this.textInputAction,
+    this.textInputAction = TextInputAction.next,
     required this.maxLines,
     required this.minLines,
     required this.inputTextColor,
