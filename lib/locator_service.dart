@@ -61,7 +61,6 @@ Future<void> init() async {
       client: sl(),
     ),
   );
-
   sl.registerLazySingleton<BankAccountsLocalDataSource>(
     () => BankAccountsLocalDataSourceImpl(sharedPreferences: sl()),
   );

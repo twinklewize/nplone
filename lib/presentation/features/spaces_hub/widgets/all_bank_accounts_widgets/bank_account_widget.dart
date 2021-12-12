@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
 import 'package:n_plus_one/domain/entities/space_entity.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/single_space_page.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/space_creation_page.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/space_creation_page/space_creation_page.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 
 class BankAccountWidget extends StatelessWidget {
