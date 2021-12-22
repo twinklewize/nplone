@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/two_buttons.dart';
 
 import 'ui_entities/user_pay_entity.dart';
-import 'widgets/news_and_actions_buttons.dart';
 import 'widgets/news_card_widget.dart';
 
 class NewsTab extends StatelessWidget {
