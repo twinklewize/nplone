@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class OnboardingScreen extends StatelessWidget {
   final String mainText;
@@ -19,7 +20,7 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      color: background_black,
+      color: AppColors.gray1,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -63,10 +64,8 @@ class OnboardingScreen extends StatelessWidget {
             child: Text(
               secondaryText,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFFB3B3B8),
-                fontSize: 16,
-              ),
+              style:
+                  AppTextStyles.regular16pt.copyWith(color: AppColors.gray2nd),
             ),
           ),
           SizedBox(

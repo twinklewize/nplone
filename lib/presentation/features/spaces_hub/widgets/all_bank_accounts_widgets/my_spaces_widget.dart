@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/spaces_hub_bloc/spaces_hub_bloc.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/spaces_hub_bloc/spaces_hub_events.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/spaces_hub_bloc/spaces_hub_states.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_bloc.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_events.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_states.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/all_bank_accounts_widgets/bank_account_widget.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
@@ -23,7 +23,7 @@ class MySpacesWidget extends StatelessWidget {
               Text(
                 '+',
                 style: TextStyle(
-                  color: blue,
+                  color: AppColors.blue,
                   fontSize: 24,
                 ),
               ),
@@ -33,7 +33,7 @@ class MySpacesWidget extends StatelessWidget {
                 child: Text(
                   'New Bank Account',
                   style: TextStyle(
-                    color: blue,
+                    color: AppColors.blue,
                   ),
                 ),
               ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
 import 'package:n_plus_one/domain/entities/space_entity.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/widgets/single_space_widgets/single_space_page.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/widgets/space_creation_page/space_creation_page.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/pages/single_space/single_space_page.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class BankAccountWidget extends StatelessWidget {
   BankAccountWidget({required this.bankAccount, Key? key}) : super(key: key);
 
-  BankAccountEntity bankAccount;
+  final BankAccountEntity bankAccount;
 
   Widget gotoSpaceButton({
     required BuildContext context,
@@ -55,11 +55,7 @@ class BankAccountWidget extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
             softWrap: true,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
+            style: AppTextStyles.medium14pt,
           ),
         ),
         SizedBox(height: 2),
@@ -89,9 +85,9 @@ class BankAccountWidget extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: () {
-          Navigator.push(
+          Navigator.pushNamed(
             context,
-            MaterialPageRoute(builder: (context) => SpaceCreationPage()),
+            '/space-creation',
           );
         },
         borderRadius: BorderRadius.circular(8),
@@ -100,7 +96,7 @@ class BankAccountWidget extends StatelessWidget {
           height: MediaQuery.of(context).size.width / 2 - 24,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(8)),
-            color: blue.withOpacity(0.25),
+            color: AppColors.blue.withOpacity(0.25),
           ),
           child: Center(
             child: Column(
@@ -109,7 +105,7 @@ class BankAccountWidget extends StatelessWidget {
                 Text(
                   '+',
                   style: TextStyle(
-                    color: blue,
+                    color: AppColors.blue,
                     fontSize: 32,
                   ),
                 ),
@@ -117,7 +113,7 @@ class BankAccountWidget extends StatelessWidget {
                 Text(
                   'New Space',
                   style: TextStyle(
-                    color: blue,
+                    color: AppColors.blue,
                   ),
                 ),
               ],

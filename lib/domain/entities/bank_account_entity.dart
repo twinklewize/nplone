@@ -7,21 +7,21 @@ class BankAccountEntity extends Equatable {
   /// Name of your bank account is the same name as your bank's name.
   /// But it can has postfix number. It's number of this bank account in list of bank accounts in app
   /// For example Tinkoff or Tinkoff 2
-  String name;
+  final String name;
 
   /// Object of Bank entity
-  BankEntity bank;
+  final BankEntity bank;
 
   /// Status of the Bank Account (needReconnect, isReconnecting, reconnected)
-  Status status;
+  final Status status;
 
   /// List of Space entity
-  List<SpaceEntity> spaces;
+  final List<SpaceEntity> spaces;
 
-  List<TransactionEntity> transactions;
+  final List<TransactionEntity> transactions;
 
   /// How much money in $ you have at this bank account
-  double howMuchMoneyInDollars;
+  final double howMuchMoneyInDollars;
 
   BankAccountEntity({
     required this.name,

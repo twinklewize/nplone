@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:n_plus_one/core/error/exception.dart';
 import '../models/bank_accout_model.dart';
 
-// TODO удалить это говно
+// TODO: delete dummyResponse
 var dummyResponse = jsonEncode(
   [
     {
@@ -172,7 +172,6 @@ class BankAccountsRemoteDataSourceImpl implements BankAccountsRemoteDataSource {
 
   BankAccountsRemoteDataSourceImpl({required this.client});
 
-  // TODO change url
   @override
   Future<List<BankAccountModel>> getBankAccouts(String userId) =>
       _getBankAccountsFromUrl(

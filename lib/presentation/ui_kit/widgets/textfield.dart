@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
 
-// ignore: must_be_immutable
 class MyTextField extends StatelessWidget {
-  Function(String?) onChanged;
-  TextEditingController controller;
-  Color fillColor;
-  String labelText;
-  TextInputType? keyboardType;
-  TextInputAction? textInputAction;
-  int? maxLines;
-  int? minLines;
-  Color inputTextColor;
+  final Function(String?) onChanged;
+  final TextEditingController controller;
+  final Color fillColor;
+  final String labelText;
+  final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
+  final int? maxLines;
+  final int? minLines;
+  final Color inputTextColor;
 
   MyTextField({
     required this.onChanged,
@@ -33,7 +31,7 @@ class MyTextField extends StatelessWidget {
         onChanged(val);
       },
       controller: controller,
-      cursorColor: blue,
+      cursorColor: AppColors.blue,
       maxLines: maxLines,
       minLines: minLines,
       cursorRadius: Radius.circular(2),

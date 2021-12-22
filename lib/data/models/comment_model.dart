@@ -1,4 +1,3 @@
-import 'package:n_plus_one/domain/entities/bank_entity.dart';
 import 'package:n_plus_one/domain/entities/comment_entity.dart';
 
 class CommentModel extends CommentEntity {

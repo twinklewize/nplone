@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:n_plus_one/presentation/features/authentication/pages/login_page.dart';
-import 'package:n_plus_one/presentation/features/authentication/pages/register_page.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_empty_button.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 
@@ -12,9 +11,9 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: background_black,
+      backgroundColor: AppColors.gray1,
       body: Container(
-        color: background_black,
+        color: AppColors.gray1,
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -43,9 +42,9 @@ class StartPage extends StatelessWidget {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                            Color.fromRGBO(27, 27, 28, 0),
-                            Color.fromRGBO(27, 27, 28, 0.33),
-                            Color.fromRGBO(27, 27, 28, 1),
+                            AppColors.gray1.withOpacity(0),
+                            AppColors.gray1.withOpacity(0.33),
+                            AppColors.gray1,
                           ],
                         ),
                       ),
@@ -71,20 +70,12 @@ class StartPage extends StatelessWidget {
                             Text(
                               'The World’s first',
                               textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w700,
-                              ),
+                              style: AppTextStyles.bold24pt,
                             ),
                             Text(
                               'banking social network',
                               textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w700,
-                              ),
+                              style: AppTextStyles.bold24pt,
                             ),
                           ],
                         ),
@@ -111,7 +102,7 @@ class StartPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: LongFilledButton(
-                  buttonColor: blue,
+                  buttonColor: AppColors.blue,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -136,7 +127,7 @@ class StartPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: LongFilledButton(
-                  buttonColor: blue,
+                  buttonColor: AppColors.blue,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -154,10 +145,9 @@ class StartPage extends StatelessWidget {
                   ),
                   onPressed: () {
                     print("Sign up with Email");
-                    Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (BuildContext context) => RegisterPage(),
-                      ),
+                    Navigator.pushNamed(
+                      context,
+                      '/signup',
                     );
                   },
                 ),
@@ -177,15 +167,14 @@ class StartPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: LongEmptyButton(
-                  buttonColor: background_black,
+                  buttonColor: AppColors.gray1,
                   textValue: 'Login',
                   textColor: Colors.white,
                   onPressed: () {
                     print("Login");
-                    Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (BuildContext context) => LoginPage(),
-                      ),
+                    Navigator.pushNamed(
+                      context,
+                      '/login',
                     );
                   },
                 ),

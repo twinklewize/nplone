@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/features/authentication/pages/register_page.dart';
-import 'package:n_plus_one/presentation/features/onboarding/onboarding_page.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/textfield.dart';
 
 class LoginPage extends StatelessWidget {
+  static const routeName = '/login';
   final emailEditingController = TextEditingController();
   final passwordEditingController = TextEditingController();
 
@@ -13,23 +13,18 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: background_black,
+        backgroundColor: AppColors.gray1,
         elevation: 0,
         actions: [
           TextButton(
             child: Text(
               'Register',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: blue,
-              ),
+              style: AppTextStyles.regular16pt.copyWith(color: AppColors.blue),
             ),
             onPressed: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute<void>(
-                  builder: (BuildContext context) => RegisterPage(),
-                ),
+              Navigator.pushReplacementNamed(
+                context,
+                '/signup',
               );
             },
           ),
@@ -37,10 +32,10 @@ class LoginPage extends StatelessWidget {
       ),
       resizeToAvoidBottomInset: false,
       body: Container(
-        color: background_black,
+        color: AppColors.gray1,
         child: SafeArea(
           child: Container(
-            color: background_black,
+            color: AppColors.gray1,
             child: Padding(
               padding: EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 0),
               child: Column(
@@ -48,11 +43,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Text(
                     'Login',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
+                    style: AppTextStyles.bold32pt,
                   ),
                   SizedBox(height: 32),
                   Form(
@@ -61,17 +52,13 @@ class LoginPage extends StatelessWidget {
                       children: [
                         Text(
                           'Email',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                          ),
+                          style: AppTextStyles.regular16pt,
                         ),
                         SizedBox(height: 4),
                         MyTextField(
                           onChanged: (value) => print(value),
                           controller: emailEditingController,
-                          fillColor: background_black,
+                          fillColor: AppColors.gray1,
                           labelText: 'Email here',
                           maxLines: 1,
                           minLines: 1,
@@ -81,11 +68,7 @@ class LoginPage extends StatelessWidget {
                         SizedBox(height: 32),
                         Text(
                           'Password',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                          ),
+                          style: AppTextStyles.regular16pt,
                         ),
                         SizedBox(height: 4),
                         Container(
@@ -96,7 +79,7 @@ class LoginPage extends StatelessWidget {
                           child: MyTextField(
                             onChanged: (value) => print(value),
                             controller: passwordEditingController,
-                            fillColor: background_black,
+                            fillColor: AppColors.gray1,
                             labelText: 'Password here',
                             maxLines: 1,
                             minLines: 1,
@@ -111,11 +94,8 @@ class LoginPage extends StatelessWidget {
                   TextButton(
                     child: Text(
                       'Forgot password?',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: blue,
-                      ),
+                      style: AppTextStyles.regular16pt
+                          .copyWith(color: AppColors.blue),
                     ),
                     onPressed: () {
                       print('Forgot password?');
@@ -123,20 +103,15 @@ class LoginPage extends StatelessWidget {
                   ),
                   Spacer(),
                   LongFilledButton(
-                    buttonColor: blue,
+                    buttonColor: AppColors.blue,
                     child: Text(
                       'Login',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: AppTextStyles.regular16pt,
                     ),
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute<void>(
-                          builder: (BuildContext context) => OnboardingPage(),
-                        ),
+                      Navigator.pushReplacementNamed(
+                        context,
+                        '/onboarding',
                       );
                     },
                   ),

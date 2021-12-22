@@ -1,10 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/textfield.dart';
 
 class RegisterPage extends StatelessWidget {
+  static const routeName = '/signup';
   // controllers
   final emailEditingController = TextEditingController();
   final passwordEditingController = TextEditingController();
@@ -14,15 +16,15 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: background_black,
+        backgroundColor: AppColors.gray1,
         elevation: 0,
       ),
       resizeToAvoidBottomInset: false,
       body: Container(
-        color: background_black,
+        color: AppColors.gray1,
         child: SafeArea(
           child: Container(
-            color: background_black,
+            color: AppColors.gray1,
             child: Padding(
               padding: EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 0),
               child: Column(
@@ -31,11 +33,7 @@ class RegisterPage extends StatelessWidget {
                   // title
                   Text(
                     'Sing Up',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
+                    style: AppTextStyles.bold32pt,
                   ),
 
                   //
@@ -49,18 +47,14 @@ class RegisterPage extends StatelessWidget {
                         // email title
                         Text(
                           'Email',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                          ),
+                          style: AppTextStyles.regular16pt,
                         ),
                         SizedBox(height: 4),
                         // email field
                         MyTextField(
                           onChanged: (value) => print(value),
                           controller: emailEditingController,
-                          fillColor: background_black,
+                          fillColor: AppColors.gray1,
                           labelText: 'Email here',
                           maxLines: 1,
                           minLines: 1,
@@ -73,11 +67,7 @@ class RegisterPage extends StatelessWidget {
                         // password title
                         Text(
                           'Password',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                          ),
+                          style: AppTextStyles.regular16pt,
                         ),
                         SizedBox(height: 4),
                         // password field
@@ -89,7 +79,7 @@ class RegisterPage extends StatelessWidget {
                           child: MyTextField(
                             onChanged: (value) => print(value),
                             controller: passwordEditingController,
-                            fillColor: background_black,
+                            fillColor: AppColors.gray1,
                             labelText: 'Password here',
                             maxLines: 1,
                             minLines: 1,
@@ -103,11 +93,7 @@ class RegisterPage extends StatelessWidget {
                         // repeat password title
                         Text(
                           'Repeat Password',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                          ),
+                          style: AppTextStyles.regular16pt,
                         ),
                         SizedBox(height: 4),
                         // repeat password field
@@ -119,7 +105,7 @@ class RegisterPage extends StatelessWidget {
                           child: MyTextField(
                             onChanged: (value) => print(value),
                             controller: repeatPasswordEditingController,
-                            fillColor: background_black,
+                            fillColor: AppColors.gray1,
                             labelText: 'Password here',
                             maxLines: 1,
                             minLines: 1,
@@ -138,19 +124,12 @@ class RegisterPage extends StatelessWidget {
                   RichText(
                     text: new TextSpan(
                       text: 'By pressing continue, you agree to ',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white,
-                      ),
+                      style: AppTextStyles.regular16pt,
                       children: [
                         new TextSpan(
                           text: 'N+1\'s User Agreement',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: blue,
-                          ),
+                          style: AppTextStyles.regular16pt
+                              .copyWith(color: AppColors.blue),
                           recognizer: new TapGestureRecognizer()
                             ..onTap = () => print('N+1\'s User Agreement'),
                         )
@@ -163,14 +142,10 @@ class RegisterPage extends StatelessWidget {
 
                   // кнопка sign up
                   LongFilledButton(
-                    buttonColor: blue,
+                    buttonColor: AppColors.blue,
                     child: Text(
                       'Sign up',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: AppTextStyles.regular16pt,
                     ),
                     onPressed: () {
                       print("login");

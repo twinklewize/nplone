@@ -1,5 +1,3 @@
-import 'package:n_plus_one/domain/entities/bank_entity.dart';
-import '/domain/entities/bank_account_entity.dart';
 import '/domain/entities/space_entity.dart';
 
 class SpaceModel extends SpaceEntity {

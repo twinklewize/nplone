@@ -15,22 +15,19 @@ class LongFilledButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      borderRadius: BorderRadius.circular(8),
-      child: Container(
-        height: height,
-        decoration: BoxDecoration(
-          color: buttonColor,
+    return Container(
+      height: height,
+      decoration: BoxDecoration(
+        color: buttonColor,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () => onPressed(),
           borderRadius: BorderRadius.circular(8),
-        ),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: () => onPressed(),
-            borderRadius: BorderRadius.circular(8),
-            child: Center(
-              child: child,
-            ),
+          child: Center(
+            child: child,
           ),
         ),
       ),
