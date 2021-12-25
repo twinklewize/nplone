@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 
 class CustomCircleAvatar extends StatelessWidget {
   const CustomCircleAvatar({Key? key, required this.imageUrl})

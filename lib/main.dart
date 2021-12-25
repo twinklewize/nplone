@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import './locator_service.dart' as di;
 import 'presentation/features/spaces_hub/pages/single_space/tabs/shared_zone/tabs/shared_zone_page/tabs/news/pages/actions_page.dart';
-import 'presentation/features/spaces_hub/pages/single_space/tabs/shared_zone/tabs/shared_zone_access/pages/admins_and_participants_page.dart';
-import 'presentation/ui_kit/colors/colors.dart';
+import 'presentation/features/spaces_hub/pages/single_space/tabs/shared_zone/tabs/shared_zone_access/pages/admins_and_participants/admins_and_participants_page.dart';
+import 'presentation/ui_kit/constants/colors.dart';
 import 'presentation/features/authentication/pages/start_page.dart';
 import 'presentation/features/authentication/pages/login_page.dart';
-import 'presentation/features/authentication/pages/register_page.dart';
+import 'presentation/features/authentication/pages/signup_page.dart';
 import 'presentation/features/onboarding/pages/onboarding_page.dart';
 import 'presentation/features/bank_account_adding/bloc/bank_account_adding_bloc/bank_account_adding_bloc.dart';
 import 'presentation/features/bank_account_adding/bloc/bank_list_bloc/bank_list_bloc.dart';
@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         home: StartPage(),
         routes: {
           LoginPage.routeName: (ctx) => LoginPage(),
-          RegisterPage.routeName: (ctx) => RegisterPage(),
+          SignupPage.routeName: (ctx) => SignupPage(),
           OnboardingPage.routeName: (ctx) => OnboardingPage(),
           BankAccountAddingPage.routeName: (ctx) => BankAccountAddingPage(),
           SuccessfullPage.routeName: (ctx) => SuccessfullPage(),

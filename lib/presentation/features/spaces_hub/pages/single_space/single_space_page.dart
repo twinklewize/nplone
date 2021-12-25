@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
 import 'package:n_plus_one/domain/entities/space_entity.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'tabs/private_zone/tabs/private_zone_accounts_tab.dart';
-import 'tabs/private_zone/tabs/private_zone_history/prvate_zone_history_tab.dart';
+import 'tabs/private_zone/tabs/private_zone_history/private_zone_history_tab.dart';
 import 'tabs/private_zone/tabs/private_zone_more_tab.dart';
 import 'tabs/shared_zone/tabs/shared_zone_access/shared_zone_access_tab.dart';
 import 'tabs/shared_zone/shared_zone_tab.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 
 enum SegmentedControlState { privateZone, sharedZone }
 
@@ -137,11 +138,7 @@ class _SingleSpacePageState extends State<SingleSpacePage> {
             SizedBox(width: 8),
             Text(
               widget.space.name,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-              ),
+              style: AppTextStyles.medium20pt,
             ),
           ],
         ),
@@ -159,9 +156,8 @@ class _SingleSpacePageState extends State<SingleSpacePage> {
             padding: EdgeInsets.all(4),
             position: BadgePosition.topEnd(top: 4, end: 4),
             badgeColor: AppColors.blue,
-            badgeContent: Center(
-                child: Text('12',
-                    style: TextStyle(color: Colors.white, fontSize: 10))),
+            badgeContent:
+                Center(child: Text('12', style: AppTextStyles.regular10pt)),
             child: SizedBox(
               width: 48,
               child: CircleAvatar(
@@ -205,12 +201,12 @@ class _SingleSpacePageState extends State<SingleSpacePage> {
                     width: MediaQuery.of(context).size.width - 24,
                     child:
                         CupertinoSlidingSegmentedControl<SegmentedControlState>(
-                      thumbColor: Color.fromRGBO(67, 69, 70, 1),
+                      thumbColor: AppColors.gray3,
                       children: {
                         SegmentedControlState.privateZone: Text('Private Zone',
-                            style: TextStyle(color: Colors.white)),
+                            style: AppTextStyles.regular16pt),
                         SegmentedControlState.sharedZone: Text('Shared Zone',
-                            style: TextStyle(color: Colors.white)),
+                            style: AppTextStyles.regular16pt),
                       },
                       groupValue: _segmentedControlGroupValue,
                       onValueChanged: (newValue) {

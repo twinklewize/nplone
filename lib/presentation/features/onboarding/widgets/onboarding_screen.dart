@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -24,8 +24,10 @@ class OnboardingScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          // Background and Image
           Stack(
             children: [
+              // background
               Positioned(
                 child: Image.asset(
                   backgroundImage,
@@ -33,6 +35,8 @@ class OnboardingScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+
+              // image
               Positioned(
                 top: MediaQuery.of(context).padding.top + 52,
                 left: 12,
@@ -47,18 +51,19 @@ class OnboardingScreen extends StatelessWidget {
             ],
           ),
           Spacer(),
+
+          // Main Text
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Text(
               mainText,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              ),
+              style: AppTextStyles.regular20pt,
             ),
           ),
           const SizedBox(height: 24),
+
+          // Text
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Text(

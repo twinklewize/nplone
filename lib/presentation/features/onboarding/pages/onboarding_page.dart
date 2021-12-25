@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:n_plus_one/presentation/features/onboarding/widgets/onboarding_screen.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_empty_button.dart';
 
 import '../widgets/animated_bar.dart';

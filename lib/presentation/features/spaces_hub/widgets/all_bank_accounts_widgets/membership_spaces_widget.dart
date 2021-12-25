@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class MembershipSpacesWidget extends StatelessWidget {
   const MembershipSpacesWidget({Key? key}) : super(key: key);
@@ -12,10 +13,7 @@ class MembershipSpacesWidget extends StatelessWidget {
         ),
         Text(
           "Страница в разработке",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 14,
-          ),
+          style: AppTextStyles.regular14pt,
         ),
       ],
     );

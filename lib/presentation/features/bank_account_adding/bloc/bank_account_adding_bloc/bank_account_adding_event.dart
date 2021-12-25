@@ -8,10 +8,15 @@ abstract class BankAccountAddingEvent extends Equatable {
   List<Object> get props => [];
 }
 
+// Choose bank
 class BankAccountAddingChooseEvent extends BankAccountAddingEvent {
   final BankEntity bankQuery;
 
   BankAccountAddingChooseEvent(this.bankQuery);
 }
 
+// Private checkbox change state
 class BankAccountAddingPrivateEvent extends BankAccountAddingEvent {}
+
+// Buisness checkbox change state
+class BankAccountAddingBuisnessEvent extends BankAccountAddingEvent {}

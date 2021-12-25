@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n_plus_one/core/utils/text_formatter.dart';
 import 'package:n_plus_one/domain/entities/transaction_entity.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/small_button.dart';
 
 class TransactionItemInHistory extends StatelessWidget {
@@ -54,11 +55,7 @@ class TransactionItemInHistory extends StatelessWidget {
                           children: [
                             Text(
                               transaction.contragent.name,
-                              style: TextStyle(
-                                color: AppColors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                              ),
+                              style: AppTextStyles.bold16pt,
                             ),
                             SizedBox(height: 6),
                             Row(
@@ -77,10 +74,8 @@ class TransactionItemInHistory extends StatelessWidget {
                                 SizedBox(width: 6),
                                 Text(
                                   transaction.contragent.bankAccount.bank.name,
-                                  style: TextStyle(
+                                  style: AppTextStyles.regular14pt.copyWith(
                                     color: AppColors.gray3,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
                                   ),
                                 ),
                               ],
@@ -93,11 +88,10 @@ class TransactionItemInHistory extends StatelessWidget {
                         Text(
                           TextFormatter.transactionToString(
                               transaction.transactionAmountInDollars),
-                          style: TextStyle(
+                          style: AppTextStyles.regular16pt.copyWith(
                             color: transaction.transactionAmountInDollars > 0
                                 ? AppColors.green
                                 : AppColors.white,
-                            fontSize: 16,
                           ),
                         ),
                       ],
@@ -116,7 +110,7 @@ class TransactionItemInHistory extends StatelessWidget {
                       SizedBox(width: 4),
                       Text(
                         transaction.comments.length.toString(),
-                        style: TextStyle(
+                        style: AppTextStyles.regular16pt.copyWith(
                           color: AppColors.gray3rd,
                         ),
                       ),
@@ -128,7 +122,7 @@ class TransactionItemInHistory extends StatelessWidget {
                       SizedBox(width: 4),
                       Text(
                         transaction.comments.length.toString(),
-                        style: TextStyle(
+                        style: AppTextStyles.regular16pt.copyWith(
                           color: AppColors.gray3rd,
                         ),
                       ),
@@ -137,38 +131,6 @@ class TransactionItemInHistory extends StatelessWidget {
                       // publish button
                       Padding(
                         padding: const EdgeInsets.only(right: 12),
-                        // child: SizedBox(
-                        //   height: transaction.isPublished ? 32 : 48,
-                        //   width: transaction.isPublished ? 91 : 133,
-                        //   child: Container(
-                        //     decoration: BoxDecoration(
-                        //       color: transaction.isPublished
-                        //           ? AppColors.white.withOpacity(0.1)
-                        //           : AppColors.green.withOpacity(0.2),
-                        //       borderRadius: BorderRadius.circular(6),
-                        //     ),
-                        //     child: Row(
-                        //       mainAxisAlignment: MainAxisAlignment.center,
-                        //       children: [
-                        //         SvgPicture.asset(
-                        //           'assets/icons/upload.svg',
-                        //           color: transaction.isPublished
-                        //               ? AppColors.gray2nd
-                        //               : AppColors.green,
-                        //         ),
-                        //         SizedBox(width: 4),
-                        //         Text(
-                        //           'Publish',
-                        //           style: TextStyle(
-                        //             color: transaction.isPublished
-                        //                 ? AppColors.gray2nd
-                        //                 : AppColors.green,
-                        //           ),
-                        //         ),
-                        //       ],
-                        //     ),
-                        //   ),
-                        // ),
                         child: transaction.isPublished
                             ? SmallButton(
                                 onPressed: () {},

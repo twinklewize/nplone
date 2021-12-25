@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class SuccessfullPage extends StatelessWidget {
@@ -10,19 +10,7 @@ class SuccessfullPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.gray1,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: AppColors.white,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-        backgroundColor: AppColors.gray1,
-        elevation: 0,
-      ),
+      appBar: appBar(context),
       body: GestureDetector(
         onTapDown: (_) {
           Navigator.pushReplacementNamed(
@@ -34,10 +22,14 @@ class SuccessfullPage extends StatelessWidget {
           child: Column(
             children: [
               Spacer(),
+
+              // Image
               Image.asset('assets/images/successfull_card_image.png'),
               const SizedBox(height: 16),
               SizedBox(
                 width: MediaQuery.of(context).size.width - 80,
+
+                // Successfull Text
                 child: Text(
                   'Accounts was successfully\n added and synced!',
                   textAlign: TextAlign.center,
@@ -53,6 +45,22 @@ class SuccessfullPage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  AppBar appBar(BuildContext context) {
+    return AppBar(
+      leading: IconButton(
+        icon: Icon(
+          Icons.arrow_back,
+          color: AppColors.white,
+        ),
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+      ),
+      backgroundColor: AppColors.gray1,
+      elevation: 0,
     );
   }
 }

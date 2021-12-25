@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/ui_entities/user_pay_entity.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 
@@ -8,8 +9,6 @@ import 'sum_deadline_creator_widget.dart';
 import 'user_pay_list_view_with_buttons.dart';
 import 'voting_buttons.dart';
 import 'likes_shares_messages_widget.dart';
-
-import '../ui_entities/user_pay_entity.dart';
 
 class NewsCardWidget extends StatelessWidget {
   final String title;

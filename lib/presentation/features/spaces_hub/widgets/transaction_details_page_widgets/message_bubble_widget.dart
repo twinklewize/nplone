@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class MessageBubbleWidget extends StatelessWidget {
@@ -25,7 +25,7 @@ class MessageBubbleWidget extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              color: Color.fromRGBO(41, 126, 225, 0.25),
+              color: AppColors.frontDarkBlue,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,9 +70,8 @@ class MessageBubbleWidget extends StatelessWidget {
                       //real additionalInfo
                       Text(
                         formattedDateTime,
-                        style: TextStyle(
-                          fontSize: 12.0,
-                          color: Color.fromRGBO(109, 120, 133, 1),
+                        style: AppTextStyles.regular12pt.copyWith(
+                          color: AppColors.frontGray2,
                         ),
                       ),
                       SizedBox(width: 12),
@@ -115,7 +114,7 @@ class MessageBubbleWidget extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                color: Color.fromRGBO(44, 45, 46, 1),
+                color: AppColors.frontGray2,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,9 +175,8 @@ class MessageBubbleWidget extends StatelessWidget {
                         //real additionalInfo
                         Text(
                           formattedDateTime,
-                          style: TextStyle(
-                            fontSize: 12.0,
-                            color: Color.fromRGBO(109, 120, 133, 1),
+                          style: AppTextStyles.regular12pt.copyWith(
+                            color: AppColors.frontGray2,
                           ),
                         ),
                         SizedBox(width: 12),

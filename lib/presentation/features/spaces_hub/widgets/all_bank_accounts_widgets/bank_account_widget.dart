@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
 import 'package:n_plus_one/domain/entities/space_entity.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/pages/single_space/single_space_page.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class BankAccountWidget extends StatelessWidget {
@@ -67,10 +67,8 @@ class BankAccountWidget extends StatelessWidget {
                 ? "Open public space"
                 : "Private space",
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              color: Color.fromRGBO(119, 119, 123, 1),
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
+            style: AppTextStyles.regular12pt.copyWith(
+              color: AppColors.frontGray4,
             ),
           ),
         ),
@@ -104,15 +102,13 @@ class BankAccountWidget extends StatelessWidget {
               children: [
                 Text(
                   '+',
-                  style: TextStyle(
-                    color: AppColors.blue,
-                    fontSize: 32,
-                  ),
+                  style:
+                      AppTextStyles.regular32pt.copyWith(color: AppColors.blue),
                 ),
                 SizedBox(height: 4),
                 Text(
                   'New Space',
-                  style: TextStyle(
+                  style: AppTextStyles.regular16pt.copyWith(
                     color: AppColors.blue,
                   ),
                 ),
@@ -153,11 +149,12 @@ class BankAccountWidget extends StatelessWidget {
                 SizedBox(height: 5),
                 Text(
                   bankAccount.name,
-                  style: TextStyle(color: Colors.white),
+                  style: AppTextStyles.regular16pt,
                 ),
                 Text(
                   bankAccount.spaces.length.toString() + ' spaces',
-                  style: TextStyle(color: Color.fromRGBO(119, 119, 123, 1)),
+                  style: AppTextStyles.regular16pt
+                      .copyWith(color: AppColors.frontGray4),
                 ),
               ],
             ),
@@ -165,7 +162,8 @@ class BankAccountWidget extends StatelessWidget {
             Spacer(),
 
             Text('\$ ${bankAccount.howMuchMoneyInDollars.toStringAsFixed(2)}',
-                style: TextStyle(color: Color.fromRGBO(119, 119, 123, 1))),
+                style: AppTextStyles.regular16pt
+                    .copyWith(color: AppColors.frontGray4)),
           ],
         ),
       ),

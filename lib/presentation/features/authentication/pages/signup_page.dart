@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/textfield.dart';
 
-class RegisterPage extends StatelessWidget {
+class SignupPage extends StatelessWidget {
   static const routeName = '/signup';
   // controllers
   final emailEditingController = TextEditingController();

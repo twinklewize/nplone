@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/pages/single_space/tabs/shared_zone/widgets/access_card.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/pages/single_space/tabs/shared_zone/widgets/list_tiles_with_switches.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/access_card_with_participants_widget.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/list_tile_with_switch_widget.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/monetization_widget.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class ClosedGroupRightsPage extends StatelessWidget {
@@ -31,7 +32,7 @@ class ClosedGroupRightsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 16),
-            AccessCardWithParticipants(
+            AccessCardWithParticipantsWidget(
               userAvatars: [
                 'https://i.ibb.co/g72brFF/Avatar.jpg',
                 'https://i.ibb.co/c63vCrZ/Avatar-1.jpg',
@@ -61,19 +62,19 @@ class ClosedGroupRightsPage extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(12, 32, 12, 8),
               child: Text('Options', style: AppTextStyles.bold20pt),
             ),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
                 text: 'See transactions',
                 switchState: false,
                 onSwitch: (value) {}),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
                 text: 'Post transactions',
                 switchState: true,
                 onSwitch: (value) {}),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
                 text: 'Comment posts and transactions',
                 switchState: false,
                 onSwitch: (value) {}),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
               text: 'Take part in financial actions',
               switchState: true,
               onSwitch: (value) {},

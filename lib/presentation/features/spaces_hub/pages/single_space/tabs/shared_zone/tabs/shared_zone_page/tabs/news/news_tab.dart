@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/ui_entities/user_pay_entity.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/news_widgets/news_card_widget.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/two_buttons.dart';
-
-import 'ui_entities/user_pay_entity.dart';
-import 'widgets/news_card_widget.dart';
 
 class NewsTab extends StatelessWidget {
   const NewsTab({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 
-import 'tabs/shared_zone_page/tabs/description/description_tab.dart';
+import 'tabs/shared_zone_page/tabs/description_tab.dart';
 import 'tabs/shared_zone_page/tabs/news/news_tab.dart';
 import 'tabs/shared_zone_page/tabs/posted_transactions_tab.dart';
 

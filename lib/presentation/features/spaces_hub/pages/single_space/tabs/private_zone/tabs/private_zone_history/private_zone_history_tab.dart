@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_bloc.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_states.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/pages/single_space/tabs/private_zone/widgets/transaction_item_in_history.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/transactions_history_widgets/transaction_item_in_history.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 

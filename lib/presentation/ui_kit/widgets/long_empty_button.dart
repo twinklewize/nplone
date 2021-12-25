@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class LongEmptyButton extends StatelessWidget {
   final Color buttonColor;
@@ -23,7 +25,7 @@ class LongEmptyButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: buttonColor,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Color.fromRGBO(255, 255, 255, 0.2)),
+          border: Border.all(color: AppColors.frontGray1),
         ),
         child: Material(
           color: Colors.transparent,
@@ -33,11 +35,7 @@ class LongEmptyButton extends StatelessWidget {
             child: Center(
               child: Text(
                 textValue,
-                style: TextStyle(
-                  color: textColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: AppTextStyles.regular16pt,
               ),
             ),
           ),

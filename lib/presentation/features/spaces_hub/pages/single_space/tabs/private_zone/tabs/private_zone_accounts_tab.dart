@@ -5,7 +5,7 @@ import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
 import 'package:n_plus_one/domain/entities/space_entity.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_bloc.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_states.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 
@@ -60,7 +60,7 @@ class PrivateZoneAccountsTab extends StatelessWidget {
                 width: MediaQuery.of(context).size.width - 24,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  color: Color.fromRGBO(44, 45, 46, 1),
+                  color: AppColors.frontGray2,
                 ),
                 child: Column(
                   children: [
@@ -184,7 +184,7 @@ class PrivateZoneAccountsTab extends StatelessWidget {
                         width: MediaQuery.of(context).size.width - 24,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
-                          color: Color.fromRGBO(44, 45, 46, 1),
+                          color: AppColors.frontGray2,
                         ),
                         child: Column(
                           children: [
@@ -251,7 +251,7 @@ class PrivateZoneAccountsTab extends StatelessWidget {
                               child: SizedBox(
                                 height: 40,
                                 child: LongFilledButton(
-                                  buttonColor: Color.fromRGBO(25, 52, 84, 1),
+                                  buttonColor: AppColors.frontGray6,
                                   child: Center(
                                     child: Row(
                                       mainAxisAlignment:
@@ -259,9 +259,9 @@ class PrivateZoneAccountsTab extends StatelessWidget {
                                       children: [
                                         Text(
                                           '+',
-                                          style: TextStyle(
+                                          style: AppTextStyles.regular24pt
+                                              .copyWith(
                                             color: AppColors.blue,
-                                            fontSize: 24,
                                           ),
                                         ),
                                         SizedBox(width: 8),
@@ -270,7 +270,8 @@ class PrivateZoneAccountsTab extends StatelessWidget {
                                               const EdgeInsets.only(top: 4),
                                           child: Text(
                                             'Sync Transactions',
-                                            style: TextStyle(
+                                            style: AppTextStyles.regular16pt
+                                                .copyWith(
                                               color: AppColors.blue,
                                             ),
                                           ),

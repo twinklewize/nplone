@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class PrivateZoneMoreTab extends StatelessWidget {
   PrivateZoneMoreTab({
@@ -10,7 +11,7 @@ class PrivateZoneMoreTab extends StatelessWidget {
     return Center(
       child: Text(
         'more',
-        style: TextStyle(color: Colors.white),
+        style: AppTextStyles.regular16pt,
       ),
     );
   }

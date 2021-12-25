@@ -6,9 +6,10 @@ import 'bank_account_adding_event.dart';
 class BankAccountAddingBloc
     extends Bloc<BankAccountAddingEvent, BankAccountAddingState> {
   BankAccountAddingBloc()
-      : super(BankAccountAddingNoChoosenState(private: true)) {
+      : super(BankAccountAddingNoChoosenState(private: true, buisness: false)) {
     BankEntity? bank;
     bool private = true;
+    bool buisness = false;
 
     on<BankAccountAddingChooseEvent>(
       (event, emit) async {
@@ -16,6 +17,7 @@ class BankAccountAddingBloc
         emit(BankAccountAddingChoosenState(
           bank: bank!,
           private: private,
+          buisness: buisness,
         ));
       },
     );
@@ -25,11 +27,30 @@ class BankAccountAddingBloc
         if (bank == null) {
           emit(BankAccountAddingNoChoosenState(
             private: private,
+            buisness: buisness,
           ));
         } else {
           emit(BankAccountAddingChoosenState(
             bank: bank!,
             private: private,
+            buisness: buisness,
+          ));
+        }
+      },
+    );
+    on<BankAccountAddingBuisnessEvent>(
+      (event, emit) async {
+        buisness = !buisness;
+        if (bank != null) {
+          emit(BankAccountAddingChoosenState(
+            bank: bank!,
+            private: private,
+            buisness: buisness,
+          ));
+        } else {
+          emit(BankAccountAddingNoChoosenState(
+            private: private,
+            buisness: buisness,
           ));
         }
       },

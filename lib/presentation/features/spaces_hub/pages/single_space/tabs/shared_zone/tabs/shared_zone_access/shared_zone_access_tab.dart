@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/pages/single_space/tabs/shared_zone/widgets/access_card.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/access_card_widget.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class SharedZoneAccessTab extends StatefulWidget {
@@ -28,7 +28,7 @@ class _SharedZoneAccessTabState extends State<SharedZoneAccessTab> {
             const SizedBox(height: 16),
 
             // Card with Admins
-            AccessCard(
+            AccessCardWidget(
               title: 'Admins',
               text: 'Set up unique access rights to Shared Page for ',
               highlitedText: 'each invited person',
@@ -51,7 +51,7 @@ class _SharedZoneAccessTabState extends State<SharedZoneAccessTab> {
             const SizedBox(height: 16),
 
             // Card with Closed Group
-            AccessCard(
+            AccessCardWidget(
               title: 'Closed group',
               text: 'Invite a group of people with the same access settings.',
               rightsButtonText: 'Configure Rights',
@@ -94,7 +94,7 @@ class _SharedZoneAccessTabState extends State<SharedZoneAccessTab> {
             const SizedBox(height: 16),
 
             // Card with Public Shared Zone
-            AccessCard(
+            AccessCardWidget(
               title: 'Public Shared Zone',
               text:
                   'The shared Zone will become unlimitedly public and will be displayed on the N+1 platform in the “Network” area. Everyone will be able to get access to the Shared Page paid or for free: Followers or Subscribers.',

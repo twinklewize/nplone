@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/all_bank_accounts_widgets/membership_spaces_widget.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/all_bank_accounts_widgets/my_spaces_widget.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 enum SegmentedControlState { mySpaces, membership }
@@ -26,7 +26,7 @@ class _SpacesHubPageState extends State<SpacesHubPage> {
       appBar: AppBar(
         backgroundColor: AppColors.gray1,
         elevation: 0,
-        leading: Icon(Icons.search, color: Color.fromRGBO(193, 193, 193, 1)),
+        leading: Icon(Icons.search, color: AppColors.frontGray5),
         actions: [
           Badge(
             padding: EdgeInsets.all(4),
@@ -35,7 +35,7 @@ class _SpacesHubPageState extends State<SpacesHubPage> {
             badgeContent: Center(
               child: Text(
                 '12',
-                style: TextStyle(color: Colors.white, fontSize: 10),
+                style: AppTextStyles.regular10pt,
               ),
             ),
             child: SizedBox(

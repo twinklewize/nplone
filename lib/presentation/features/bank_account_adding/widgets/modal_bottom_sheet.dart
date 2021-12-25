@@ -7,7 +7,7 @@ import 'package:n_plus_one/presentation/features/bank_account_adding/bloc/bank_a
 import 'package:n_plus_one/presentation/features/bank_account_adding/bloc/bank_list_bloc/bank_list_bloc.dart';
 import 'package:n_plus_one/presentation/features/bank_account_adding/bloc/bank_list_bloc/bank_list_event.dart';
 import 'package:n_plus_one/presentation/features/bank_account_adding/bloc/bank_list_bloc/bank_list_states.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 import 'search_bar.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 
 class AppTextStyles {
   static const bold32pt = TextStyle(
@@ -62,6 +62,30 @@ class AppTextStyles {
     color: AppColors.white,
   );
 
+  static const regular32pt = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 24,
+    color: AppColors.white,
+  );
+
+  static const regular24pt = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 24,
+    color: AppColors.white,
+  );
+
+  static const regular20pt = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 20,
+    color: AppColors.white,
+  );
+
+  static const regular18pt = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 18,
+    color: AppColors.white,
+  );
+
   static const regular16pt = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 16,
@@ -75,6 +99,12 @@ class AppTextStyles {
   );
 
   static const regular12pt = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+    color: AppColors.white,
+  );
+
+  static const regular10pt = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 12,
     color: AppColors.white,

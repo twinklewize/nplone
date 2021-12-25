@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_empty_button.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
@@ -91,11 +91,7 @@ class StartPage extends StatelessWidget {
                 child: Text(
                   'Manage funds jointly, reliably and transparently',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: AppTextStyles.regular18pt,
                 ),
               ),
               Spacer(),
@@ -110,11 +106,7 @@ class StartPage extends StatelessWidget {
                       SizedBox(width: 12),
                       Text(
                         'Continue with Google',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: AppTextStyles.regular16pt,
                       ),
                     ],
                   ),
@@ -135,11 +127,7 @@ class StartPage extends StatelessWidget {
                       SizedBox(width: 12),
                       Text(
                         'Sign up with Email',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: AppTextStyles.regular16pt,
                       ),
                     ],
                   ),
@@ -156,11 +144,7 @@ class StartPage extends StatelessWidget {
               Center(
                 child: Text(
                   'or',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: AppTextStyles.regular18pt,
                 ),
               ),
               SizedBox(height: 12),

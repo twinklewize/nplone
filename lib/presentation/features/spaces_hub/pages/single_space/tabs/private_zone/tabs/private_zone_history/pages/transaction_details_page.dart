@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/textfield.dart';
 
-import '../widgets/message_bubble_widget.dart';
+import '../../../../../../../widgets/transaction_details_page_widgets/message_bubble_widget.dart';
 
 class TransactionDetailsPage extends StatefulWidget {
   const TransactionDetailsPage({Key? key}) : super(key: key);
@@ -50,7 +50,7 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
               Container(
                 width: MediaQuery.of(context).size.width - 24,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(44, 45, 46, 1),
+                  color: AppColors.frontGray2,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
@@ -81,10 +81,8 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                     SizedBox(height: 12),
                     Text(
                       'Feb 15 2021, 09:41, München',
-                      style: TextStyle(
+                      style: AppTextStyles.regular14pt.copyWith(
                         color: Colors.grey,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
                       ),
                     ),
                     isDetailsHidden
@@ -162,20 +160,14 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                                 ),
                                 title: Text(
                                   'Transaction type',
-                                  style: TextStyle(
-                                    color: AppColors.gray3,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
+                                  style: AppTextStyles.regular14pt.copyWith(
+                                    color: AppColors.gray3rd,
                                   ),
                                 ),
                                 subtitle: isTxTypeVisible
                                     ? Text(
                                         'Pay',
-                                        style: TextStyle(
-                                          color: AppColors.white,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                        style: AppTextStyles.regular14pt,
                                       )
                                     : Image.asset(
                                         'assets/images/hiden_info.png',
@@ -216,20 +208,14 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                                 ),
                                 title: Text(
                                   'Originator',
-                                  style: TextStyle(
-                                    color: AppColors.gray3,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
+                                  style: AppTextStyles.regular14pt.copyWith(
+                                    color: AppColors.gray3rd,
                                   ),
                                 ),
                                 subtitle: isOriginatorVisible
                                     ? Text(
                                         'Anton Smith',
-                                        style: TextStyle(
-                                          color: AppColors.white,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                        style: AppTextStyles.regular14pt,
                                       )
                                     : Image.asset(
                                         'assets/images/hiden_info.png',
@@ -266,20 +252,14 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                                 ),
                                 title: Text(
                                   'Reciever',
-                                  style: TextStyle(
-                                    color: AppColors.gray3,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
+                                  style: AppTextStyles.regular14pt.copyWith(
+                                    color: AppColors.gray3rd,
                                   ),
                                 ),
                                 subtitle: isRecieverVisible
                                     ? Text(
                                         'Commerzbank, Muhnauser Str.18, Grossengottern, Germany',
-                                        style: TextStyle(
-                                          color: AppColors.white,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                        style: AppTextStyles.regular14pt,
                                       )
                                     : Image.asset(
                                         'assets/images/hiden_info.png',
@@ -314,20 +294,14 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                                 ),
                                 title: Text(
                                   'Sender',
-                                  style: TextStyle(
-                                    color: AppColors.gray3,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
+                                  style: AppTextStyles.regular14pt.copyWith(
+                                    color: AppColors.gray3rd,
                                   ),
                                 ),
                                 subtitle: isSenderVisible
                                     ? Text(
                                         'Revolut IBAN, DE2810011001*******322',
-                                        style: TextStyle(
-                                          color: AppColors.white,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                        style: AppTextStyles.regular14pt,
                                       )
                                     : Image.asset(
                                         'assets/images/hiden_info.png',
@@ -361,10 +335,8 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                       },
                       child: Text(
                         isDetailsHidden ? 'View Details ->' : 'Hide Details ->',
-                        style: TextStyle(
+                        style: AppTextStyles.regular14pt.copyWith(
                           color: AppColors.blue,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
                         ),
                       ),
                     ),
@@ -390,19 +362,13 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                 ),
                 title: Text(
                   'Posted by:',
-                  style: TextStyle(
-                    color: AppColors.gray3,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
+                  style: AppTextStyles.regular14pt.copyWith(
+                    color: AppColors.gray3rd,
                   ),
                 ),
                 subtitle: Text(
                   'Anton Smith (owner)',
-                  style: TextStyle(
-                    color: AppColors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: AppTextStyles.regular14pt,
                 ),
                 trailing: SvgPicture.asset('assets/icons/instagram.svg'),
               ),
@@ -422,19 +388,13 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                 ),
                 title: Text(
                   'Information is Reliable',
-                  style: TextStyle(
-                    color: Color.fromRGBO(9, 181, 79, 1),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
+                  style: AppTextStyles.regular14pt.copyWith(
+                    color: AppColors.frontGreen,
                   ),
                 ),
                 subtitle: Text(
                   'Last Update: 12.11.2021 at 12:33',
-                  style: TextStyle(
-                    color: AppColors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: AppTextStyles.regular14pt,
                 ),
               ),
 
@@ -453,11 +413,7 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                 ),
                 title: Text(
                   'Attachment files: 3',
-                  style: TextStyle(
-                    color: AppColors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: AppTextStyles.regular14pt,
                 ),
                 trailing: GestureDetector(
                   onTap: () {
@@ -482,18 +438,12 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                           leading: SvgPicture.asset('assets/icons/docs.svg'),
                           title: Text(
                             'Company.doc',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
+                            style: AppTextStyles.medium14pt,
                           ),
                           subtitle: Text(
                             '10.1 MB',
-                            style: TextStyle(
-                              color: AppColors.gray3,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
+                            style: AppTextStyles.regular14pt.copyWith(
+                              color: AppColors.gray3rd,
                             ),
                           ),
                           trailing: amIOwner
@@ -515,18 +465,12 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                           leading: SvgPicture.asset('assets/icons/pdf.svg'),
                           title: Text(
                             'Company.doc',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
+                            style: AppTextStyles.medium14pt,
                           ),
                           subtitle: Text(
                             '10.1 MB',
-                            style: TextStyle(
-                              color: AppColors.gray3,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
+                            style: AppTextStyles.regular14pt.copyWith(
+                              color: AppColors.gray3rd,
                             ),
                           ),
                           trailing: amIOwner
@@ -548,18 +492,12 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                           leading: SvgPicture.asset('assets/icons/pptx.svg'),
                           title: Text(
                             'Company.doc',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
+                            style: AppTextStyles.medium14pt,
                           ),
                           subtitle: Text(
                             '10.1 MB',
-                            style: TextStyle(
-                              color: AppColors.gray3,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
+                            style: AppTextStyles.regular14pt.copyWith(
+                              color: AppColors.gray3rd,
                             ),
                           ),
                           trailing: amIOwner
@@ -584,11 +522,7 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
 
               Text(
                 '3 Comments',
-                style: TextStyle(
-                  color: AppColors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: AppTextStyles.medium14pt,
               ),
 
               SizedBox(height: 12),
@@ -644,7 +578,7 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                           SizedBox(width: 8),
                           Text(
                             'Post in Shared Zone',
-                            style: TextStyle(
+                            style: AppTextStyles.regular16pt.copyWith(
                               color: AppColors.green,
                             ),
                           ),
@@ -666,7 +600,7 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
                           SizedBox(width: 8),
                           Text(
                             'Actions',
-                            style: TextStyle(
+                            style: AppTextStyles.regular16pt.copyWith(
                               color: AppColors.green,
                             ),
                           ),

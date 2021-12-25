@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/pages/single_space/tabs/shared_zone/widgets/list_tiles_with_switches.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/list_tile_with_switch_widget.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/monetization_widget.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/custom_sircle_avatar.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
@@ -36,27 +37,27 @@ class AdminEditPage extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(12, 16, 12, 8),
               child: Text('Options', style: AppTextStyles.bold20pt),
             ),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
                 text: 'See all transactions',
                 switchState: true,
                 onSwitch: (value) {}),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
                 text: 'Post transactions and news',
                 switchState: true,
                 onSwitch: (value) {}),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
                 text: 'Take part in financial actions',
                 switchState: false,
                 onSwitch: (value) {}),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
                 text: 'Comment posts and transactions',
                 switchState: true,
                 onSwitch: (value) {}),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
                 text: 'Edit zone info and Delete Posts',
                 switchState: false,
                 onSwitch: (value) {}),
-            ListTileWithSwitch(
+            ListTileWithSwitchWidget(
               text: 'Delete/invite new people',
               switchState: true,
               onSwitch: (value) {},

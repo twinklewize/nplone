@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class MyTextField extends StatelessWidget {
   final Function(String?) onChanged;
@@ -50,27 +51,25 @@ class MyTextField extends StatelessWidget {
         filled: true,
         floatingLabelBehavior: FloatingLabelBehavior.never,
         labelText: "     " + labelText,
-        labelStyle: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 16,
-          color: Color.fromRGBO(255, 255, 255, 0.2),
+        labelStyle: AppTextStyles.medium16pt.copyWith(
+          color: AppColors.frontGray1,
         ),
         prefixText: '    ',
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(color: Color.fromRGBO(255, 255, 255, 0.2)),
+          borderSide: BorderSide(color: AppColors.frontGray1),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(color: Color.fromRGBO(255, 255, 255, 0.2)),
+          borderSide: BorderSide(color: AppColors.frontGray1),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(color: Color.fromRGBO(255, 255, 255, 0.2)),
+          borderSide: BorderSide(color: AppColors.frontGray1),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(color: Color.fromRGBO(255, 255, 255, 0.2)),
+          borderSide: BorderSide(color: AppColors.frontGray1),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),

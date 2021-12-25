@@ -5,7 +5,8 @@ import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc
 import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_events.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_states.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/all_bank_accounts_widgets/bank_account_widget.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 
 class MySpacesWidget extends StatelessWidget {
@@ -15,26 +16,23 @@ class MySpacesWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 18),
       child: LongFilledButton(
-        buttonColor: Color.fromRGBO(25, 52, 84, 1),
+        buttonColor: AppColors.frontGray6,
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 '+',
-                style: TextStyle(
-                  color: AppColors.blue,
-                  fontSize: 24,
-                ),
+                style:
+                    AppTextStyles.regular24pt.copyWith(color: AppColors.blue),
               ),
               SizedBox(width: 8),
               Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   'New Bank Account',
-                  style: TextStyle(
-                    color: AppColors.blue,
-                  ),
+                  style:
+                      AppTextStyles.regular16pt.copyWith(color: AppColors.blue),
                 ),
               ),
             ],
@@ -63,7 +61,7 @@ class MySpacesWidget extends StatelessWidget {
         return state is BankAccountsLoading
             ? Center(child: CircularProgressIndicator())
             : state is BankAccountsLoadingError
-                ? Text('Error :(', style: TextStyle(color: Colors.white))
+                ? Text('Error :(', style: AppTextStyles.regular16pt)
                 : SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height - 200,
@@ -78,9 +76,8 @@ class MySpacesWidget extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 12),
                             child: Text(
                               "Total Balance:",
-                              style: TextStyle(
-                                color: Color.fromRGBO(179, 179, 184, 1),
-                                fontSize: 14,
+                              style: AppTextStyles.regular14pt.copyWith(
+                                color: AppColors.gray2nd,
                               ),
                             ),
                           ),
@@ -92,11 +89,7 @@ class MySpacesWidget extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 12),
                             child: Text(
                               "\$ ${totalBalance.toStringAsFixed(2)}",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w700,
-                              ),
+                              style: AppTextStyles.bold24pt,
                             ),
                           ),
 

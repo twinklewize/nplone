@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/ui_kit/colors/colors.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/description_widgets/cover_with_image_widget.dart';
+import 'package:n_plus_one/presentation/features/spaces_hub/widgets/description_widgets/text_with_icon_widget.dart';
+import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/small_button.dart';
-import 'widgets/cover_with_image_widget.dart';
-import 'widgets/text_with_icon_widget.dart';
 
 class DescriptionTab extends StatelessWidget {
   final Function() editFunction = () {};
