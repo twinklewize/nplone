@@ -14,11 +14,10 @@ class TextFormatter {
   }
 
   static String transactionToString(double number) {
-    String transactionString;
+    String sign;
+    number < 0 ? sign = '- \$' : sign = '+ \$';
     var formatter = NumberFormat('#,##0.00');
-    number < 0 ? transactionString = '- \$' : transactionString = '+ \$';
-    transactionString = transactionString + formatter.format(number.abs());
-    return transactionString;
+    return sign + formatter.format(number.abs());
   }
 
   static String intToString(int number) {
