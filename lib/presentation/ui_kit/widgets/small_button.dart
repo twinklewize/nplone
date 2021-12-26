@@ -12,9 +12,9 @@ class SmallButton extends StatelessWidget {
   SmallButton({
     Key? key,
     required this.onPressed,
+    required this.color,
     this.assetName = '',
     this.text = '',
-    required this.color,
     this.textColor = AppColors.gray2nd,
   }) : super(key: key);
 

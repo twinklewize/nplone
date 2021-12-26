@@ -12,15 +12,15 @@ class UserEntity extends Equatable {
   String email = '';
 
   /// User's list of bank accounts
-  List<BankAccountEntity> bankAccouts = [];
+  List<BankAccountEntity> bankaccounts = [];
 
   UserEntity({
     required this.id,
     required this.name,
     required this.email,
-    required this.bankAccouts,
+    required this.bankaccounts,
   });
 
   @override
-  List<Object?> get props => [id, name, email, bankAccouts];
+  List<Object?> get props => [id, name, email, bankaccounts];
 }

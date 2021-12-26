@@ -42,7 +42,7 @@ class BankAccountsLocalDataSourceImpl implements BankAccountsLocalDataSource {
         .toList();
     sharedPreferences.setStringList(
         CACHED_BANK_ACCOUNTS_LIST, jsonBankAccountList);
-    print('Bank Accouts to write Cache: ${jsonBankAccountList.length}');
+    print('Bank accounts to write Cache: ${jsonBankAccountList.length}');
     return Future.value(jsonBankAccountList);
   }
 }

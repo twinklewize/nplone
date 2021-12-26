@@ -164,7 +164,7 @@ abstract class BankAccountsRemoteDataSource {
   /// Calls the https://rickandmortyapi.com/api/character/?page=1 endpoint.
   ///
   /// Throws a [ServerException] for all error codes.
-  Future<List<BankAccountModel>> getBankAccouts(String userId);
+  Future<List<BankAccountModel>> getBankaccounts(String userId);
 }
 
 class BankAccountsRemoteDataSourceImpl implements BankAccountsRemoteDataSource {
@@ -173,7 +173,7 @@ class BankAccountsRemoteDataSourceImpl implements BankAccountsRemoteDataSource {
   BankAccountsRemoteDataSourceImpl({required this.client});
 
   @override
-  Future<List<BankAccountModel>> getBankAccouts(String userId) =>
+  Future<List<BankAccountModel>> getBankaccounts(String userId) =>
       _getBankAccountsFromUrl(
           'https://rickandmortyapi.com/api/character/?page=$userId');
 

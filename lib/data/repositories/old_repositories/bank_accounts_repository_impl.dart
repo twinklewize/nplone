@@ -22,12 +22,12 @@ class BankAccountsRepositoryImpl implements BankAccountsRepository {
   @override
   Future<Either<Failure, List<BankAccountEntity>>> getBankAccounts(
       String userId) async {
-    return await _getBankAccouts(() {
-      return remoteDataSource.getBankAccouts(userId);
+    return await _getBankaccounts(() {
+      return remoteDataSource.getBankaccounts(userId);
     });
   }
 
-  Future<Either<Failure, List<BankAccountModel>>> _getBankAccouts(
+  Future<Either<Failure, List<BankAccountModel>>> _getBankaccounts(
       Future<List<BankAccountModel>> Function() getBankAccounts) async {
     if (await networkInfo.isConnected) {
       try {
