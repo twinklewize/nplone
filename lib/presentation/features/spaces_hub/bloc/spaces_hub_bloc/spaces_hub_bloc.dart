@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:n_plus_one/core/error/failure.dart';
-import 'package:n_plus_one/domain/usecases/get_all_bank_accouts.dart';
+import 'package:n_plus_one/domain/usecases/old_usecases/get_all_bank_accounts.dart';
 import '../spaces_hub_bloc/spaces_hub_events.dart';
 import '../spaces_hub_bloc/spaces_hub_states.dart';
 
@@ -22,7 +22,7 @@ class SpacesHubBloc extends Bloc<SpacesHubEvent, SpacesHubState> {
     emit(BankAccountsLoading());
     if (event is BankAccountsStartLoadingEvent) {
       final failureOrBankAccounts = await loadUserBankAccounts(
-          LoadBankAccoutsParams(userId: event.userId));
+          LoadBankAccountsParams(userId: event.userId));
       print(event.userId);
       emit(failureOrBankAccounts.fold(
           (failure) =>

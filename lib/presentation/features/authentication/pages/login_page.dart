@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
             onPressed: () {
               Navigator.pushReplacementNamed(
                 context,
-                '/signup',
+                '/register',
               );
             },
           ),

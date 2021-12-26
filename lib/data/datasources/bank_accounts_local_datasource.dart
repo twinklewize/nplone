@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:n_plus_one/core/error/exception.dart';
-import 'package:n_plus_one/data/models/bank_accout_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:n_plus_one/core/error/exception.dart';
+import 'package:n_plus_one/data/models/old_models/bank_account_model.dart';
 
 abstract class BankAccountsLocalDataSource {
   /// Gets the cached [List<BankAccoutModel>] which was gotten the last time

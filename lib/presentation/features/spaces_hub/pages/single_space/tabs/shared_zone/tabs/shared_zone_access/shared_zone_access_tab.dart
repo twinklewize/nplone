@@ -1,5 +1,10 @@
+// Flutter & Dart
 import 'package:flutter/material.dart';
+
+// Widgets
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/access_card_widget.dart';
+
+// Ui kit
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 
 class SharedZoneAccessTab extends StatefulWidget {

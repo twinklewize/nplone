@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n_plus_one/core/utils/text_formatter.dart';
-import 'package:n_plus_one/domain/entities/transaction_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/transaction_entity.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/small_button.dart';

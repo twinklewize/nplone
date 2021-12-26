@@ -432,7 +432,7 @@ packages:
   nplone_api:
     dependency: "direct main"
     description:
-      path: openapi_package
+      path: ".nplone_api_package"
       relative: true
     source: path
     version: "1.0.0"

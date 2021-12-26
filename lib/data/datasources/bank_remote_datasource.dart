@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:n_plus_one/core/error/exception.dart';
-import 'package:n_plus_one/data/models/bank_model.dart';
+import 'package:n_plus_one/data/models/old_models/bank_model.dart';
 
 // TODO: delete dummyResponse
 var dummyResponse = jsonEncode(

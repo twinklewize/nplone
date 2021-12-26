@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:n_plus_one/domain/entities/bank_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/bank_entity.dart';
 
 abstract class BankListState extends Equatable {
   const BankListState();

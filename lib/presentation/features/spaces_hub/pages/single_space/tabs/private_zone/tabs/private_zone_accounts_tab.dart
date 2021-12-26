@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
-import 'package:n_plus_one/domain/entities/space_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/bank_account_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/space_entity.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_bloc.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_states.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';

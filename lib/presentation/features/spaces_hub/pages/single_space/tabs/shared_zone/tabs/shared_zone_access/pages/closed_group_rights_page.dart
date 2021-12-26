@@ -1,7 +1,12 @@
+// Flutter & Dart
 import 'package:flutter/material.dart';
+
+// Widgets
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/access_card_with_participants_widget.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/list_tile_with_switch_widget.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/shared_zone_access_widgets/monetization_widget.dart';
+
+// Ui kit
 import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 

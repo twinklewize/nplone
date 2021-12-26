@@ -135,7 +135,7 @@ class StartPage extends StatelessWidget {
                     print("Sign up with Email");
                     Navigator.pushNamed(
                       context,
-                      '/signup',
+                      '/register',
                     );
                   },
                 ),

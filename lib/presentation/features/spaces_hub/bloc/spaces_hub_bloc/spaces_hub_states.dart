@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/bank_account_entity.dart';
 
 abstract class SpacesHubState extends Equatable {
   const SpacesHubState();

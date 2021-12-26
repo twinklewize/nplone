@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/domain/entities/bank_account_entity.dart';
-import 'package:n_plus_one/domain/entities/space_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/bank_account_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/space_entity.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/pages/single_space/single_space_page.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';

@@ -42,27 +42,25 @@ dependencies:
   # Images
   image_picker: ^0.8.4+4
 
-  #Code Generation
+  # Code Generation
   openapi_generator_annotations: ^3.3.0
   nplone_api:
-    path: openapi_package
+    path: .nplone_api_package
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   linter: ^1.15.0
 
-  #Code Generation
+  # Code Generation
   openapi_generator: ^3.3.0+1
   build_runner: ^2.1.7
   build_resolvers: ^2.0.6
 
 
-# The following section is specific to Flutter.
 flutter:
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
     - assets/icons/

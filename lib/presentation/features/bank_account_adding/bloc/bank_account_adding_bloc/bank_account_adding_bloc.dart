@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:n_plus_one/domain/entities/bank_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/bank_entity.dart';
 import 'bank_account_adding_bloc_states.dart';
 import 'bank_account_adding_event.dart';
 

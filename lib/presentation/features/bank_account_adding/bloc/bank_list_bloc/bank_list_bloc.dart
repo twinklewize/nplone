@@ -2,8 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:n_plus_one/core/error/failure.dart';
 import 'package:n_plus_one/core/usecases/usecase.dart';
-import 'package:n_plus_one/domain/entities/bank_entity.dart';
-import 'package:n_plus_one/domain/usecases/get_all_banks.dart';
+import 'package:n_plus_one/domain/entities/old_entities/bank_entity.dart';
+import 'package:n_plus_one/domain/usecases/old_usecases/get_all_banks.dart';
 import 'bank_list_event.dart';
 import 'bank_list_states.dart';
 
