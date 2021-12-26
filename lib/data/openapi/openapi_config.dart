@@ -5,6 +5,6 @@ import 'package:openapi_generator_annotations/openapi_generator_annotations.dart
   inputSpecFile: 'lib/data/openapi/api-docs.yaml',
   skipSpecValidation: true,
   generatorName: Generator.dart,
-  outputDirectory: 'lib/data/openapi/generated_code/',
+  outputDirectory: 'openapi_package',
 )
 class OpenApiconfig extends OpenapiGeneratorConfig {}

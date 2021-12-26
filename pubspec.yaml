@@ -44,6 +44,8 @@ dependencies:
 
   #Code Generation
   openapi_generator_annotations: ^3.3.0
+  nplone_api:
+    path: openapi_package
 
 dev_dependencies:
   flutter_test:
