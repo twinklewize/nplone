@@ -13,7 +13,6 @@ class CommentModel extends CommentEntity {
 
   factory CommentModel.fromJson(Map<String, dynamic> json) {
     return CommentModel(
-      // TODO исправить метод !!!!!!!!
       text: json['text'],
       commentatorId: json['commentatorId'],
       whenItWas: DateTime.parse(json['whenItWas']),

@@ -29,7 +29,6 @@ class BankAccountModel extends BankAccountEntity {
 
   factory BankAccountModel.fromJson(Map<String, dynamic> json) {
     return BankAccountModel(
-      // TODO исправить метод под реальный API
       name: json['name'] as String,
       bank: BankEntity(
         name: json['bank']['name'],

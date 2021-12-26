@@ -65,11 +65,7 @@ class _SharedZoneAccessTabState extends State<SharedZoneAccessTab> {
                       Navigator.pushNamed(context, '/closed-group-rights');
                     }
                   : () {},
-              onLinkButton: widget.closedGroupSwitchState
-                  ? () {
-                      // TODO: Function
-                    }
-                  : () {},
+              onLinkButton: widget.closedGroupSwitchState ? () {} : () {},
               onSwitch: (value) {
                 setState(() {
                   widget.closedGroupSwitchState = value;
@@ -106,14 +102,10 @@ class _SharedZoneAccessTabState extends State<SharedZoneAccessTab> {
               rightsButtonText: 'Configure Rights',
               onRightsButton: widget.publicSharedZoneSwitchState
                   ? () {
-                      // TODO: Function
+                      //
                     }
                   : () {},
-              onLinkButton: widget.publicSharedZoneSwitchState
-                  ? () {
-                      // TODO: Function
-                    }
-                  : () {},
+              onLinkButton: widget.publicSharedZoneSwitchState ? () {} : () {},
               onSwitch: (value) {
                 setState(() {
                   widget.publicSharedZoneSwitchState = value;

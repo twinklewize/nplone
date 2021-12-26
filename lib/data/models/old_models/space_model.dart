@@ -17,7 +17,6 @@ class SpaceModel extends SpaceEntity {
 
   factory SpaceModel.fromJson(Map<String, dynamic> json) {
     return SpaceModel(
-      // TODO исправить метод !!!!!!!!
       id: json['id'] as String,
       name: json['name'] as String,
       imageUrl: json['imageUrl'] as String,

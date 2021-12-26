@@ -19,7 +19,6 @@ class ContragentModel extends ContragentEntity {
           imageUrl: imageUrl,
         );
 
-  // TODO исправить метод !!!!!!!!
   factory ContragentModel.fromJson(Map<String, dynamic> json) {
     return ContragentModel(
       id: json['id'],

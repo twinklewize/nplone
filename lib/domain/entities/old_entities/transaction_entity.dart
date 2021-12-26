@@ -4,31 +4,31 @@ import 'package:n_plus_one/domain/entities/old_entities/contragent_entity.dart';
 
 class TransactionEntity extends Equatable {
   /// лицо, с которым произошла транзакция
-  ContragentEntity contragent;
+  final ContragentEntity contragent;
 
   /// сколько денег было переведено (>0, если вам перевели, <0, если вы)
-  double transactionAmountInDollars;
+  final double transactionAmountInDollars;
 
   /// Опубликована ли транзакция
-  bool isPublished;
+  final bool isPublished;
 
   /// Когда была совершена транзакция
-  DateTime whenItWas;
+  final DateTime whenItWas;
 
   /// Когда была опубликована транзакция
-  DateTime? whenItWasPublished;
+  final DateTime? whenItWasPublished;
 
   /// Откуда была совершена транзакция
-  String whereItWas;
+  final String whereItWas;
 
   /// Тип совершенной операции
-  String transactionType;
+  final String transactionType;
 
   /// Список прикрепленных файлов
-  List<String>? attachmentFiles;
+  final List<String>? attachmentFiles;
 
   /// Список оставленных по транзакцией комментариев
-  List<CommentEntity> comments;
+  final List<CommentEntity> comments;
 
   TransactionEntity({
     required this.contragent,

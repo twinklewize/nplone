@@ -32,7 +32,6 @@ class TransactionModel extends TransactionEntity {
           comments: comments,
         );
 
-  // TODO исправить метод !!!!!!!!
   factory TransactionModel.fromJson(Map<String, dynamic> json) {
     return TransactionModel(
       contragent: ContragentEntity(

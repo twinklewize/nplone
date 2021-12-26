@@ -2,13 +2,13 @@ import 'package:equatable/equatable.dart';
 
 class CommentEntity extends Equatable {
   /// Текст коммнтария
-  String text;
+  final String text;
 
   /// Id человека, который оставил комментарий
-  String commentatorId;
+  final String commentatorId;
 
   /// когдa был оставлен коммент
-  DateTime whenItWas;
+  final DateTime whenItWas;
 
   CommentEntity({
     required this.text,

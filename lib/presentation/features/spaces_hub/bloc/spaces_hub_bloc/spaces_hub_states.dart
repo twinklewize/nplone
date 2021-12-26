@@ -13,7 +13,7 @@ class BankAccountsLoading extends SpacesHubState {}
 
 /// Состояние, при котором все данные успешно загружены
 class BankAccountsLoaded extends SpacesHubState {
-  List<BankAccountEntity> bankAccounts;
+  final List<BankAccountEntity> bankAccounts;
 
   BankAccountsLoaded({required this.bankAccounts});
 

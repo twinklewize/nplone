@@ -9,7 +9,7 @@ abstract class SpacesHubEvent extends Equatable {
 
 /// Event, при котором открыта вкладка My Spaces и происходит загрузка данных
 class BankAccountsStartLoadingEvent extends SpacesHubEvent {
-  String userId;
+  final String userId;
 
   BankAccountsStartLoadingEvent({required this.userId});
 }

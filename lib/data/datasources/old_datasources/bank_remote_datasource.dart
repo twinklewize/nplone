@@ -3,7 +3,6 @@ import 'package:http/http.dart' as http;
 import 'package:n_plus_one/core/error/exception.dart';
 import 'package:n_plus_one/data/models/old_models/bank_model.dart';
 
-// TODO: delete dummyResponse
 var dummyResponse = jsonEncode(
   [
     {"name": "Revoluot", "imageURL": "https://i.ibb.co/jbyP14J/revoluot.png"},
@@ -38,7 +37,6 @@ class BankRemoteDataSourceImpl implements BankRemoteDataSource {
 
   // @override
   // Future<List<BankModel>> getAllBanks() async {
-  //   // TODO: добавить обращение по запросу
   //   final response = await client
   //       .get(Uri.parse(''), headers: {'Content-Type': 'application/json'});
   //   if (response.statusCode == 200) {

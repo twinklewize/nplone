@@ -3,16 +3,16 @@ import 'package:n_plus_one/domain/entities/old_entities/bank_account_entity.dart
 
 class ContragentEntity extends Equatable {
   /// Id лица, с которым произошла транзакция
-  String id;
+  final String id;
 
   /// имя лица, с которым произошла транзакция
-  String name;
+  final String name;
 
   /// Банк лица, c которым произошла транзакция
-  BankAccountEntity bankAccount;
+  final BankAccountEntity bankAccount;
 
   ///  лица, c которым произошла транзакция
-  String imageUrl;
+  final String imageUrl;
 
   ContragentEntity({
     required this.name,

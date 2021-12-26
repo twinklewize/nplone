@@ -1,21 +1,20 @@
 import 'package:equatable/equatable.dart';
-import 'package:n_plus_one/domain/entities/old_entities/bank_entity.dart';
 
 class SpaceEntity extends Equatable {
   /// name of this space given from user
-  String name;
+  final String name;
 
   /// Unique id of this space
-  String id;
+  final String id;
 
   /// Avatar image URL of this space
-  String imageUrl;
+  final String imageUrl;
 
   /// Avatar image URL of this space
-  Privacy privacy;
+  final Privacy privacy;
 
   /// Avatar image URL of this space
-  int howManyPeopleInSpace;
+  final int howManyPeopleInSpace;
 
   SpaceEntity({
     required this.id,

@@ -2,10 +2,10 @@ import 'package:equatable/equatable.dart';
 
 class BankEntity extends Equatable {
   /// Name of the bank. Tinkoff, for example
-  String name;
+  final String name;
 
   /// Bank's avatar
-  String imageUrl;
+  final String imageUrl;
 
   BankEntity({
     required this.name,
