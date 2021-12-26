@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/ui_entities/user_pay_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/user_pay_entity.dart';
 import 'package:n_plus_one/presentation/features/spaces_hub/widgets/news_widgets/news_card_widget.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/two_buttons.dart';
 

@@ -1,6 +1,6 @@
 import 'package:n_plus_one/core/error/exception.dart';
 import 'package:n_plus_one/core/platform/network_info.dart';
-import 'package:n_plus_one/data/datasources/bank_remote_datasource.dart';
+import 'package:n_plus_one/data/datasources/old_datasources/bank_remote_datasource.dart';
 import 'package:n_plus_one/domain/entities/old_entities/bank_entity.dart';
 import 'package:n_plus_one/core/error/failure.dart';
 import 'package:dartz/dartz.dart';

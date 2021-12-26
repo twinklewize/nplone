@@ -6,7 +6,7 @@ import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/search_bar.dart';
 
-import '../../../../../../../../ui_entities/admin_and_participant_entity.dart';
+import '../../../../../../../../../../../domain/entities/old_entities/admin_and_participant_entity.dart';
 
 class AdminsAndParticipantsPage extends StatefulWidget {
   static const routeName = '/admins-and-participants';

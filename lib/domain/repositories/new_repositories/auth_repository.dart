@@ -9,19 +9,12 @@ import '../../entities/new_entities/auth_entities/token_info_entity.dart';
 
 // Packages
 import 'package:dartz/dartz.dart';
-import 'package:http/http.dart';
 
 abstract class AuthRepository {
   Future<Either<Failure, void>> registerUser(UserRegisterEntity userRegister);
-  Future<Either<Failure, Response>> registerUserWithHttpInfo(
-      UserRegisterEntity userRegister);
 
   Future<Either<Failure, TokenInfoEntity>> login(UserLoginEntity userLogin);
-  Future<Either<Failure, Response>> loginUserWithHttpInfo(
-      UserLoginEntity userRegister);
 
   Future<Either<Failure, TokenInfoEntity>> googleSignIn(
-      GoogleTokenEntity googleToken);
-  Future<Either<Failure, Response>> googleSignInWithHttpInfo(
       GoogleTokenEntity googleToken);
 }

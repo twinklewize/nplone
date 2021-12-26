@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:n_plus_one/presentation/features/spaces_hub/ui_entities/admin_and_participant_entity.dart';
+import 'package:n_plus_one/domain/entities/old_entities/admin_and_participant_entity.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 
 class MediaButtons extends StatelessWidget {
