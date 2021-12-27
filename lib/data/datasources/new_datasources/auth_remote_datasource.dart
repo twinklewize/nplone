@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:n_plus_one/core/error/exception.dart';
 import 'package:n_plus_one/data/models/new_models/auth_models/token_info_model.dart';
@@ -7,7 +9,6 @@ import 'package:n_plus_one/domain/entities/new_entities/auth_entities/user_regis
 import 'package:nplone_api/nplone_api.dart';
 
 abstract class AuthRemoteDataSource {
-  /// Throws a [ServerException] for all error codes.
   Future<TokenInfoModel> googleSignIn(GoogleTokenEntity googleToken);
 
   Future<TokenInfoModel> login(UserLoginEntity userLogin);
@@ -41,6 +42,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     }
   }
 
+  late Response<TokenInfo> response;
+
   @override
   Future<TokenInfoModel> login(UserLoginEntity userLogin) async {
     try {
@@ -49,12 +52,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         userLoginBuilder.password = userLogin.password;
         userLoginBuilder.email = userLogin.email;
       }));
-
       if (response.statusCode == 200) {
         return TokenInfoModel.fromTokenInfo(tokenInfo: response.data!);
       }
       throw ServerException();
-    } catch (_) {
+    } catch (error) {
+      if (error is DioError && error.response != null) {
+        String? detail = json.decode(error.response!.data)['detail'];
+        if (detail != null) throw AuthException(message: detail);
+      }
       throw ServerException();
     }
   }
@@ -76,7 +82,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         return;
       }
       throw ServerException();
-    } catch (_) {
+    } catch (error) {
       throw ServerException();
     }
   }

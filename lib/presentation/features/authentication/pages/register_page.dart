@@ -11,6 +11,36 @@ class RegisterPage extends StatelessWidget {
   final emailEditingController = TextEditingController();
   final passwordEditingController = TextEditingController();
   final repeatPasswordEditingController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
+  String? emailValidation(String? value) {
+    // if (value == null || value.isEmpty) {
+    //   return 'Please enter some text';
+    // }
+    // final emailValid = RegExp(
+    //     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+    // if (!emailValid.hasMatch(value)) {
+    //   return 'Please enter valid email';
+    // }
+    return null;
+  }
+
+  String? passwordValidation(String? value) {
+    // if (value == null || value.length < 4) {
+    //   return 'Please enter at least 4 characters';
+    // }
+    return null;
+  }
+
+  String? repeatPasswordValidation(String? value) {
+    // if (value == null || value.length < 4) {
+    //   return 'Please enter at least 4 characters';
+    // }
+    // if (value != passwordEditingController.text) {
+    //   return 'Passwords must match';
+    // }
+    // return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +62,7 @@ class RegisterPage extends StatelessWidget {
                 children: [
                   // title
                   Text(
-                    'Sing Up',
+                    'Sing In',
                     style: AppTextStyles.bold32pt,
                   ),
 
@@ -41,6 +71,7 @@ class RegisterPage extends StatelessWidget {
 
                   // Form
                   Form(
+                    key: _formKey,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -60,6 +91,7 @@ class RegisterPage extends StatelessWidget {
                           minLines: 1,
                           keyboardType: TextInputType.emailAddress,
                           inputTextColor: Colors.white,
+                          validationFunction: emailValidation,
                         ),
 
                         SizedBox(height: 32),
@@ -70,22 +102,18 @@ class RegisterPage extends StatelessWidget {
                           style: AppTextStyles.regular16pt,
                         ),
                         SizedBox(height: 4),
+
                         // password field
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(14.0),
-                          ),
-                          child: MyTextField(
-                            onChanged: (value) => print(value),
-                            controller: passwordEditingController,
-                            fillColor: AppColors.gray1,
-                            labelText: 'Password here',
-                            maxLines: 1,
-                            minLines: 1,
-                            keyboardType: TextInputType.emailAddress,
-                            inputTextColor: Colors.white,
-                          ),
+                        MyTextField(
+                          onChanged: (value) => print(value),
+                          controller: passwordEditingController,
+                          fillColor: AppColors.gray1,
+                          labelText: 'Password here',
+                          maxLines: 1,
+                          minLines: 1,
+                          keyboardType: TextInputType.emailAddress,
+                          inputTextColor: Colors.white,
+                          validationFunction: passwordValidation,
                         ),
 
                         SizedBox(height: 32),
@@ -96,22 +124,18 @@ class RegisterPage extends StatelessWidget {
                           style: AppTextStyles.regular16pt,
                         ),
                         SizedBox(height: 4),
+
                         // repeat password field
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(14.0),
-                          ),
-                          child: MyTextField(
-                            onChanged: (value) => print(value),
-                            controller: repeatPasswordEditingController,
-                            fillColor: AppColors.gray1,
-                            labelText: 'Password here',
-                            maxLines: 1,
-                            minLines: 1,
-                            keyboardType: TextInputType.emailAddress,
-                            inputTextColor: Colors.white,
-                          ),
+                        MyTextField(
+                          onChanged: (value) => print(value),
+                          controller: repeatPasswordEditingController,
+                          fillColor: AppColors.gray1,
+                          labelText: 'Password here',
+                          maxLines: 1,
+                          minLines: 1,
+                          keyboardType: TextInputType.emailAddress,
+                          inputTextColor: Colors.white,
+                          validationFunction: repeatPasswordValidation,
                         ),
                       ],
                     ),
@@ -123,7 +147,7 @@ class RegisterPage extends StatelessWidget {
                   // terms
                   RichText(
                     text: new TextSpan(
-                      text: 'By pressing continue, you agree to ',
+                      text: 'By pressing "Sign In", you agree to ',
                       style: AppTextStyles.regular16pt,
                       children: [
                         new TextSpan(
@@ -140,15 +164,18 @@ class RegisterPage extends StatelessWidget {
                   //
                   Spacer(),
 
-                  // кнопка sign up
+                  // кнопка sign in
                   LongFilledButton(
                     buttonColor: AppColors.blue,
                     child: Text(
-                      'Sign up',
+                      'Sign In',
                       style: AppTextStyles.regular16pt,
                     ),
                     onPressed: () {
-                      print("login");
+                      final FormState form = _formKey.currentState!;
+                      if (form.validate()) {
+                        Navigator.pushNamed(context, '/country-choosing');
+                      }
                     },
                   ),
                   SizedBox(height: 24),

@@ -15,3 +15,13 @@ class NoInternetConnectionException implements Exception {
     print("No Internet Connection");
   }
 }
+
+class AuthException implements Exception {
+  String message;
+
+  AuthException({required this.message});
+
+  void call() {
+    print("AuthException");
+  }
+}

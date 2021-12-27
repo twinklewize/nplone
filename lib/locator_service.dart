@@ -2,6 +2,7 @@
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:n_plus_one/data/datasources/new_datasources/auth_remote_datasource.dart';
 import 'package:n_plus_one/presentation/features/authentication/bloc/login_bloc/login_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -79,6 +80,7 @@ Future<void> init() async {
     ),
   );
 
+  // DataSources - old
   sl.registerLazySingleton<BankRemoteDataSource>(
     () => BankRemoteDataSourceImpl(
       client: sl(),
@@ -92,6 +94,11 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<BankAccountsLocalDataSource>(
     () => BankAccountsLocalDataSourceImpl(sharedPreferences: sl()),
+  );
+
+  // DataSources - new
+  sl.registerLazySingleton<AuthRemoteDataSource>(
+    () => AuthRemoteDataSourceImpl(),
   );
 
   // Repositories - new

@@ -27,12 +27,14 @@ class AuthRepositoryImpl implements AuthRepository {
       try {
         tokenInfo = await remoteDataSource.googleSignIn(googleToken);
         return Right(LoginSuccess());
-      } on ServerException {
+      } catch (exception) {
+        if (exception is AuthException) {
+          return Left(AuthFailure(message: exception.message));
+        }
         return Left(ServerFailure());
       }
-    } else {
-      return Left(NoInternetConnectionFailure());
     }
+    return Left(NoInternetConnectionFailure());
   }
 
   @override
@@ -41,12 +43,14 @@ class AuthRepositoryImpl implements AuthRepository {
       try {
         tokenInfo = await remoteDataSource.login(userLogin);
         return Right(LoginSuccess());
-      } on ServerException {
+      } catch (exception) {
+        if (exception is AuthException) {
+          return Left(AuthFailure(message: exception.message));
+        }
         return Left(ServerFailure());
       }
-    } else {
-      return Left(NoInternetConnectionFailure());
     }
+    return Left(NoInternetConnectionFailure());
   }
 
   @override
@@ -59,8 +63,7 @@ class AuthRepositoryImpl implements AuthRepository {
       } on ServerException {
         return Left(ServerFailure());
       }
-    } else {
-      return Left(NoInternetConnectionFailure());
     }
+    return Left(NoInternetConnectionFailure());
   }
 }

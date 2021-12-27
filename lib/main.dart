@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import './locator_service.dart' as di;
 
 // Ui Kit
-import 'presentation/features/authentication/bloc/login_bloc/login_bloc.dart';
 import 'presentation/ui_kit/constants/colors.dart';
 
 // Bloc
@@ -17,10 +16,11 @@ import 'presentation/features/bank_account_adding/pages/successfull_page.dart';
 import 'presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_bloc.dart';
 
 // Pages
+import 'presentation/features/authentication/pages/start_page.dart';
 import 'presentation/features/authentication/pages/login_page.dart';
 import 'presentation/features/authentication/pages/register_page.dart';
+import 'presentation/features/authentication/pages/country_choosing_page.dart';
 import 'presentation/features/onboarding/pages/onboarding_page.dart';
-import 'presentation/features/authentication/pages/start_page.dart';
 import 'presentation/features/spaces_hub/pages/spaces_hub_page.dart';
 import 'presentation/features/spaces_hub/pages/space_creation_page.dart';
 import 'presentation/features/spaces_hub/pages/single_space/tabs/private_zone/tabs/private_zone_history/pages/transaction_details_page.dart';
@@ -41,9 +41,6 @@ class MyApp extends StatelessWidget {
     // Bloc
     return MultiBlocProvider(
       providers: [
-        // New Bloc
-        BlocProvider<LoginBloc>(create: (context) => di.sl<LoginBloc>()),
-
         // Old Bloc
         BlocProvider<SpacesHubBloc>(
             create: (context) => di.sl<SpacesHubBloc>()),
@@ -79,6 +76,7 @@ class MyApp extends StatelessWidget {
           AdminsAndParticipantsPage.routeName: (ctx) =>
               AdminsAndParticipantsPage(),
           AdminEditPage.routeName: (ctx) => AdminEditPage(),
+          CountryChoosingPage.routeName: (ctx) => CountryChoosingPage(),
         },
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:n_plus_one/presentation/features/authentication/bloc/login_bloc/login_bloc.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_empty_button.dart';
@@ -148,6 +150,8 @@ class StartPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 12),
+
+              // Login Button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: LongEmptyButton(
@@ -155,7 +159,6 @@ class StartPage extends StatelessWidget {
                   textValue: 'Login',
                   textColor: Colors.white,
                   onPressed: () {
-                    print("Login");
                     Navigator.pushNamed(
                       context,
                       '/login',
@@ -171,7 +174,3 @@ class StartPage extends StatelessWidget {
     );
   }
 }
-
-// Padding(
-//               padding: EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 0),
-//               child: ,),

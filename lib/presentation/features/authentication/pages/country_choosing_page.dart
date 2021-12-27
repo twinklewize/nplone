@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:n_plus_one/presentation/features/bank_account_adding/bloc/bank_account_adding_bloc/bank_account_adding_bloc.dart';
 import 'package:n_plus_one/presentation/features/bank_account_adding/bloc/bank_account_adding_bloc/bank_account_adding_bloc_states.dart';
-import 'package:n_plus_one/presentation/features/bank_account_adding/bloc/bank_account_adding_bloc/bank_account_adding_event.dart';
+import 'package:n_plus_one/presentation/ui_kit/widgets/dropdown_list.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_filled_button.dart';
 
-import '../widgets/container_with_checkbox.dart';
-import '../../../ui_kit/widgets/dropdown_list.dart';
 import '../widgets/modal_bottom_sheet.dart';
 
-class BankAccountAddingPage extends StatelessWidget {
-  static const routeName = '/bank-account-adding';
+class CountryChoosingPage extends StatelessWidget {
+  static const routeName = '/country-choosing';
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
@@ -23,19 +22,24 @@ class BankAccountAddingPage extends StatelessWidget {
         child: BlocBuilder<BankAccountAddingBloc, BankAccountAddingState>(
             builder: (context, state) {
           return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 16),
-
+              SizedBox(
+                height: 131,
+                width: 131,
+                child: Image.asset('assets/images/country_choosing_image.png'),
+              ),
+              const SizedBox(height: 24),
               // Title
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Text(
-                  'Create new bank account',
-                  style: AppTextStyles.bold24pt,
+                  'Before you continue choose your country',
+                  style: AppTextStyles.bold32pt,
+                  textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 34),
 
               // Drop Down List
               Padding(
@@ -43,21 +47,17 @@ class BankAccountAddingPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Bank',
-                      style: AppTextStyles.regular16pt,
-                    ),
                     const SizedBox(height: 4),
                     state is BankAccountAddingChoosenState
                         ? DropdownList(
+                            defaultText: 'Select Country',
                             text: state.bank.name,
                             imageURL: state.bank.imageUrl,
-                            defaultText: 'Select Bank',
                             onTap: () =>
                                 customShowModalBottomSheet(context, mediaQuery),
                           )
                         : DropdownList(
-                            defaultText: 'Select Bank',
+                            defaultText: 'Select Country',
                             onTap: () =>
                                 customShowModalBottomSheet(context, mediaQuery),
                           ),
@@ -65,45 +65,22 @@ class BankAccountAddingPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 16),
 
-              // Private Checkbox
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: InkWell(
-                  customBorder: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  onTap: () {
-                    BlocProvider.of<BankAccountAddingBloc>(context,
-                        listen: false)
-                      ..add(BankAccountAddingPrivateEvent());
-                  },
-                  child: ContainerWithCheckbox(
-                      check: state.props[0] as bool, text: 'Private'),
-                ),
-              ),
-              const SizedBox(height: 8),
-
-              // Business Checkbox
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: InkWell(
-                  customBorder: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  onTap: () {
-                    BlocProvider.of<BankAccountAddingBloc>(context,
-                        listen: false)
-                      ..add(BankAccountAddingBuisnessEvent());
-                  },
-                  child: ContainerWithCheckbox(
-                      check: state.props[1] as bool, text: 'Business'),
-                ),
-              ),
               const Spacer(),
 
-              // Create Button
+              // Text
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Text(
+                  'The registration process may differ from the choice of the country.',
+                  style: AppTextStyles.regular14pt.copyWith(
+                    color: AppColors.gray3rd,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
+
+              // Continue Button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: LongFilledButton(
@@ -111,7 +88,7 @@ class BankAccountAddingPage extends StatelessWidget {
                       ? AppColors.blue
                       : AppColors.blue.withOpacity(0.4),
                   child: Text(
-                    "Create",
+                    "Continue",
                     style: state is BankAccountAddingChoosenState
                         ? AppTextStyles.bold20pt
                         : AppTextStyles.bold20pt

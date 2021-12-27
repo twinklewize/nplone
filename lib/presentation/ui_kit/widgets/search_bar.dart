@@ -20,6 +20,7 @@ class SearchBar extends StatelessWidget {
             color: AppColors.white.withOpacity(0.25),
           )),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SvgPicture.asset(
             'assets/icons/search_icon.svg',

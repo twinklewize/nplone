@@ -12,7 +12,8 @@ class MyTextField extends StatelessWidget {
   final int? maxLines;
   final int? minLines;
   final Color inputTextColor;
-  final Function(String? value)? validationFunction;
+  final String? Function(String? value)? validationFunction;
+  final String? errorText;
 
   MyTextField({
     required this.onChanged,
@@ -25,6 +26,7 @@ class MyTextField extends StatelessWidget {
     this.textInputAction = TextInputAction.next,
     required this.inputTextColor,
     this.validationFunction,
+    this.errorText,
   });
 
   @override
@@ -48,7 +50,7 @@ class MyTextField extends StatelessWidget {
       decoration: InputDecoration(
         errorStyle: TextStyle(color: AppColors.red),
         isDense: true,
-        // errorText: 'Hu',
+        errorText: errorText,
         contentPadding: // Text Field height
             EdgeInsets.only(
           top: 14,

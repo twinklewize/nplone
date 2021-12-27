@@ -9,8 +9,12 @@ abstract class LoginEvent extends Equatable {
 
 class UserLoginEvent extends LoginEvent {
   final UserLoginEntity userLoginEntity;
+  final BuildContext context;
 
-  UserLoginEvent(this.userLoginEntity);
+  UserLoginEvent(
+    this.userLoginEntity,
+    this.context,
+  );
 
   @override
   List<Object> get props => [userLoginEntity];
