@@ -1,182 +1,187 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.7
+// @dart=2.0
 
-// ignore_for_file: unused_import
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
 
-import 'dart:async';
-import 'package:dio/dio.dart';
-import 'package:built_value/serializer.dart';
+part of openapi.api;
 
-import 'package:nplone_api/model/google_token.dart';
-import 'package:nplone_api/model/token_info.dart';
-import 'package:nplone_api/model/user_login.dart';
-import 'package:nplone_api/model/user_register.dart';
 
 class AuthApi {
-  final Dio _dio;
+  AuthApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
-  final Serializers _serializers;
-
-  const AuthApi(this._dio, this._serializers);
+  final ApiClient apiClient;
 
   /// Аутентификация через аккаунт Google
   ///
+  /// Note: This method returns the HTTP [Response].
   ///
-  Future<Response<TokenInfo>> googleSignIn(
-    GoogleToken googleToken, {
-    CancelToken cancelToken,
-    Map<String, dynamic> headers,
-    Map<String, dynamic> extra,
-    ValidateStatus validateStatus,
-    ProgressCallback onSendProgress,
-    ProgressCallback onReceiveProgress,
-  }) async {
-    final _request = RequestOptions(
-      path: r'/api/v1/googlesignin',
-      method: 'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-      contentType: 'application/json',
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
+  /// Parameters:
+  ///
+  /// * [GoogleToken] googleToken (required):
+  Future<Response> googleSignInWithHttpInfo(GoogleToken googleToken,) async {
+    // Verify required params are set.
+    if (googleToken == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: googleToken');
+    }
+
+    // ignore: prefer_const_declarations
+    final path = r'/api/v1/googlesignin';
+
+    // ignore: prefer_final_locals
+    Object postBody = googleToken;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>[];
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
     );
+  }
 
-    dynamic _bodyData;
+  /// Аутентификация через аккаунт Google
+  ///
+  /// Parameters:
+  ///
+  /// * [GoogleToken] googleToken (required):
+  Future<TokenInfo> googleSignIn(GoogleToken googleToken,) async {
+    final response = await googleSignInWithHttpInfo(googleToken,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TokenInfo',) as TokenInfo;
+    
+    }
+    return Future<TokenInfo>.value();
+  }
 
-    const _type = FullType(GoogleToken);
-    _bodyData = _serializers.serialize(googleToken, specifiedType: _type);
+  /// Войти под пользователем
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [UserLogin] userLogin (required):
+  Future<Response> loginWithHttpInfo(UserLogin userLogin,) async {
+    // Verify required params are set.
+    if (userLogin == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: userLogin');
+    }
 
-    final _response = await _dio.request<dynamic>(
-      _request.path,
-      data: _bodyData,
-      options: _request,
-    );
+    // ignore: prefer_const_declarations
+    final path = r'/api/v1/login';
 
-    const _responseType = FullType(TokenInfo);
-    final _responseData = _serializers.deserialize(
-      _response.data,
-      specifiedType: _responseType,
-    ) as TokenInfo;
+    // ignore: prefer_final_locals
+    Object postBody = userLogin;
 
-    return Response<TokenInfo>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      request: _response.request,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>[];
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
     );
   }
 
   /// Войти под пользователем
   ///
+  /// Parameters:
   ///
-  Future<Response<TokenInfo>> login(
-    UserLogin userLogin, {
-    CancelToken cancelToken,
-    Map<String, dynamic> headers,
-    Map<String, dynamic> extra,
-    ValidateStatus validateStatus,
-    ProgressCallback onSendProgress,
-    ProgressCallback onReceiveProgress,
-  }) async {
-    final _request = RequestOptions(
-      path: r'/api/v1/login',
-      method: 'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-      contentType: 'application/json',
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+  /// * [UserLogin] userLogin (required):
+  Future<TokenInfo> login(UserLogin userLogin,) async {
+    final response = await loginWithHttpInfo(userLogin,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body != null && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TokenInfo',) as TokenInfo;
+    
+    }
+    return Future<TokenInfo>.value();
+  }
 
-    dynamic _bodyData;
+  /// Зарегистрировать нового пользователя в системе
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [UserRegister] userRegister (required):
+  Future<Response> registerUserWithHttpInfo(UserRegister userRegister,) async {
+    // Verify required params are set.
+    if (userRegister == null) {
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: userRegister');
+    }
 
-    const _type = FullType(UserLogin);
-    _bodyData = _serializers.serialize(userLogin, specifiedType: _type);
+    // ignore: prefer_const_declarations
+    final path = r'/api/v1/register';
 
-    final _response = await _dio.request<dynamic>(
-      _request.path,
-      data: _bodyData,
-      options: _request,
-    );
+    // ignore: prefer_final_locals
+    Object postBody = userRegister;
 
-    const _responseType = FullType(TokenInfo);
-    final _responseData = _serializers.deserialize(
-      _response.data,
-      specifiedType: _responseType,
-    ) as TokenInfo;
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
 
-    return Response<TokenInfo>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      request: _response.request,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
+    const authNames = <String>[];
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
     );
   }
 
   /// Зарегистрировать нового пользователя в системе
   ///
+  /// Parameters:
   ///
-  Future<Response<void>> registerUser(
-    UserRegister userRegister, {
-    CancelToken cancelToken,
-    Map<String, dynamic> headers,
-    Map<String, dynamic> extra,
-    ValidateStatus validateStatus,
-    ProgressCallback onSendProgress,
-    ProgressCallback onReceiveProgress,
-  }) async {
-    final _request = RequestOptions(
-      path: r'/api/v1/register',
-      method: 'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-      contentType: 'application/json',
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    dynamic _bodyData;
-
-    const _type = FullType(UserRegister);
-    _bodyData = _serializers.serialize(userRegister, specifiedType: _type);
-
-    final _response = await _dio.request<dynamic>(
-      _request.path,
-      data: _bodyData,
-      options: _request,
-    );
-
-    return _response;
+  /// * [UserRegister] userRegister (required):
+  Future<void> registerUser(UserRegister userRegister,) async {
+    final response = await registerUserWithHttpInfo(userRegister,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
   }
 }

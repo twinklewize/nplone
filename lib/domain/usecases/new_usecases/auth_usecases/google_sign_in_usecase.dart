@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 
 // Core
 import 'package:n_plus_one/core/error/failure.dart';
+import 'package:n_plus_one/core/error/success.dart';
 import 'package:n_plus_one/core/usecases/usecase.dart';
 
 // Entities
@@ -19,8 +20,7 @@ class GoogleSingInUsecase extends UseCase<void, GoogleSingInParams> {
   GoogleSingInUsecase(this.authRepository);
 
   @override
-  Future<Either<Failure, TokenInfoEntity>> call(
-      GoogleSingInParams params) async {
+  Future<Either<Failure, Success>> call(GoogleSingInParams params) async {
     final response = await authRepository.googleSignIn(params.googleToken);
     return response;
   }

@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 
 // Core
 import 'package:n_plus_one/core/error/failure.dart';
+import 'package:n_plus_one/core/error/success.dart';
 import 'package:n_plus_one/core/usecases/usecase.dart';
 
 // Entities
@@ -18,7 +19,7 @@ class RegisterUserUsecase extends UseCase<void, RegisterUserParams> {
   RegisterUserUsecase(this.authRepository);
 
   @override
-  Future<Either<Failure, void>> call(RegisterUserParams params) async {
+  Future<Either<Failure, Success>> call(RegisterUserParams params) async {
     final response = await authRepository.registerUser(params.userRegister);
     return response;
   }
