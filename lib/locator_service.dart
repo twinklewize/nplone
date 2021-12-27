@@ -2,6 +2,7 @@
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:n_plus_one/presentation/features/authentication/bloc/login_bloc/login_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // Core
@@ -37,7 +38,7 @@ import 'presentation/features/spaces_hub/bloc/spaces_hub_bloc/spaces_hub_bloc.da
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  // Bloc
+  // Bloc - old
   sl.registerFactory(
     () => BankListBloc(getAllBanks: sl()),
   );
@@ -46,6 +47,11 @@ Future<void> init() async {
   );
   sl.registerFactory(
     () => SpacesHubBloc(loadUserBankAccounts: sl()),
+  );
+
+  // Bloc - new
+  sl.registerFactory(
+    () => LoginBloc(loginUsecase: sl()),
   );
 
   // UseCases - old

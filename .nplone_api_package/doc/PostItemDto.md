@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **likes** | **int** | Количество лайков | 
 **liked** | **bool** | Лайкнул ли пост пользователь | 
 **comments** | **int** | Количество комментариев к посту | 
-**transactionBalances** | [**List<AccountBalance>**](AccountBalance.md) | Балансы прикреплённых транзакций | [default to const []]
+**transactionBalances** | [**BuiltList&lt;AccountBalance&gt;**](AccountBalance.md) | Балансы прикреплённых транзакций | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

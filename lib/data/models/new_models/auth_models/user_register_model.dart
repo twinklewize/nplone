@@ -1,6 +1,5 @@
 import 'package:n_plus_one/domain/entities/new_entities/auth_entities/user_register_entity.dart';
-// ignore: import_of_legacy_library_into_null_safe
-import 'package:nplone_api/api.dart';
+import 'package:nplone_api/nplone_api.dart';
 
 class UserRegisterModel extends UserRegisterEntity {
   late final UserRegister userRegister;
@@ -14,11 +13,11 @@ class UserRegisterModel extends UserRegisterEntity {
           email: email,
           password: password,
         ) {
-    userRegister = UserRegister(
-      country: country,
-      email: email,
-      password: password,
-    );
+    userRegister = UserRegister((UserRegisterBuilder userRegisterBuilder) {
+      userRegisterBuilder.country = country;
+      userRegisterBuilder.email = email;
+      userRegisterBuilder.password = password;
+    });
   }
 
   UserRegisterModel.fromUserRegister({
@@ -28,13 +27,4 @@ class UserRegisterModel extends UserRegisterEntity {
           email: userRegister.email,
           password: userRegister.password,
         );
-
-  Map<String, dynamic> toJson() {
-    return userRegister.toJson();
-  }
-
-  factory UserRegisterModel.fromJson(Map<String, dynamic> json) {
-    return UserRegisterModel.fromUserRegister(
-        userRegister: UserRegister.fromJson(json));
-  }
 }

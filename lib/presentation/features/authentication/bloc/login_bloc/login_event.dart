@@ -1,17 +1,17 @@
-// part of 'login_bloc.dart';
+part of 'login_bloc.dart';
 
-// abstract class LoginEvent extends Equatable {
-//   const LoginEvent();
+abstract class LoginEvent extends Equatable {
+  const LoginEvent();
 
-//   @override
-//   List<Object> get props => [];
-// }
+  @override
+  List<Object> get props => [];
+}
 
-// class UserLoginEvent extends LoginEvent {
-//   final UserLoginEntity userLoginEntity;
+class UserLoginEvent extends LoginEvent {
+  final UserLoginEntity userLoginEntity;
 
-//   UserLoginEvent(this.userLoginEntity);
+  UserLoginEvent(this.userLoginEntity);
 
-//   @override
-//   List<Object> get props => [userLoginEntity];
-// }
+  @override
+  List<Object> get props => [userLoginEntity];
+}

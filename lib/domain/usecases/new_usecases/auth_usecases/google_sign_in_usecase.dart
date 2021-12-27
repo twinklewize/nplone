@@ -9,7 +9,6 @@ import 'package:n_plus_one/core/usecases/usecase.dart';
 
 // Entities
 import 'package:n_plus_one/domain/entities/new_entities/auth_entities/google_token_entity.dart';
-import 'package:n_plus_one/domain/entities/new_entities/auth_entities/token_info_entity.dart';
 
 // Repositories
 import 'package:n_plus_one/domain/repositories/new_repositories/auth_repository.dart';

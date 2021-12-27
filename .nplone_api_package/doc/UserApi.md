@@ -21,18 +21,15 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = UserApi();
+final api = NploneApi().getUserApi();
 
 try {
-    api_instance.deleteUser();
-} catch (e) {
+    api.deleteUser();
+} catch on DioError (e) {
     print('Exception when calling UserApi->deleteUser: $e\n');
 }
 ```
@@ -63,19 +60,16 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = UserApi();
+final api = NploneApi().getUserApi();
 
 try {
-    final result = api_instance.getUserInfo();
-    print(result);
-} catch (e) {
+    final response = api.getUserInfo();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling UserApi->getUserInfo: $e\n');
 }
 ```

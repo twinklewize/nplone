@@ -30,13 +30,13 @@ Method | HTTP request | Description
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = SpaceApi();
-final id = id_example; // String | ID пространства
-final inlineObject1 = InlineObject1(); // InlineObject1 | 
+final api = NploneApi().getSpaceApi();
+final String id = id_example; // String | ID пространства
+final InlineObject1 inlineObject1 = ; // InlineObject1 | 
 
 try {
-    api_instance.createPost(id, inlineObject1);
-} catch (e) {
+    api.createPost(id, inlineObject1);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->createPost: $e\n');
 }
 ```
@@ -71,20 +71,17 @@ No authorization required
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = SpaceApi();
-final inlineObject = InlineObject(); // InlineObject | 
+final api = NploneApi().getSpaceApi();
+final InlineObject inlineObject = ; // InlineObject | 
 
 try {
-    final result = api_instance.createSpace(inlineObject);
-    print(result);
-} catch (e) {
+    final response = api.createSpace(inlineObject);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->createSpace: $e\n');
 }
 ```
@@ -118,19 +115,16 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = SpaceApi();
-final id = id_example; // String | ID пространства
+final api = NploneApi().getSpaceApi();
+final String id = id_example; // String | ID пространства
 
 try {
-    api_instance.deleteSpace(id);
-} catch (e) {
+    api.deleteSpace(id);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->deleteSpace: $e\n');
 }
 ```
@@ -164,21 +158,18 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = SpaceApi();
-final id = id_example; // String | ID пространства
-final inlineObject4 = InlineObject4(); // InlineObject4 | 
+final api = NploneApi().getSpaceApi();
+final String id = id_example; // String | ID пространства
+final InlineObject4 inlineObject4 = ; // InlineObject4 | 
 
 try {
-    final result = api_instance.editSpace(id, inlineObject4);
-    print(result);
-} catch (e) {
+    final response = api.editSpace(id, inlineObject4);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->editSpace: $e\n');
 }
 ```
@@ -214,14 +205,14 @@ Name | Type | Description  | Notes
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = SpaceApi();
-final id = id_example; // String | ID пространства
-final page = 789; // int | Страница
+final api = NploneApi().getSpaceApi();
+final String id = id_example; // String | ID пространства
+final int page = 789; // int | Страница
 
 try {
-    final result = api_instance.getPosts(id, page);
-    print(result);
-} catch (e) {
+    final response = api.getPosts(id, page);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->getPosts: $e\n');
 }
 ```
@@ -256,20 +247,17 @@ No authorization required
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = SpaceApi();
-final id = id_example; // String | ID пространства
+final api = NploneApi().getSpaceApi();
+final String id = id_example; // String | ID пространства
 
 try {
-    final result = api_instance.getSpace(id);
-    print(result);
-} catch (e) {
+    final response = api.getSpace(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->getSpace: $e\n');
 }
 ```
@@ -303,20 +291,17 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = SpaceApi();
-final id = id_example; // String | ID пространства
+final api = NploneApi().getSpaceApi();
+final String id = id_example; // String | ID пространства
 
 try {
-    final result = api_instance.getSpaceBankingInfo(id);
-    print(result);
-} catch (e) {
+    final response = api.getSpaceBankingInfo(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->getSpaceBankingInfo: $e\n');
 }
 ```
@@ -350,21 +335,18 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = SpaceApi();
-final id = id_example; // String | ID пространства
-final page = page_example; // String | Cтраница
+final api = NploneApi().getSpaceApi();
+final String id = id_example; // String | ID пространства
+final String page = page_example; // String | Cтраница
 
 try {
-    final result = api_instance.getSpacePostedTransactions(id, page);
-    print(result);
-} catch (e) {
+    final response = api.getSpacePostedTransactions(id, page);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->getSpacePostedTransactions: $e\n');
 }
 ```
@@ -399,21 +381,18 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = SpaceApi();
-final id = id_example; // String | ID пространства
-final page = page_example; // String | Cтраница
+final api = NploneApi().getSpaceApi();
+final String id = id_example; // String | ID пространства
+final String page = page_example; // String | Cтраница
 
 try {
-    final result = api_instance.getSpaceTransactions(id, page);
-    print(result);
-} catch (e) {
+    final response = api.getSpaceTransactions(id, page);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->getSpaceTransactions: $e\n');
 }
 ```
@@ -448,21 +427,18 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = SpaceApi();
-final size = 56; // int | Размер страницы
-final page = 56; // int | Страница (с 0)
+final api = NploneApi().getSpaceApi();
+final int size = 56; // int | Размер страницы
+final int page = 56; // int | Страница (с 0)
 
 try {
-    final result = api_instance.getSpaces(size, page);
-    print(result);
-} catch (e) {
+    final response = api.getSpaces(size, page);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SpaceApi->getSpaces: $e\n');
 }
 ```

@@ -1,4 +1,3 @@
-// @dart=2.9
 // Flutter & Dart
 import 'package:flutter/material.dart';
 
@@ -7,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import './locator_service.dart' as di;
 
 // Ui Kit
+import 'presentation/features/authentication/bloc/login_bloc/login_bloc.dart';
 import 'presentation/ui_kit/constants/colors.dart';
 
 // Bloc
@@ -41,9 +41,12 @@ class MyApp extends StatelessWidget {
     // Bloc
     return MultiBlocProvider(
       providers: [
+        // New Bloc
+        BlocProvider<LoginBloc>(create: (context) => di.sl<LoginBloc>()),
+
+        // Old Bloc
         BlocProvider<SpacesHubBloc>(
-          create: (context) => di.sl<SpacesHubBloc>(),
-        ),
+            create: (context) => di.sl<SpacesHubBloc>()),
         BlocProvider<BankListBloc>(create: (context) => di.sl<BankListBloc>()),
         BlocProvider<BankAccountAddingBloc>(
             create: (context) => di.sl<BankAccountAddingBloc>()),

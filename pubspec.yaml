@@ -35,6 +35,9 @@ dependencies:
 
   # DI
   get_it: ^7.2.0
+
+  # HTTP
+  dio: ^4.0.4
   
   # Text Formatter
   intl: ^0.17.0
@@ -46,6 +49,8 @@ dependencies:
   openapi_generator_annotations: ^3.3.0
   nplone_api:
     path: .nplone_api_package
+
+
 
 dev_dependencies:
   flutter_test:

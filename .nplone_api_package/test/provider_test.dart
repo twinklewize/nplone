@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.0
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:nplone_api/api.dart';
 import 'package:test/test.dart';
+import 'package:nplone_api/nplone_api.dart';
 
 // tests for Provider
 void main() {
-  final instance = Provider();
+  final instance = ProviderBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test Provider', () {
+  group(Provider, () {
     // Валюта провайдера
     // String currency
     test('to test the property `currency`', () async {
@@ -88,7 +79,5 @@ void main() {
       // TODO
     });
 
-
   });
-
 }

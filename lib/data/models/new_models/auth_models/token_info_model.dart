@@ -1,6 +1,5 @@
 import 'package:n_plus_one/domain/entities/new_entities/auth_entities/token_info_entity.dart';
-// ignore: import_of_legacy_library_into_null_safe
-import 'package:nplone_api/api.dart';
+import 'package:nplone_api/nplone_api.dart';
 
 class TokenInfoModel extends TokenInfoEntity {
   late final TokenInfo tokenInfo;
@@ -12,7 +11,10 @@ class TokenInfoModel extends TokenInfoEntity {
           accessToken: accessToken,
           userId: userId,
         ) {
-    tokenInfo = TokenInfo(accessToken: accessToken, userId: userId);
+    tokenInfo = TokenInfo((TokenInfoBuilder tokenInfoBuilder) {
+      tokenInfoBuilder.accessToken = accessToken;
+      tokenInfoBuilder.userId = userId;
+    });
   }
 
   TokenInfoModel.fromTokenInfo({
@@ -21,12 +23,4 @@ class TokenInfoModel extends TokenInfoEntity {
           accessToken: tokenInfo.accessToken,
           userId: tokenInfo.userId,
         );
-
-  Map<String, dynamic> toJson() {
-    return tokenInfo.toJson();
-  }
-
-  factory TokenInfoModel.fromJson(Map<String, dynamic> json) {
-    return TokenInfoModel.fromTokenInfo(tokenInfo: TokenInfo.fromJson(json));
-  }
 }

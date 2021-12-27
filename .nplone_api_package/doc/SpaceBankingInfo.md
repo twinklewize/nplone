@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | [**AccountBalance**](AccountBalance.md) |  | [optional] 
 **primaryAccount** | [**Account**](Account.md) |  | [optional] 
-**linkedAccounts** | [**List<Account>**](Account.md) |  | [optional] [default to const []]
+**linkedAccounts** | [**BuiltList&lt;Account&gt;**](Account.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

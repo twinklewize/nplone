@@ -29,14 +29,14 @@ Method | HTTP request | Description
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = PostApi();
-final id = id_example; // String | ID транзакции
-final inlineObject3 = InlineObject3(); // InlineObject3 | 
+final api = NploneApi().getPostApi();
+final String id = id_example; // String | ID транзакции
+final InlineObject3 inlineObject3 = ; // InlineObject3 | 
 
 try {
-    final result = api_instance.addFileToPost(id, inlineObject3);
-    print(result);
-} catch (e) {
+    final response = api.addFileToPost(id, inlineObject3);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling PostApi->addFileToPost: $e\n');
 }
 ```
@@ -72,14 +72,14 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = PostApi();
-final id = id_example; // String | ID транзакции
-final commentPostDto = CommentPostDto(); // CommentPostDto | 
+final api = NploneApi().getPostApi();
+final String id = id_example; // String | ID транзакции
+final CommentPostDto commentPostDto = ; // CommentPostDto | 
 
 try {
-    final result = api_instance.addPostComment(id, commentPostDto);
-    print(result);
-} catch (e) {
+    final response = api.addPostComment(id, commentPostDto);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling PostApi->addPostComment: $e\n');
 }
 ```
@@ -115,13 +115,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = PostApi();
-final id = id_example; // String | ID транзакции
-final inlineObject5 = InlineObject5(); // InlineObject5 | 
+final api = NploneApi().getPostApi();
+final String id = id_example; // String | ID транзакции
+final InlineObject5 inlineObject5 = ; // InlineObject5 | 
 
 try {
-    api_instance.editPost(id, inlineObject5);
-} catch (e) {
+    api.editPost(id, inlineObject5);
+} catch on DioError (e) {
     print('Exception when calling PostApi->editPost: $e\n');
 }
 ```
@@ -157,13 +157,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = PostApi();
-final id = id_example; // String | ID поста
+final api = NploneApi().getPostApi();
+final String id = id_example; // String | ID поста
 
 try {
-    final result = api_instance.getPost(id);
-    print(result);
-} catch (e) {
+    final response = api.getPost(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling PostApi->getPost: $e\n');
 }
 ```
@@ -198,15 +198,15 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = PostApi();
-final id = id_example; // String | ID транзакции
-final page = 789; // int | Страница
-final size = 56; // int | Размер страницы
+final api = NploneApi().getPostApi();
+final String id = id_example; // String | ID транзакции
+final int page = 789; // int | Страница
+final int size = 56; // int | Размер страницы
 
 try {
-    final result = api_instance.getPostComments(id, page, size);
-    print(result);
-} catch (e) {
+    final response = api.getPostComments(id, page, size);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling PostApi->getPostComments: $e\n');
 }
 ```
@@ -243,13 +243,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = PostApi();
-final id = id_example; // String | ID транзакции
+final api = NploneApi().getPostApi();
+final String id = id_example; // String | ID транзакции
 
 try {
-    final result = api_instance.getPostFiles(id);
-    print(result);
-} catch (e) {
+    final response = api.getPostFiles(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling PostApi->getPostFiles: $e\n');
 }
 ```
@@ -284,12 +284,12 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = PostApi();
-final id = id_example; // String | ID поста
+final api = NploneApi().getPostApi();
+final String id = id_example; // String | ID поста
 
 try {
-    api_instance.likePost(id);
-} catch (e) {
+    api.likePost(id);
+} catch on DioError (e) {
     print('Exception when calling PostApi->likePost: $e\n');
 }
 ```
@@ -324,13 +324,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = PostApi();
-final id = id_example; // String | ID поста
-final comment = 789; // int | ID комментария
+final api = NploneApi().getPostApi();
+final String id = id_example; // String | ID поста
+final int comment = 789; // int | ID комментария
 
 try {
-    api_instance.likePostComment(id, comment);
-} catch (e) {
+    api.likePostComment(id, comment);
+} catch on DioError (e) {
     print('Exception when calling PostApi->likePostComment: $e\n');
 }
 ```
@@ -366,13 +366,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = PostApi();
-final id = id_example; // String | ID транзакции
-final fid = fid_example; // String | ID файла
+final api = NploneApi().getPostApi();
+final String id = id_example; // String | ID транзакции
+final String fid = fid_example; // String | ID файла
 
 try {
-    api_instance.removeFileFromPost(id, fid);
-} catch (e) {
+    api.removeFileFromPost(id, fid);
+} catch on DioError (e) {
     print('Exception when calling PostApi->removeFileFromPost: $e\n');
 }
 ```

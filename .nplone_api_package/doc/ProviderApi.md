@@ -14,26 +14,23 @@ Method | HTTP request | Description
 
 
 # **getProviders**
-> List<Provider> getProviders()
+> BuiltList<Provider> getProviders()
 
 Получить список провайдеров
 
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = ProviderApi();
+final api = NploneApi().getProviderApi();
 
 try {
-    final result = api_instance.getProviders();
-    print(result);
-} catch (e) {
+    final response = api.getProviders();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling ProviderApi->getProviders: $e\n');
 }
 ```
@@ -43,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<Provider>**](Provider.md)
+[**BuiltList&lt;Provider&gt;**](Provider.md)
 
 ### Authorization
 
@@ -64,22 +61,19 @@ This endpoint does not need any parameter.
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = ProviderApi();
-final provider = provider_example; // String | 
-final segments = []; // List<String> | 
-final acceptLanguage = acceptLanguage_example; // String | 
+final api = NploneApi().getProviderApi();
+final String provider = provider_example; // String | 
+final BuiltList<String> segments = ; // BuiltList<String> | 
+final String acceptLanguage = acceptLanguage_example; // String | 
 
 try {
-    final result = api_instance.initiateProviderConnection(provider, segments, acceptLanguage);
-    print(result);
-} catch (e) {
+    final response = api.initiateProviderConnection(provider, segments, acceptLanguage);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling ProviderApi->initiateProviderConnection: $e\n');
 }
 ```
@@ -89,7 +83,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **provider** | **String**|  | 
- **segments** | [**List<String>**](String.md)|  | [default to const []]
+ **segments** | [**BuiltList&lt;String&gt;**](String.md)|  | 
  **acceptLanguage** | **String**|  | [optional] [default to 'EN']
 
 ### Return type

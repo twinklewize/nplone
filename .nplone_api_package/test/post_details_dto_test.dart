@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.0
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:nplone_api/api.dart';
 import 'package:test/test.dart';
+import 'package:nplone_api/nplone_api.dart';
 
 // tests for PostDetailsDto
 void main() {
-  final instance = PostDetailsDto();
+  final instance = PostDetailsDtoBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test PostDetailsDto', () {
+  group(PostDetailsDto, () {
     // int id
     test('to test the property `id`', () async {
       // TODO
@@ -51,12 +42,10 @@ void main() {
       // TODO
     });
 
-    // List<TransactionItemDto> transactions (default value: const [])
+    // BuiltList<TransactionItemDto> transactions
     test('to test the property `transactions`', () async {
       // TODO
     });
 
-
   });
-
 }

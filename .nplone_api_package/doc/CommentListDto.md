@@ -8,7 +8,7 @@ import 'package:nplone_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**comments** | [**List<CommentDto>**](CommentDto.md) |  | [optional] [default to const []]
+**comments** | [**BuiltList&lt;CommentDto&gt;**](CommentDto.md) |  | [optional] 
 **count** | **int** |  | [optional] 
 **nextPage** | **int** |  | [optional] 
 

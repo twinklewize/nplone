@@ -23,13 +23,13 @@ Method | HTTP request | Description
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = AuthApi();
-final googleToken = GoogleToken(); // GoogleToken | 
+final api = NploneApi().getAuthApi();
+final GoogleToken googleToken = ; // GoogleToken | 
 
 try {
-    final result = api_instance.googleSignIn(googleToken);
-    print(result);
-} catch (e) {
+    final response = api.googleSignIn(googleToken);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AuthApi->googleSignIn: $e\n');
 }
 ```
@@ -64,13 +64,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = AuthApi();
-final userLogin = UserLogin(); // UserLogin | 
+final api = NploneApi().getAuthApi();
+final UserLogin userLogin = ; // UserLogin | 
 
 try {
-    final result = api_instance.login(userLogin);
-    print(result);
-} catch (e) {
+    final response = api.login(userLogin);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AuthApi->login: $e\n');
 }
 ```
@@ -105,12 +105,12 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = AuthApi();
-final userRegister = UserRegister(); // UserRegister | 
+final api = NploneApi().getAuthApi();
+final UserRegister userRegister = ; // UserRegister | 
 
 try {
-    api_instance.registerUser(userRegister);
-} catch (e) {
+    api.registerUser(userRegister);
+} catch on DioError (e) {
     print('Exception when calling AuthApi->registerUser: $e\n');
 }
 ```

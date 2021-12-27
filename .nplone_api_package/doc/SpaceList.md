@@ -8,7 +8,7 @@ import 'package:nplone_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**List<SpaceItem>**](SpaceItem.md) | Список пространств | [default to const []]
+**items** | [**BuiltList&lt;SpaceItem&gt;**](SpaceItem.md) | Список пространств | 
 **count** | **int** | Количество элементов | 
 **last** | **bool** | Является ли текущая выборка последней в списке | 
 

@@ -21,19 +21,16 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = AccountRedirectApi();
-final state = state_example; // String | 
+final api = NploneApi().getAccountRedirectApi();
+final String state = state_example; // String | 
 
 try {
-    api_instance.finishAccountRedirect(state);
-} catch (e) {
+    api.finishAccountRedirect(state);
+} catch on DioError (e) {
     print('Exception when calling AccountRedirectApi->finishAccountRedirect: $e\n');
 }
 ```
@@ -67,19 +64,16 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:nplone_api/api.dart';
-// TODO Configure HTTP Bearer authorization: auth
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('auth').setAccessToken(yourTokenGeneratorFunction);
+// TODO Configure HTTP basic authorization: auth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('auth').password = 'YOUR_PASSWORD';
 
-final api_instance = AccountRedirectApi();
-final code = code_example; // String | Код
+final api = NploneApi().getAccountRedirectApi();
+final String code = code_example; // String | Код
 
 try {
-    api_instance.startAccountRedirect(code);
-} catch (e) {
+    api.startAccountRedirect(code);
+} catch on DioError (e) {
     print('Exception when calling AccountRedirectApi->startAccountRedirect: $e\n');
 }
 ```

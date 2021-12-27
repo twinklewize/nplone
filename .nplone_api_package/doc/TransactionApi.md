@@ -29,14 +29,14 @@ Method | HTTP request | Description
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = TransactionApi();
-final id = id_example; // String | ID транзакции
-final commentPostDto = CommentPostDto(); // CommentPostDto | 
+final api = NploneApi().getTransactionApi();
+final String id = id_example; // String | ID транзакции
+final CommentPostDto commentPostDto = ; // CommentPostDto | 
 
 try {
-    final result = api_instance.addComment(id, commentPostDto);
-    print(result);
-} catch (e) {
+    final response = api.addComment(id, commentPostDto);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TransactionApi->addComment: $e\n');
 }
 ```
@@ -72,14 +72,14 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = TransactionApi();
-final id = id_example; // String | ID транзакции
-final inlineObject2 = InlineObject2(); // InlineObject2 | 
+final api = NploneApi().getTransactionApi();
+final String id = id_example; // String | ID транзакции
+final InlineObject2 inlineObject2 = ; // InlineObject2 | 
 
 try {
-    final result = api_instance.addFileToTransaction(id, inlineObject2);
-    print(result);
-} catch (e) {
+    final response = api.addFileToTransaction(id, inlineObject2);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TransactionApi->addFileToTransaction: $e\n');
 }
 ```
@@ -115,12 +115,12 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = TransactionApi();
-final id = id_example; // String | 
+final api = NploneApi().getTransactionApi();
+final String id = id_example; // String | 
 
 try {
-    api_instance.createPost1(id);
-} catch (e) {
+    api.createPost1(id);
+} catch on DioError (e) {
     print('Exception when calling TransactionApi->createPost1: $e\n');
 }
 ```
@@ -155,13 +155,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = TransactionApi();
-final id = id_example; // String | ID транзакции
-final transactionEditDto = TransactionEditDto(); // TransactionEditDto | 
+final api = NploneApi().getTransactionApi();
+final String id = id_example; // String | ID транзакции
+final TransactionEditDto transactionEditDto = ; // TransactionEditDto | 
 
 try {
-    api_instance.editTransaction(id, transactionEditDto);
-} catch (e) {
+    api.editTransaction(id, transactionEditDto);
+} catch on DioError (e) {
     print('Exception when calling TransactionApi->editTransaction: $e\n');
 }
 ```
@@ -197,15 +197,15 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = TransactionApi();
-final id = id_example; // String | ID транзакции
-final page = 789; // int | Страница
-final size = 56; // int | Размер страницы
+final api = NploneApi().getTransactionApi();
+final String id = id_example; // String | ID транзакции
+final int page = 789; // int | Страница
+final int size = 56; // int | Размер страницы
 
 try {
-    final result = api_instance.getComments(id, page, size);
-    print(result);
-} catch (e) {
+    final response = api.getComments(id, page, size);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TransactionApi->getComments: $e\n');
 }
 ```
@@ -242,13 +242,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = TransactionApi();
-final id = id_example; // String | ID транзакции
+final api = NploneApi().getTransactionApi();
+final String id = id_example; // String | ID транзакции
 
 try {
-    final result = api_instance.getTransactionFiles(id);
-    print(result);
-} catch (e) {
+    final response = api.getTransactionFiles(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TransactionApi->getTransactionFiles: $e\n');
 }
 ```
@@ -283,14 +283,14 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = TransactionApi();
-final id = id_example; // String | ID транзакции
-final space = space_example; // String | ID пространства для проверки публикации
+final api = NploneApi().getTransactionApi();
+final String id = id_example; // String | ID транзакции
+final String space = space_example; // String | ID пространства для проверки публикации
 
 try {
-    final result = api_instance.getTransactionInfo(id, space);
-    print(result);
-} catch (e) {
+    final response = api.getTransactionInfo(id, space);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TransactionApi->getTransactionInfo: $e\n');
 }
 ```
@@ -326,13 +326,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = TransactionApi();
-final id = id_example; // String | ID транзакции
-final comment = 789; // int | ID комментария
+final api = NploneApi().getTransactionApi();
+final String id = id_example; // String | ID транзакции
+final int comment = 789; // int | ID комментария
 
 try {
-    api_instance.likeComment(id, comment);
-} catch (e) {
+    api.likeComment(id, comment);
+} catch on DioError (e) {
     print('Exception when calling TransactionApi->likeComment: $e\n');
 }
 ```
@@ -368,13 +368,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = TransactionApi();
-final id = id_example; // String | ID транзакции
-final fid = fid_example; // String | ID файла
+final api = NploneApi().getTransactionApi();
+final String id = id_example; // String | ID транзакции
+final String fid = fid_example; // String | ID файла
 
 try {
-    api_instance.removeFileFromTransaction(id, fid);
-} catch (e) {
+    api.removeFileFromTransaction(id, fid);
+} catch on DioError (e) {
     print('Exception when calling TransactionApi->removeFileFromTransaction: $e\n');
 }
 ```

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **getDefaultSpaceBanner**
-> MultipartFile getDefaultSpaceBanner()
+> Uint8List getDefaultSpaceBanner()
 
 Получить изображение баннера пространства по-умолчанию
 
@@ -25,12 +25,12 @@ Method | HTTP request | Description
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = StaticApi();
+final api = NploneApi().getStaticApi();
 
 try {
-    final result = api_instance.getDefaultSpaceBanner();
-    print(result);
-} catch (e) {
+    final response = api.getDefaultSpaceBanner();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling StaticApi->getDefaultSpaceBanner: $e\n');
 }
 ```
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**MultipartFile**](MultipartFile.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 
@@ -54,7 +54,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDefaultSpaceImage**
-> MultipartFile getDefaultSpaceImage()
+> Uint8List getDefaultSpaceImage()
 
 Получить изображение пространства по-умолчанию
 
@@ -62,12 +62,12 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = StaticApi();
+final api = NploneApi().getStaticApi();
 
 try {
-    final result = api_instance.getDefaultSpaceImage();
-    print(result);
-} catch (e) {
+    final response = api.getDefaultSpaceImage();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling StaticApi->getDefaultSpaceImage: $e\n');
 }
 ```
@@ -77,7 +77,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**MultipartFile**](MultipartFile.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPostFile**
-> MultipartFile getPostFile(id, ext)
+> Uint8List getPostFile(id, ext)
 
 Получить файл поста
 
@@ -99,14 +99,14 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = StaticApi();
-final id = id_example; // String | ID изображения
-final ext = ext_example; // String | 
+final api = NploneApi().getStaticApi();
+final String id = id_example; // String | ID изображения
+final String ext = ext_example; // String | 
 
 try {
-    final result = api_instance.getPostFile(id, ext);
-    print(result);
-} catch (e) {
+    final response = api.getPostFile(id, ext);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling StaticApi->getPostFile: $e\n');
 }
 ```
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MultipartFile**](MultipartFile.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSpaceImage**
-> MultipartFile getSpaceImage(id)
+> Uint8List getSpaceImage(id)
 
 Получить изображение пространства
 
@@ -142,13 +142,13 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = StaticApi();
-final id = id_example; // String | ID изображения
+final api = NploneApi().getStaticApi();
+final String id = id_example; // String | ID изображения
 
 try {
-    final result = api_instance.getSpaceImage(id);
-    print(result);
-} catch (e) {
+    final response = api.getSpaceImage(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling StaticApi->getSpaceImage: $e\n');
 }
 ```
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MultipartFile**](MultipartFile.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 
@@ -175,7 +175,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTransactionFile**
-> MultipartFile getTransactionFile(id, ext)
+> Uint8List getTransactionFile(id, ext)
 
 Получить файл транзакции
 
@@ -183,14 +183,14 @@ No authorization required
 ```dart
 import 'package:nplone_api/api.dart';
 
-final api_instance = StaticApi();
-final id = id_example; // String | ID изображения
-final ext = ext_example; // String | 
+final api = NploneApi().getStaticApi();
+final String id = id_example; // String | ID изображения
+final String ext = ext_example; // String | 
 
 try {
-    final result = api_instance.getTransactionFile(id, ext);
-    print(result);
-} catch (e) {
+    final response = api.getTransactionFile(id, ext);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling StaticApi->getTransactionFile: $e\n');
 }
 ```
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MultipartFile**](MultipartFile.md)
+[**Uint8List**](Uint8List.md)
 
 ### Authorization
 

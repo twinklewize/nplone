@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **icon** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **postedBy** | [**UserSummaryDto**](UserSummaryDto.md) |  | [optional] 
-**transactions** | [**List<TransactionItemDto>**](TransactionItemDto.md) |  | [optional] [default to const []]
+**transactions** | [**BuiltList&lt;TransactionItemDto&gt;**](TransactionItemDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
