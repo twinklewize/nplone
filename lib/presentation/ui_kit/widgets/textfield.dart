@@ -12,6 +12,7 @@ class MyTextField extends StatelessWidget {
   final int? maxLines;
   final int? minLines;
   final Color inputTextColor;
+  final Function(String? value)? validationFunction;
 
   MyTextField({
     required this.onChanged,
@@ -19,10 +20,11 @@ class MyTextField extends StatelessWidget {
     required this.fillColor,
     required this.labelText,
     required this.keyboardType,
-    this.textInputAction = TextInputAction.next,
     required this.maxLines,
     required this.minLines,
+    this.textInputAction = TextInputAction.next,
     required this.inputTextColor,
+    this.validationFunction,
   });
 
   @override
@@ -31,15 +33,22 @@ class MyTextField extends StatelessWidget {
       onChanged: (val) {
         onChanged(val);
       },
+      validator: (value) {
+        if (validationFunction != null) {
+          return validationFunction!(value);
+        }
+      },
       controller: controller,
-      cursorColor: AppColors.blue,
+      cursorColor: AppColors.white,
       maxLines: maxLines,
       minLines: minLines,
       cursorRadius: Radius.circular(2),
       textInputAction: textInputAction,
-      style: TextStyle(color: inputTextColor),
+      style: AppTextStyles.regular14pt.copyWith(color: inputTextColor),
       decoration: InputDecoration(
+        errorStyle: TextStyle(color: AppColors.red),
         isDense: true,
+        // errorText: 'Hu',
         contentPadding: // Text Field height
             EdgeInsets.only(
           top: 14,
@@ -51,7 +60,7 @@ class MyTextField extends StatelessWidget {
         filled: true,
         floatingLabelBehavior: FloatingLabelBehavior.never,
         labelText: "     " + labelText,
-        labelStyle: AppTextStyles.medium16pt.copyWith(
+        labelStyle: AppTextStyles.regular16pt.copyWith(
           color: AppColors.frontGray1,
         ),
         prefixText: '    ',
@@ -61,7 +70,7 @@ class MyTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(color: AppColors.frontGray1),
+          borderSide: BorderSide(color: AppColors.blue),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),

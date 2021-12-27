@@ -13,6 +13,9 @@ class BankAccountAddingChooseEvent extends BankAccountAddingEvent {
   final BankEntity bankQuery;
 
   BankAccountAddingChooseEvent(this.bankQuery);
+
+  @override
+  List<Object> get props => [bankQuery];
 }
 
 // Private checkbox change state

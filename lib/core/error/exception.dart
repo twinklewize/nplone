@@ -1,11 +1,17 @@
 class ServerException implements Exception {
   void call() {
-    print("ServerException");
+    print("Server Exception");
   }
 }
 
 class CacheException implements Exception {
   void call() {
-    print("ServerException");
+    print("Cache Exception");
+  }
+}
+
+class NoInternetConnectionException implements Exception {
+  void call() {
+    print("No Internet Connection");
   }
 }
