@@ -21,5 +21,26 @@
     "loginPagePasswordValidationPasswordIsTooShort": "Please enter at least {minPasswordLength} characters",
     "loginPageServerFailure": "Server Failure",
     "loginPagePasswordNotMatchFailure": "Invalid password",
-    "loginPagePasswordUserNotFoundFailure": "Email is invalid or already in use"
+    "loginPagePasswordUserNotFoundFailure": "Email is invalid or already in use",
+
+    "signinPageTitle": "Sign In",
+    "signinPageEmailTextFieldTitle": "Email",
+    "signinPageEmailTextFieldHintText": "Email here",
+    "signinPagePasswordTextFieldTitle": "Password",
+    "signinPagePasswordTextFieldHintText": "Password here",
+    "signinPageSignInButton": "Sign In",
+    "signinPageEmailValidationTextFieldIsEmpty": "Please enter some text",
+    "signinPageEmailValidationNotValidEmail": "Please enter valid email",
+    "signinPagePasswordValidationPasswordIsTooShort": "Please enter at least {minPasswordLength} characters",
+    "signinPageServerFailure": "Server Failure",
+    "signinPagePasswordNotMatchFailure": "Invalid password",
+    "signinPagePasswordUserNotFoundFailure": "Email is invalid or already in use",
+
+
+    "countryChoosingPageMainText": "Before you continue choose your country",
+    "countryChoosingPageDropdownHintText": "Select Country",
+    "countryChoosingPageSecondaryText": "The registration process may differ from the choice of the country",
+    "countryChoosingPageContinueButton": "Continue"
+
+    
 }

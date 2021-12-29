@@ -250,6 +250,167 @@ class S {
       args: [],
     );
   }
+
+  /// `Sign In`
+  String get signinPageTitle {
+    return Intl.message(
+      'Sign In',
+      name: 'signinPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get signinPageEmailTextFieldTitle {
+    return Intl.message(
+      'Email',
+      name: 'signinPageEmailTextFieldTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email here`
+  String get signinPageEmailTextFieldHintText {
+    return Intl.message(
+      'Email here',
+      name: 'signinPageEmailTextFieldHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get signinPagePasswordTextFieldTitle {
+    return Intl.message(
+      'Password',
+      name: 'signinPagePasswordTextFieldTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password here`
+  String get signinPagePasswordTextFieldHintText {
+    return Intl.message(
+      'Password here',
+      name: 'signinPagePasswordTextFieldHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signinPageSignInButton {
+    return Intl.message(
+      'Sign In',
+      name: 'signinPageSignInButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter some text`
+  String get signinPageEmailValidationTextFieldIsEmpty {
+    return Intl.message(
+      'Please enter some text',
+      name: 'signinPageEmailValidationTextFieldIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter valid email`
+  String get signinPageEmailValidationNotValidEmail {
+    return Intl.message(
+      'Please enter valid email',
+      name: 'signinPageEmailValidationNotValidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter at least {minPasswordLength} characters`
+  String signinPagePasswordValidationPasswordIsTooShort(
+      Object minPasswordLength) {
+    return Intl.message(
+      'Please enter at least $minPasswordLength characters',
+      name: 'signinPagePasswordValidationPasswordIsTooShort',
+      desc: '',
+      args: [minPasswordLength],
+    );
+  }
+
+  /// `Server Failure`
+  String get signinPageServerFailure {
+    return Intl.message(
+      'Server Failure',
+      name: 'signinPageServerFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid password`
+  String get signinPagePasswordNotMatchFailure {
+    return Intl.message(
+      'Invalid password',
+      name: 'signinPagePasswordNotMatchFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email is invalid or already in use`
+  String get signinPagePasswordUserNotFoundFailure {
+    return Intl.message(
+      'Email is invalid or already in use',
+      name: 'signinPagePasswordUserNotFoundFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Before you continue choose your country`
+  String get countryChoosingPageMainText {
+    return Intl.message(
+      'Before you continue choose your country',
+      name: 'countryChoosingPageMainText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Country`
+  String get countryChoosingPageDropdownHintText {
+    return Intl.message(
+      'Select Country',
+      name: 'countryChoosingPageDropdownHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The registration process may differ from the choice of the country`
+  String get countryChoosingPageSecondaryText {
+    return Intl.message(
+      'The registration process may differ from the choice of the country',
+      name: 'countryChoosingPageSecondaryText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get countryChoosingPageContinueButton {
+    return Intl.message(
+      'Continue',
+      name: 'countryChoosingPageContinueButton',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -23,8 +23,19 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(minPasswordLength) =>
       "Please enter at least ${minPasswordLength} characters";
 
+  static String m1(minPasswordLength) =>
+      "Please enter at least ${minPasswordLength} characters";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "countryChoosingPageContinueButton":
+            MessageLookupByLibrary.simpleMessage("Continue"),
+        "countryChoosingPageDropdownHintText":
+            MessageLookupByLibrary.simpleMessage("Select Country"),
+        "countryChoosingPageMainText": MessageLookupByLibrary.simpleMessage(
+            "Before you continue choose your country"),
+        "countryChoosingPageSecondaryText": MessageLookupByLibrary.simpleMessage(
+            "The registration process may differ from the choice of the country"),
         "loginPageEmailTextFieldHintText":
             MessageLookupByLibrary.simpleMessage("Email here"),
         "loginPageEmailTextFieldTitle":
@@ -51,6 +62,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginPageSignInButton":
             MessageLookupByLibrary.simpleMessage("Sign In"),
         "loginPageTitle": MessageLookupByLibrary.simpleMessage("Login"),
+        "signinPageEmailTextFieldHintText":
+            MessageLookupByLibrary.simpleMessage("Email here"),
+        "signinPageEmailTextFieldTitle":
+            MessageLookupByLibrary.simpleMessage("Email"),
+        "signinPageEmailValidationNotValidEmail":
+            MessageLookupByLibrary.simpleMessage("Please enter valid email"),
+        "signinPageEmailValidationTextFieldIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Please enter some text"),
+        "signinPagePasswordNotMatchFailure":
+            MessageLookupByLibrary.simpleMessage("Invalid password"),
+        "signinPagePasswordTextFieldHintText":
+            MessageLookupByLibrary.simpleMessage("Password here"),
+        "signinPagePasswordTextFieldTitle":
+            MessageLookupByLibrary.simpleMessage("Password"),
+        "signinPagePasswordUserNotFoundFailure":
+            MessageLookupByLibrary.simpleMessage(
+                "Email is invalid or already in use"),
+        "signinPagePasswordValidationPasswordIsTooShort": m1,
+        "signinPageServerFailure":
+            MessageLookupByLibrary.simpleMessage("Server Failure"),
+        "signinPageSignInButton":
+            MessageLookupByLibrary.simpleMessage("Sign In"),
+        "signinPageTitle": MessageLookupByLibrary.simpleMessage("Sign In"),
         "startPageLoginButton": MessageLookupByLibrary.simpleMessage("Login"),
         "startPageMainText": MessageLookupByLibrary.simpleMessage(
             "The World\'s first banking social network"),

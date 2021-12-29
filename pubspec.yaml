@@ -52,6 +52,10 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
 
+  # Google Sign In
+  google_sign_in: ^5.2.1
+  http: ^0.13.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

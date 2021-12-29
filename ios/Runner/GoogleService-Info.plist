@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>685999891020-e09mbutu3snoe1ii811oh5s3phi8jgt6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.685999891020-e09mbutu3snoe1ii811oh5s3phi8jgt6</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>685999891020-2ebsj13j98846bj0suls1d04m48pbtk5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB_sf2Si0X9mk-rEg2qoNYysY0CoILzNmU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>685999891020</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.nPlusOne</string>
+	<key>PROJECT_ID</key>
+	<string>nplone</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nplone.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:685999891020:ios:64a9013e82384eac610ae9</string>
+	<!-- Google Sign-in Section -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>685999891020-ve6kmiunijem4dok0qi9u5qidqmsjk3l.apps.googleusercontent.com</string>
+			</array>
+		</dict>
+	</array>
+	<!-- End of the Google Sign-in Section -->
+</dict>
+</plist>
