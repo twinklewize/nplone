@@ -10,15 +10,23 @@ class ServerFailure extends Failure {
   String get message => 'Server Failure';
 }
 
+class CacheFailure extends Failure {
+  String get message => 'Cache Failure';
+}
+
+// Auth Failures
 class NoInternetConnectionFailure extends Failure {
   String get message => 'No Internet connection';
 }
 
-class AuthFailure extends Failure {
-  final String message;
-  AuthFailure({required this.message});
+class UserNotFoundFailure extends Failure {
+  String get message => 'No User Found Failure';
 }
 
-class CacheFailure extends Failure {
-  String get message => 'Cache Failure';
+class PasswordNotMatchFailure extends Failure {
+  String get message => "Password Not Match Failure";
+}
+
+class RegistrationFailure extends Failure {
+  String get message => "Registration Failure";
 }

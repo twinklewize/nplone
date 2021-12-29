@@ -16,12 +16,21 @@ class NoInternetConnectionException implements Exception {
   }
 }
 
-class AuthException implements Exception {
-  String message;
-
-  AuthException({required this.message});
-
+// Auth Exceptions
+class UserNotFoundException implements Exception {
   void call() {
-    print("AuthException");
+    print("No User Found Exception");
+  }
+}
+
+class PasswordNotMatchException implements Exception {
+  void call() {
+    print("Password Not Match Exception");
+  }
+}
+
+class RegistrationException implements Exception {
+  void call() {
+    print("Registration Exception");
   }
 }

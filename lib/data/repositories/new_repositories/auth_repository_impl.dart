@@ -28,9 +28,9 @@ class AuthRepositoryImpl implements AuthRepository {
         tokenInfo = await remoteDataSource.googleSignIn(googleToken);
         return Right(LoginSuccess());
       } catch (exception) {
-        if (exception is AuthException) {
-          return Left(AuthFailure(message: exception.message));
-        }
+        // if (exception is AuthException) {
+        //   return Left(AuthFailure(message: exception.message));
+        // }
         return Left(ServerFailure());
       }
     }
@@ -43,10 +43,11 @@ class AuthRepositoryImpl implements AuthRepository {
       try {
         tokenInfo = await remoteDataSource.login(userLogin);
         return Right(LoginSuccess());
-      } catch (exception) {
-        if (exception is AuthException) {
-          return Left(AuthFailure(message: exception.message));
-        }
+      } on UserNotFoundException {
+        return Left(UserNotFoundFailure());
+      } on PasswordNotMatchException {
+        return Left(PasswordNotMatchFailure());
+      } catch (_) {
         return Left(ServerFailure());
       }
     }

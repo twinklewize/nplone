@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:n_plus_one/core/localization/generated/l10n.dart';
 import 'package:n_plus_one/domain/entities/new_entities/auth_entities/user_login_entity.dart';
 import 'package:n_plus_one/locator_service.dart';
 import 'package:n_plus_one/presentation/features/authentication/bloc/login_bloc/login_bloc.dart';
@@ -17,23 +18,30 @@ class LoginPage extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
 
-  String? emailValidation(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Please enter some text';
-    }
-    // final emailValid = RegExp(
-    //     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-    // if (!emailValid.hasMatch(value)) {
-    //   return 'Please enter valid email';
-    // }
-    return null;
+  String? Function(String? value)? emailValidation(BuildContext context) {
+    return (String? value) {
+      if (value == null || value.isEmpty) {
+        return S.of(context).loginPageEmailValidationTextFieldIsEmpty;
+      }
+      final emailValid =
+          RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+");
+      if (!emailValid.hasMatch(value)) {
+        return S.of(context).loginPageEmailValidationNotValidEmail;
+      }
+      return null;
+    };
   }
 
-  String? passwordValidation(String? value) {
-    if (value == null || value.length < 4) {
-      return 'Please enter at least 4 characters';
-    }
-    return null;
+  String? Function(String? value)? passwordValidation(BuildContext context) {
+    return (String? value) {
+      final int minPasswordLength = 4;
+      if (value == null || value.length < minPasswordLength) {
+        return S
+            .of(context)
+            .loginPagePasswordValidationPasswordIsTooShort(minPasswordLength);
+      }
+      return null;
+    };
   }
 
   @override
@@ -55,19 +63,22 @@ class LoginPage extends StatelessWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // Title
                         Text(
-                          'Login',
+                          S.of(context).loginPageTitle,
                           style: AppTextStyles.bold32pt,
                         ),
                         SizedBox(height: 32),
+
+                        // Form
                         Form(
                           key: _formKey,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              // Email
+                              // Email Text Field
                               Text(
-                                'Email',
+                                S.of(context).loginPageEmailTextFieldTitle,
                                 style: AppTextStyles.regular16pt,
                               ),
                               SizedBox(height: 4),
@@ -75,21 +86,20 @@ class LoginPage extends StatelessWidget {
                                 onChanged: (_) {},
                                 controller: emailEditingController,
                                 fillColor: AppColors.gray1,
-                                labelText: 'Email here',
+                                labelText: S
+                                    .of(context)
+                                    .loginPageEmailTextFieldHintText,
                                 maxLines: 1,
                                 minLines: 1,
                                 keyboardType: TextInputType.emailAddress,
                                 inputTextColor: Colors.white,
-                                validationFunction: emailValidation,
-                                errorText: (state is LoginFailedState)
-                                    ? state.errorMessage
-                                    : null,
+                                validationFunction: emailValidation(context),
                               ),
                               SizedBox(height: 32),
 
-                              // Password
+                              // Password Text Field
                               Text(
-                                'Password',
+                                S.of(context).loginPagePasswordTextFieldTitle,
                                 style: AppTextStyles.regular16pt,
                               ),
                               SizedBox(height: 4),
@@ -97,13 +107,21 @@ class LoginPage extends StatelessWidget {
                                 onChanged: (_) {},
                                 controller: passwordEditingController,
                                 fillColor: AppColors.gray1,
-                                labelText: 'Password here',
+                                labelText: S
+                                    .of(context)
+                                    .loginPagePasswordTextFieldHintText,
                                 maxLines: 1,
                                 minLines: 1,
                                 keyboardType: TextInputType.visiblePassword,
                                 inputTextColor: Colors.white,
                                 textInputAction: TextInputAction.done,
-                                validationFunction: passwordValidation,
+                                enableSuggestions: false,
+                                autocorrect: false,
+                                obscureText: true,
+                                validationFunction: passwordValidation(context),
+                                errorText: (state is LoginFailedState)
+                                    ? state.errorMessage
+                                    : null,
                               ),
                             ],
                           ),
@@ -114,13 +132,14 @@ class LoginPage extends StatelessWidget {
                         // Forgot Password
                         TextButton(
                           child: Text(
-                            'Forgot password?',
+                            S.of(context).loginPageForgotPasswordButton,
                             style: AppTextStyles.regular16pt
                                 .copyWith(color: AppColors.blue),
                           ),
-                          onPressed: () {
-                            print('Forgot password?');
-                          },
+                          style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              alignment: Alignment.centerLeft),
+                          onPressed: () {},
                         ),
                         Spacer(),
 
@@ -133,11 +152,11 @@ class LoginPage extends StatelessWidget {
                               )))
                             : const SizedBox(),
 
-                        // Button
+                        // Login Button
                         LongFilledButton(
                           buttonColor: AppColors.blue,
                           child: Text(
-                            'Login',
+                            S.of(context).loginPageLoginButton,
                             style: AppTextStyles.regular16pt,
                           ),
                           onPressed: () {
@@ -174,13 +193,14 @@ class LoginPage extends StatelessWidget {
       backgroundColor: AppColors.gray1,
       elevation: 0,
       actions: [
+        // Sign In Button
         TextButton(
           child: Text(
-            'Register',
+            S.of(context).loginPageSignInButton,
             style: AppTextStyles.regular16pt.copyWith(color: AppColors.blue),
           ),
           onPressed: () {
-            Navigator.pushReplacementNamed(
+            Navigator.pushNamed(
               context,
               '/register',
             );

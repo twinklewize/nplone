@@ -1,0 +1,25 @@
+{
+    "@@locale": "en_GB",
+    
+    "startPageMainText": "The World's first banking social network",
+    "startPageSecondaryText": "Manage funds jointly, reliably and transapently",
+    "startPageSigninWithGoogleButton": "Sign in with Google",
+    "startPageSigninWithEmailButton": "Sign in with Email",
+    "startPageOrText": "or",
+    "startPageLoginButton": "Login",
+
+    "loginPageTitle": "Login",
+    "loginPageEmailTextFieldTitle": "Email",
+    "loginPageEmailTextFieldHintText": "Email here",
+    "loginPagePasswordTextFieldTitle": "Password",
+    "loginPagePasswordTextFieldHintText": "Password here",
+    "loginPageForgotPasswordButton": "Forgot Password?",
+    "loginPageSignInButton": "Sign In",
+    "loginPageLoginButton": "Login",
+    "loginPageEmailValidationTextFieldIsEmpty": "Please enter some text",
+    "loginPageEmailValidationNotValidEmail": "Please enter valid email",
+    "loginPagePasswordValidationPasswordIsTooShort": "Please enter at least {minPasswordLength} characters",
+    "loginPageServerFailure": "Server Failure",
+    "loginPagePasswordNotMatchFailure": "Invalid password",
+    "loginPagePasswordUserNotFoundFailure": "Email is invalid or already in use"
+}

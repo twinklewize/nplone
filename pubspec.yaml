@@ -1,5 +1,5 @@
 name: n_plus_one
-description: A new Flutter project.
+description: N + 1 mobile application
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -11,9 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
 
   # UI
+  cupertino_icons: ^1.0.2
   flutter_svg: ^0.23.0+1
   badges: ^2.0.2
   expandable: ^5.0.1
@@ -38,9 +38,6 @@ dependencies:
 
   # HTTP
   dio: ^4.0.4
-  
-  # Text Formatter
-  intl: ^0.17.0
 
   # Images
   image_picker: ^0.8.4+4
@@ -50,21 +47,26 @@ dependencies:
   nplone_api:
     path: .nplone_api_package
 
-
+  # Text Formatter & Localization
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   linter: ^1.15.0
-
+  flutter_lints: ^1.0.4
+  # dart_code_metrics: ^4.8.1
+  
   # Code Generation
   openapi_generator: ^3.3.0+1
   build_runner: ^2.1.7
   build_resolvers: ^2.0.6
 
-
 flutter:
   uses-material-design: true
+  generate: true
 
   assets:
     - assets/images/
@@ -82,4 +84,11 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  
+
+# Localization configuration
+flutter_intl:
+  main_locale: en_GB
+  enabled: true
+  class_name: S
+  output_dir: lib\core\localization\generated
+  arb_dir: lib\core\localization\l10n

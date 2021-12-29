@@ -14,14 +14,14 @@ class RegisterPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
   String? emailValidation(String? value) {
-    // if (value == null || value.isEmpty) {
-    //   return 'Please enter some text';
-    // }
-    // final emailValid = RegExp(
-    //     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-    // if (!emailValid.hasMatch(value)) {
-    //   return 'Please enter valid email';
-    // }
+    if (value == null || value.isEmpty) {
+      return 'Please enter some text';
+    }
+    final emailValid =
+        RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+");
+    if (!emailValid.hasMatch(value)) {
+      return 'Please enter valid email';
+    }
     return null;
   }
 
@@ -113,6 +113,9 @@ class RegisterPage extends StatelessWidget {
                           minLines: 1,
                           keyboardType: TextInputType.emailAddress,
                           inputTextColor: Colors.white,
+                          enableSuggestions: false,
+                          autocorrect: false,
+                          obscureText: true,
                           validationFunction: passwordValidation,
                         ),
 
@@ -135,6 +138,9 @@ class RegisterPage extends StatelessWidget {
                           minLines: 1,
                           keyboardType: TextInputType.emailAddress,
                           inputTextColor: Colors.white,
+                          enableSuggestions: false,
+                          autocorrect: false,
+                          obscureText: true,
                           validationFunction: repeatPasswordValidation,
                         ),
                       ],

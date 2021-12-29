@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:n_plus_one/presentation/features/authentication/bloc/login_bloc/login_bloc.dart';
+import 'package:n_plus_one/core/localization/generated/l10n.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/presentation/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/presentation/ui_kit/widgets/long_empty_button.dart';
@@ -23,6 +22,7 @@ class StartPage extends StatelessWidget {
             children: [
               Stack(
                 children: [
+                  // Background Image
                   Positioned(
                     child: RotatedBox(
                       quarterTurns: 4,
@@ -52,6 +52,8 @@ class StartPage extends StatelessWidget {
                       ),
                     ),
                   ),
+
+                  // Logo
                   Positioned(
                     top: MediaQuery.of(context).size.width / 2 - 48,
                     right: 10,
@@ -60,6 +62,8 @@ class StartPage extends StatelessWidget {
                       'assets/images/logo_n+1.svg',
                     ),
                   ),
+
+                  // Main Text
                   Positioned(
                     top: MediaQuery.of(context).size.width - 96,
                     left: 0,
@@ -67,36 +71,31 @@ class StartPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
                       child: Center(
-                        child: Column(
-                          children: [
-                            Text(
-                              'The World’s first',
-                              textAlign: TextAlign.center,
-                              style: AppTextStyles.bold24pt,
-                            ),
-                            Text(
-                              'banking social network',
-                              textAlign: TextAlign.center,
-                              style: AppTextStyles.bold24pt,
-                            ),
-                          ],
+                        child: Text(
+                          S.of(context).startPageMainText,
+                          textAlign: TextAlign.center,
+                          style: AppTextStyles.bold24pt,
                         ),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 19),
+              Spacer(),
+
+              // Secondary text
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 margin: const EdgeInsets.symmetric(horizontal: 64),
                 child: Text(
-                  'Manage funds jointly, reliably and transparently',
+                  S.of(context).startPageSecondaryText,
                   textAlign: TextAlign.center,
                   style: AppTextStyles.regular18pt,
                 ),
               ),
-              Spacer(),
+              Spacer(flex: 6),
+
+              // Sign in with Google Button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: LongFilledButton(
@@ -107,17 +106,17 @@ class StartPage extends StatelessWidget {
                       SvgPicture.asset('assets/icons/google_icon.svg'),
                       SizedBox(width: 12),
                       Text(
-                        'Continue with Google',
+                        S.of(context).startPageSigninWithGoogleButton,
                         style: AppTextStyles.regular16pt,
                       ),
                     ],
                   ),
-                  onPressed: () {
-                    print("Continue with Google");
-                  },
+                  onPressed: () {},
                 ),
               ),
               SizedBox(height: 8),
+
+              // Sign in with Email Button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: LongFilledButton(
@@ -128,13 +127,12 @@ class StartPage extends StatelessWidget {
                       SvgPicture.asset('assets/icons/email_icon.svg'),
                       SizedBox(width: 12),
                       Text(
-                        'Sign up with Email',
+                        S.of(context).startPageSigninWithEmailButton,
                         style: AppTextStyles.regular16pt,
                       ),
                     ],
                   ),
                   onPressed: () {
-                    print("Sign up with Email");
                     Navigator.pushNamed(
                       context,
                       '/register',
@@ -143,9 +141,11 @@ class StartPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 12),
+
+              // Text "or"
               Center(
                 child: Text(
-                  'or',
+                  S.of(context).startPageOrText,
                   style: AppTextStyles.regular18pt,
                 ),
               ),
@@ -156,7 +156,7 @@ class StartPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: LongEmptyButton(
                   buttonColor: AppColors.gray1,
-                  textValue: 'Login',
+                  textValue: S.of(context).startPageLoginButton,
                   textColor: Colors.white,
                   onPressed: () {
                     Navigator.pushNamed(

@@ -1,0 +1,24 @@
+{
+    "@@locale": "ru_RU",
+    "startPageMainText": "Первая в мире банковская социальная сеть",
+    "startPageSecondaryText": "Управляйте средствами совместно и прозрачно",
+    "startPageSigninWithGoogleButton": "Войти через Google",
+    "startPageSigninWithEmailButton": "Регистрация",
+    "startPageOrText": "или",
+    "startPageLoginButton": "Вход",
+
+    "loginPageTitle": "Вход",
+    "loginPageEmailTextFieldTitle": "Email",
+    "loginPageEmailTextFieldHintText": "Введите email",
+    "loginPagePasswordTextFieldTitle": "Пароль",
+    "loginPagePasswordTextFieldHintText": "Введите пароль",
+    "loginPageForgotPasswordButton": "Забыли пароль?",
+    "loginPageSignInButton": "Регистрация",
+    "loginPageLoginButton": "Войти",
+    "loginPageEmailValidationTextFieldIsEmpty": "Поле не может быть пустым",
+    "loginPageEmailValidationNotValidEmail": "Неверный email",
+    "loginPagePasswordValidationPasswordIsTooShort": "Минимальная длина пароля {minPasswordLength} символа",
+    "loginPageServerFailure": "Ошибка сервера",
+    "loginPagePasswordNotMatchFailure": "Неверный пароль",
+    "loginPagePasswordUserNotFoundFailure": "Email неверный или уже используется"
+}

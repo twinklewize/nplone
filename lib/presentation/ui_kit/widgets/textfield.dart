@@ -14,6 +14,9 @@ class MyTextField extends StatelessWidget {
   final Color inputTextColor;
   final String? Function(String? value)? validationFunction;
   final String? errorText;
+  final bool obscureText;
+  final bool enableSuggestions;
+  final bool autocorrect;
 
   MyTextField({
     required this.onChanged,
@@ -27,6 +30,9 @@ class MyTextField extends StatelessWidget {
     required this.inputTextColor,
     this.validationFunction,
     this.errorText,
+    this.obscureText = false,
+    this.enableSuggestions = true,
+    this.autocorrect = true,
   });
 
   @override
@@ -41,6 +47,7 @@ class MyTextField extends StatelessWidget {
         }
       },
       controller: controller,
+      obscureText: obscureText,
       cursorColor: AppColors.white,
       maxLines: maxLines,
       minLines: minLines,
@@ -96,6 +103,8 @@ class MyTextField extends StatelessWidget {
         ),
       ),
       keyboardType: keyboardType,
+      enableSuggestions: enableSuggestions,
+      autocorrect: autocorrect,
     );
   }
 }

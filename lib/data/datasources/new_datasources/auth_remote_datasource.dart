@@ -57,9 +57,16 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       }
       throw ServerException();
     } catch (error) {
-      if (error is DioError && error.response != null) {
-        String? detail = json.decode(error.response!.data)['detail'];
-        if (detail != null) throw AuthException(message: detail);
+      if (error is DioError &&
+          error.response != null &&
+          error.response!.statusCode == 401) {
+        String detail = json.decode(error.response!.data)['detail'];
+        if (detail == 'Password does not match') {
+          throw PasswordNotMatchException();
+        }
+        if (detail == 'User not found') {
+          throw UserNotFoundException();
+        }
       }
       throw ServerException();
     }
