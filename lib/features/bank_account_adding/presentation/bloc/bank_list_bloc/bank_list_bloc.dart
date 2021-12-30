@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:n_plus_one/core/error/failure.dart';
+import 'package:n_plus_one/core/error_and_success/failure.dart';
 import 'package:n_plus_one/core/usecases/usecase.dart';
 import 'package:n_plus_one/features/bank_account_adding/domain/usecases/get_all_banks.dart';
 import 'package:n_plus_one/features/bank_account_adding/presentation/bloc/bank_list_bloc/bank_list_event.dart';

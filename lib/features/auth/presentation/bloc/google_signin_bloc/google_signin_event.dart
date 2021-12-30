@@ -6,3 +6,14 @@ abstract class GoogleSigninEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class UserGoogleSigninEvent extends GoogleSigninEvent {
+  final BuildContext context;
+
+  UserGoogleSigninEvent(
+    this.context,
+  );
+
+  @override
+  List<Object> get props => [context];
+}

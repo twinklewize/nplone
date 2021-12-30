@@ -1,6 +1,6 @@
 import 'dart:convert';
+import 'package:n_plus_one/core/error_and_success/exception.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:n_plus_one/core/error/exception.dart';
 
 import '../models/bank_account_model.dart';
 

@@ -1,10 +1,11 @@
 // Packages
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:n_plus_one/core/error_and_success/failure.dart';
+import 'package:n_plus_one/core/error_and_success/success.dart';
 
 // Core
-import 'package:n_plus_one/core/error/failure.dart';
-import 'package:n_plus_one/core/error/success.dart';
+
 import 'package:n_plus_one/core/usecases/usecase.dart';
 
 // Entities

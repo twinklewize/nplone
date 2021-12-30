@@ -110,6 +110,26 @@ class S {
     );
   }
 
+  /// `Server Failure`
+  String get startPageGoogleSignInServerFailure {
+    return Intl.message(
+      'Server Failure',
+      name: 'startPageGoogleSignInServerFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Internet connection`
+  String get startPageGoogleNoInternetConnectionFailure {
+    return Intl.message(
+      'No Internet connection',
+      name: 'startPageGoogleNoInternetConnectionFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Login`
   String get loginPageTitle {
     return Intl.message(

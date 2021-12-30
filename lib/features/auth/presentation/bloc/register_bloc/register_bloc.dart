@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:n_plus_one/core/error/failure.dart';
+import 'package:n_plus_one/core/error_and_success/failure.dart';
 import 'package:n_plus_one/core/localization/generated/l10n.dart';
 import 'package:n_plus_one/features/auth/domain/entities/country_entity.dart';
 import 'package:n_plus_one/features/auth/domain/entities/user_login_entity.dart';
@@ -22,6 +22,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   RegisterBloc({required this.loginUsecase, required this.registerUsecase})
       : super(RegisterInitial()) {
     on<AddEmailAndPasswordEvent>((event, emit) {
+      emit(RegisterInitial());
       email = event.email;
       password = event.password;
     });

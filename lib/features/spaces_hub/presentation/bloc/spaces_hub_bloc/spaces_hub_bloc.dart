@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:n_plus_one/core/error/failure.dart';
+import 'package:n_plus_one/core/error_and_success/failure.dart';
 import 'package:n_plus_one/features/spaces_hub/domain/usecases/get_all_bank_accounts.dart';
 import '../spaces_hub_bloc/spaces_hub_events.dart';
 import '../spaces_hub_bloc/spaces_hub_states.dart';

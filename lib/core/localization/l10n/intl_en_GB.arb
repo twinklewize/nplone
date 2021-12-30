@@ -7,6 +7,8 @@
     "startPageSigninWithEmailButton": "Sign in with Email",
     "startPageOrText": "or",
     "startPageLoginButton": "Login",
+    "startPageGoogleSignInServerFailure": "Server Failure",
+    "startPageGoogleNoInternetConnectionFailure": "No Internet connection",
 
     "loginPageTitle": "Login",
     "loginPageEmailTextFieldTitle": "Email",

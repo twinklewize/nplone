@@ -17,5 +17,5 @@ class UserLoginEvent extends LoginEvent {
   );
 
   @override
-  List<Object> get props => [userLoginEntity];
+  List<Object> get props => [userLoginEntity, context];
 }

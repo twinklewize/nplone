@@ -104,6 +104,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "signinPageSignInButton":
             MessageLookupByLibrary.simpleMessage("Sign In"),
         "signinPageTitle": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "startPageGoogleNoInternetConnectionFailure":
+            MessageLookupByLibrary.simpleMessage("No Internet connection"),
+        "startPageGoogleSignInServerFailure":
+            MessageLookupByLibrary.simpleMessage("Server Failure"),
         "startPageLoginButton": MessageLookupByLibrary.simpleMessage("Login"),
         "startPageMainText": MessageLookupByLibrary.simpleMessage(
             "The World\'s first banking social network"),

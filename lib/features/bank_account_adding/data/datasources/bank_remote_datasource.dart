@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:n_plus_one/core/error/exception.dart';
 import 'package:n_plus_one/features/spaces_hub/data/models/bank_model.dart';
 
 var dummyResponse = jsonEncode(

@@ -1,13 +1,12 @@
 import 'package:dartz/dartz.dart';
-import 'package:n_plus_one/core/error/exception.dart';
-import 'package:n_plus_one/core/error/failure.dart';
-import 'package:n_plus_one/core/error/success.dart';
+import 'package:n_plus_one/core/error_and_success/exception.dart';
+import 'package:n_plus_one/core/error_and_success/failure.dart';
+import 'package:n_plus_one/core/error_and_success/success.dart';
 import 'package:n_plus_one/core/platform/network_info.dart';
 import 'package:n_plus_one/features/auth/data/datasources/auth_remote_datasource.dart';
 import 'package:n_plus_one/features/auth/domain/entities/token_info_entity.dart';
 import 'package:n_plus_one/features/auth/domain/entities/user_register_entity.dart';
 import 'package:n_plus_one/features/auth/domain/entities/user_login_entity.dart';
-import 'package:n_plus_one/features/auth/domain/entities/google_token_entity.dart';
 import 'package:n_plus_one/features/auth/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
@@ -21,12 +20,14 @@ class AuthRepositoryImpl implements AuthRepository {
   });
 
   @override
-  Future<Either<Failure, Success>> googleSignIn(
-      GoogleTokenEntity googleToken) async {
+  Future<Either<Failure, Success>> googleSignIn() async {
     if (await networkInfo.isConnected) {
       try {
-        tokenInfo = await remoteDataSource.googleSignIn(googleToken);
-        return Right(LoginSuccess());
+        final googleToken = await remoteDataSource.googleSignInToken();
+        Success success = await remoteDataSource.googleSignIn(googleToken);
+        tokenInfo = success.value;
+        if (success is LoginSuccess) return Right(LoginSuccess());
+        if (success is RegisterSuccess) return Right(RegisterSuccess());
       } catch (exception) {
         return Left(ServerFailure());
       }

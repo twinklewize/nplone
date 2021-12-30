@@ -8,3 +8,16 @@ abstract class GoogleSigninState extends Equatable {
 }
 
 class GoogleSigninInitial extends GoogleSigninState {}
+
+class GoogleSigninFailedState extends GoogleSigninState {
+  final String errorMessage;
+
+  GoogleSigninFailedState({
+    required this.errorMessage,
+  });
+
+  @override
+  List<Object> get props => [errorMessage];
+}
+
+class GoogleSigninLoadingState extends GoogleSigninState {}

@@ -1,8 +1,10 @@
 // Flutter & Dart
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 // Packages
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:n_plus_one/features/auth/presentation/bloc/google_signin_bloc/google_signin_bloc.dart';
 import './locator_service.dart' as di;
 
 // Localization
@@ -13,6 +15,7 @@ import 'core/localization/generated/l10n.dart';
 import 'package:n_plus_one/core/ui_kit/constants/colors.dart';
 
 // Bloc
+import 'package:n_plus_one/features/auth/presentation/bloc/register_bloc/register_bloc.dart';
 import 'features/auth/presentation/bloc/country_list_bloc/country_list_bloc.dart';
 import 'features/bank_account_adding/presentation/bloc/bank_account_adding_bloc/bank_account_adding_bloc.dart';
 import 'features/bank_account_adding/presentation/bloc/bank_list_bloc/bank_list_bloc.dart';
@@ -36,6 +39,7 @@ import 'features/bank_account_adding/presentation/pages/bank_account_adding_page
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   await di.init();
   runApp(MyApp());
 }
@@ -55,6 +59,9 @@ class MyApp extends StatelessWidget {
         // Auth Bloc
         BlocProvider<CountryListBloc>(
             create: (context) => di.sl<CountryListBloc>()),
+        BlocProvider<RegisterBloc>(create: (context) => di.sl<RegisterBloc>()),
+        BlocProvider<GoogleSigninBloc>(
+            create: (context) => di.sl<GoogleSigninBloc>()),
       ],
 
       // App

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:n_plus_one/core/error/failure.dart';
+import 'package:n_plus_one/core/error_and_success/failure.dart';
 import 'package:n_plus_one/core/localization/generated/l10n.dart';
 import 'package:n_plus_one/features/auth/domain/entities/user_login_entity.dart';
 import 'package:n_plus_one/features/auth/domain/usecases/login_usecase.dart';

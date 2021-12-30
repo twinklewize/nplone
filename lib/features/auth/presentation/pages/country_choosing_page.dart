@@ -73,16 +73,19 @@ class CountryChoosingPage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 16),
-
               state is RegisterFailedState
-                  ? Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      child: Text(
-                        state.errorMessage,
-                        style: AppTextStyles.regular16pt
-                            .copyWith(color: AppColors.red),
-                      ),
+                  ? Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Text(
+                            state.errorMessage,
+                            style: AppTextStyles.regular16pt
+                                .copyWith(color: AppColors.red),
+                          ),
+                        ),
+                        Spacer(),
+                      ],
                     )
                   : const SizedBox(),
 
