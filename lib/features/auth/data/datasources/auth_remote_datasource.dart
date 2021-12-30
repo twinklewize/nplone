@@ -128,18 +128,20 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       if (response.statusCode != 200) throw ServerException();
       final country = response.data['locales'][0]['value'];
 
-      // Id Token
-      final FirebaseAuth _auth = FirebaseAuth.instance;
-      final GoogleSignInAuthentication? googleAuth =
-          await googleUser.authentication;
-      if (googleAuth == null) throw ServerException();
-      final AuthCredential credential = GoogleAuthProvider.credential(
-        idToken: googleAuth.idToken,
-        accessToken: googleAuth.accessToken,
-      );
-      final User? user = (await _auth.signInWithCredential(credential)).user;
-      if (user == null) throw ServerException();
-      final idToken = await user.getIdToken(true);
+      // // Id Token
+      // final FirebaseAuth _auth = FirebaseAuth.instance;
+      // final GoogleSignInAuthentication? googleAuth =
+      //     await googleUser.authentication;
+      // if (googleAuth == null) throw ServerException();
+      // final AuthCredential credential = GoogleAuthProvider.credential(
+      //   idToken: googleAuth.idToken,
+      //   accessToken: googleAuth.accessToken,
+      // );
+      // final User? user = (await _auth.signInWithCredential(credential)).user;
+      // if (user == null) throw ServerException();
+      // final idToken = await user.getIdToken(true);
+
+      final idToken = (await googleUser.authentication).idToken;
 
       // Google Token
       print('$idToken');

@@ -90,7 +90,7 @@ class StartPage extends StatelessWidget {
                 // Secondary text
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
-                  margin: const EdgeInsets.symmetric(horizontal: 64),
+                  margin: const EdgeInsets.symmetric(horizontal: 12),
                   child: Text(
                     S.of(context).startPageSecondaryText,
                     textAlign: TextAlign.center,

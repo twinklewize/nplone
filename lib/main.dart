@@ -39,7 +39,7 @@ import 'features/bank_account_adding/presentation/pages/bank_account_adding_page
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  // await Firebase.initializeApp();
   await di.init();
   runApp(MyApp());
 }
