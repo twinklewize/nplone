@@ -2,7 +2,9 @@
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:n_plus_one/features/auth/data/datasources/country_remote_datasource.dart';
+import 'package:n_plus_one/features/auth/presentation/bloc/country_list_bloc/country_list_bloc.dart';
+import 'package:n_plus_one/features/auth/presentation/bloc/google_signin_bloc/google_signin_bloc.dart';
+import 'package:n_plus_one/features/auth/presentation/bloc/register_bloc/register_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // Core
@@ -32,6 +34,38 @@ import 'features/spaces_hub/presentation/bloc/spaces_hub_bloc/spaces_hub_bloc.da
 final sl = GetIt.instance;
 
 Future<void> init() async {
+  // Bloc - Auth
+  sl.registerFactory(
+    () => LoginBloc(loginUsecase: sl()),
+  );
+  sl.registerFactory(
+    () => RegisterBloc(registerUsecase: sl()),
+  );
+  sl.registerFactory(
+    () => GoogleSigninBloc(googleSingInUsecase: sl()),
+  );
+  sl.registerFactory(
+    () => CountryListBloc(),
+  );
+
+  // UseCases - Auth
+  sl.registerLazySingleton(() => LoginUsecase(sl()));
+  sl.registerLazySingleton(() => RegisterUserUsecase(sl()));
+  sl.registerLazySingleton(() => GoogleSingInUsecase(sl()));
+
+  // Repositories - Auth
+  sl.registerLazySingleton<AuthRepository>(
+    () => AuthRepositoryImpl(
+      remoteDataSource: sl(),
+      networkInfo: sl(),
+    ),
+  );
+
+  // DataSources - Auth
+  sl.registerLazySingleton<AuthRemoteDataSource>(
+    () => AuthRemoteDataSourceImpl(),
+  );
+
   // Bloc - old
   sl.registerFactory(
     () => BankListBloc(getAllBanks: sl()),
@@ -43,19 +77,9 @@ Future<void> init() async {
     () => SpacesHubBloc(loadUserBankAccounts: sl()),
   );
 
-  // Bloc - new
-  sl.registerFactory(
-    () => LoginBloc(loginUsecase: sl()),
-  );
-
   // UseCases - old
   sl.registerLazySingleton(() => LoadUserBankAccounts(sl()));
   sl.registerLazySingleton(() => GetAllBanks(sl()));
-
-  // UseCases - Auth
-  sl.registerLazySingleton(() => LoginUsecase(sl()));
-  sl.registerLazySingleton(() => RegisterUserUsecase(sl()));
-  sl.registerLazySingleton(() => GoogleSingInUsecase(sl()));
 
   // Repositories - old
   sl.registerLazySingleton<BankAccountsRepository>(
@@ -73,14 +97,6 @@ Future<void> init() async {
     ),
   );
 
-  // Repositories - Auth
-  sl.registerLazySingleton<AuthRepository>(
-    () => AuthRepositoryImpl(
-      remoteDataSource: sl(),
-      networkInfo: sl(),
-    ),
-  );
-
   // DataSources - old
   sl.registerLazySingleton<BankRemoteDataSource>(
     () => BankRemoteDataSourceImpl(
@@ -95,14 +111,6 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<BankAccountsLocalDataSource>(
     () => BankAccountsLocalDataSourceImpl(sharedPreferences: sl()),
-  );
-
-  // DataSources - Auth
-  sl.registerLazySingleton<AuthRemoteDataSource>(
-    () => AuthRemoteDataSourceImpl(),
-  );
-  sl.registerLazySingleton<CountryRemoteDataSource>(
-    () => CountryRemoteDataSourceImpl(),
   );
 
   // Core

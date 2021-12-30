@@ -9,6 +9,17 @@ abstract class RegisterState extends Equatable {
 
 class RegisterInitial extends RegisterState {}
 
+class RegisterCountryAddedState extends RegisterState {
+  final CountryEntity country;
+
+  RegisterCountryAddedState({
+    required this.country,
+  });
+
+  @override
+  List<Object> get props => [country];
+}
+
 class RegisterFailedState extends RegisterState {
   final String errorMessage;
 

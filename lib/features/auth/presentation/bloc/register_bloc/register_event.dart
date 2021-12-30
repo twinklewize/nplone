@@ -32,7 +32,7 @@ class AddEmailAndPasswordEvent extends RegisterEvent {
 }
 
 class AddCountryEvent extends RegisterEvent {
-  final String country;
+  final CountryEntity country;
 
   AddCountryEvent({
     required this.country,

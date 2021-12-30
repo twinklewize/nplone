@@ -1,66 +1,54 @@
+import 'dart:core';
+
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
+import 'package:country_list/country_list.dart';
 import 'package:equatable/equatable.dart';
-import 'package:n_plus_one/core/error/failure.dart';
-import 'package:n_plus_one/core/usecases/usecase.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:n_plus_one/features/auth/domain/entities/country_entity.dart';
-import 'package:n_plus_one/features/auth/domain/usecases/get_all_countries_usecase.dart';
 
 part 'country_list_event.dart';
 part 'country_list_state.dart';
 
 class CountryListBloc extends Bloc<CountryListEvent, CountryListState> {
-  final GetAllCountries getAllCountries;
-  Either<Failure, List<CountryEntity>>? failureOrCountry;
-
-  CountryListBloc({required this.getAllCountries})
-      : super(CountryListInitial()) {
+  CountryListBloc() : super(CountryListInitial()) {
+    List<CountryEntity> countries = [];
     on<CountryListLoadEvent>(
       (event, emit) async {
-        emit(CountryListLoadingState());
-        if (failureOrCountry == null) {
-          failureOrCountry = await getAllCountries(NoParams());
-        }
-        failureOrCountry!.fold(
-            (failure) => emit(
-                CountryListErrorState(message: _mapFailureToMessage(failure))),
-            (countries) {
-          emit(CountryListLoadedState(countries: countries));
-        });
+        countries = Countries.list
+            .map((country) => CountryEntity(
+                  countryName: country.name,
+                  countryCode: country.isoCode.toLowerCase(),
+                  flagEmoji: _flagEmoji(country.isoCode),
+                ))
+            .toList();
+        emit(CountryListLoaded(countries: countries));
       },
     );
     on<CountryListSearhEvent>(
       (event, emit) async {
-        emit(CountryListLoadingState());
-        if (failureOrCountry == null) {
-          failureOrCountry = await getAllCountries(NoParams());
+        if (event.countryQuery == '') {
+          emit(CountryListSearchState(countries: countries));
+        } else {
+          emit(CountryListSearchState(
+              countries: countries
+                  .where((country) => country.countryName
+                      .toLowerCase()
+                      .contains(event.countryQuery.toLowerCase()))
+                  .toList()));
         }
-        failureOrCountry!.fold(
-          (failure) => emit(
-              CountryListErrorState(message: _mapFailureToMessage(failure))),
-          (countries) {
-            if (event.countryQuery == '') {
-              emit(CountryListSearchState(countries: countries));
-            } else {
-              emit(CountryListSearchState(
-                  countries: countries
-                      .where((country) => country.countryName
-                          .toLowerCase()
-                          .contains(event.countryQuery.toLowerCase()))
-                      .toList()));
-            }
-          },
-        );
       },
     );
   }
 
-  String _mapFailureToMessage(Failure failure) {
-    switch (failure.runtimeType) {
-      case ServerFailure:
-        return 'Server Failure';
-      default:
-        return 'Unexpected Error';
-    }
+  String _flagEmoji(String country) {
+    int flagOffset = 0x1F1E6;
+    int asciiOffset = 0x41;
+
+    int firstChar = country.codeUnitAt(0) - asciiOffset + flagOffset;
+    int secondChar = country.codeUnitAt(1) - asciiOffset + flagOffset;
+
+    String emoji =
+        String.fromCharCode(firstChar) + String.fromCharCode(secondChar);
+    return emoji;
   }
 }

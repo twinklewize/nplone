@@ -3,10 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:n_plus_one/core/localization/generated/l10n.dart';
 import 'package:n_plus_one/core/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/core/ui_kit/constants/text_styles.dart';
-import 'package:n_plus_one/core/ui_kit/widgets/dropdown_list.dart';
+import 'package:n_plus_one/features/auth/presentation/bloc/register_bloc/register_bloc.dart';
+import 'package:n_plus_one/features/auth/presentation/widgets/country_dropdown_list.dart';
 import 'package:n_plus_one/core/ui_kit/widgets/long_filled_button.dart';
-import 'package:n_plus_one/features/bank_account_adding/presentation/bloc/bank_account_adding_bloc/bank_account_adding_bloc.dart';
-import 'package:n_plus_one/features/bank_account_adding/presentation/bloc/bank_account_adding_bloc/bank_account_adding_bloc_states.dart';
 
 import '../widgets/country_modal_bottom_sheet.dart';
 
@@ -20,8 +19,8 @@ class CountryChoosingPage extends StatelessWidget {
       backgroundColor: AppColors.gray1,
       appBar: appBar(context),
       body: SafeArea(
-        child: BlocBuilder<BankAccountAddingBloc, BankAccountAddingState>(
-            builder: (context, state) {
+        child:
+            BlocBuilder<RegisterBloc, RegisterState>(builder: (context, state) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -49,17 +48,17 @@ class CountryChoosingPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 4),
-                    state is BankAccountAddingChoosenState
-                        ? DropdownList(
+                    state is RegisterCountryAddedState
+                        ? CountryDropdownList(
                             defaultText: S
                                 .of(context)
                                 .countryChoosingPageDropdownHintText,
-                            text: state.bank.name,
-                            imageURL: state.bank.imageUrl,
+                            text: state.country.countryName,
+                            flagEmoji: state.country.flagEmoji,
                             onTap: () =>
                                 customShowModalBottomSheet(context, mediaQuery),
                           )
-                        : DropdownList(
+                        : CountryDropdownList(
                             defaultText: S
                                 .of(context)
                                 .countryChoosingPageDropdownHintText,
@@ -89,17 +88,17 @@ class CountryChoosingPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: LongFilledButton(
-                  buttonColor: state is BankAccountAddingChoosenState
+                  buttonColor: state is RegisterCountryAddedState
                       ? AppColors.blue
                       : AppColors.blue.withOpacity(0.4),
                   child: Text(
                     S.of(context).countryChoosingPageContinueButton,
-                    style: state is BankAccountAddingChoosenState
+                    style: state is RegisterCountryAddedState
                         ? AppTextStyles.bold20pt
                         : AppTextStyles.bold20pt
                             .copyWith(color: AppColors.white.withOpacity(0.4)),
                   ),
-                  onPressed: state is BankAccountAddingChoosenState
+                  onPressed: state is RegisterCountryAddedState
                       ? () {
                           Navigator.pushReplacementNamed(
                             context,

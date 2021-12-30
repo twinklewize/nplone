@@ -1,4 +1,4 @@
-part of '../../../../../features/auth/presentation/bloc/country_list_bloc/country_list_bloc.dart';
+part of 'country_list_bloc.dart';
 
 abstract class CountryListEvent extends Equatable {
   const CountryListEvent();
@@ -13,4 +13,8 @@ class CountryListSearhEvent extends CountryListEvent {
   CountryListSearhEvent(this.countryQuery);
 }
 
-class CountryListLoadEvent extends CountryListEvent {}
+class CountryListLoadEvent extends CountryListEvent {
+  final BuildContext context;
+
+  CountryListLoadEvent(this.context);
+}

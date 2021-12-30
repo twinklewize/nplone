@@ -4,7 +4,7 @@ class CountryEntity extends Equatable {
   CountryEntity({
     required this.countryName,
     required this.countryCode,
-    required this.imageUrl,
+    required this.flagEmoji,
   });
 
   /// Название страны на английском языке
@@ -13,9 +13,9 @@ class CountryEntity extends Equatable {
   /// Код страны в ISO 3166 alpha-2
   final String countryCode;
 
-  /// URL изображения флага
-  final String imageUrl;
+  /// Emoji изображения флага
+  final String flagEmoji;
 
   @override
-  List<Object?> get props => [countryName, countryCode, imageUrl];
+  List<Object?> get props => [countryName, countryCode, flagEmoji];
 }

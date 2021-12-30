@@ -38,6 +38,7 @@ dependencies:
 
   # HTTP
   dio: ^4.0.4
+  http: ^0.13.4 # deprecates
 
   # Images
   image_picker: ^0.8.4+4
@@ -54,7 +55,9 @@ dependencies:
 
   # Google Sign In
   google_sign_in: ^5.2.1
-  http: ^0.13.4
+
+  # Countries
+  country_list: ^0.0.5
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +70,7 @@ dev_dependencies:
   openapi_generator: ^3.3.0+1
   build_runner: ^2.1.7
   build_resolvers: ^2.0.6
+  
 
 flutter:
   uses-material-design: true

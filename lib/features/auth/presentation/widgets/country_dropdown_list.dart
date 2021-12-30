@@ -3,15 +3,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n_plus_one/core/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/core/ui_kit/constants/text_styles.dart';
 
-class DropdownList extends StatelessWidget {
-  final String? imageURL;
+class CountryDropdownList extends StatelessWidget {
+  final String? flagEmoji;
   final String? text;
   final String defaultText;
+
   final Function() onTap;
 
-  const DropdownList({
+  const CountryDropdownList({
     Key? key,
-    this.imageURL,
+    this.flagEmoji,
     this.text,
     required this.defaultText,
     required this.onTap,
@@ -40,14 +41,24 @@ class DropdownList extends StatelessWidget {
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(
-                  color: AppColors.white.withOpacity(0.2),
+                  color: flagEmoji == null
+                      ? AppColors.white.withOpacity(0.2)
+                      : Colors.transparent,
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: imageURL == null
+                child: flagEmoji == null
                     ? const SizedBox()
-                    : Image.network(imageURL!),
+                    : Center(
+                        child: Text(
+                          flagEmoji!,
+                          style: TextStyle(
+                            fontSize: 24,
+                          ),
+                        ),
+                      ),
               ),
             ),
+            const SizedBox(width: 8),
             text == null
                 ? Text(
                     defaultText,

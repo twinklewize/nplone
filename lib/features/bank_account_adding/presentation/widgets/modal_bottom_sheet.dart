@@ -3,14 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n_plus_one/core/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/core/ui_kit/constants/text_styles.dart';
+import 'package:n_plus_one/core/ui_kit/widgets/search_bar.dart';
 import 'package:n_plus_one/features/bank_account_adding/presentation/bloc/bank_account_adding_bloc/bank_account_adding_bloc.dart';
 import 'package:n_plus_one/features/bank_account_adding/presentation/bloc/bank_account_adding_bloc/bank_account_adding_event.dart';
 import 'package:n_plus_one/features/bank_account_adding/presentation/bloc/bank_list_bloc/bank_list_bloc.dart';
 import 'package:n_plus_one/features/bank_account_adding/presentation/bloc/bank_list_bloc/bank_list_event.dart';
 import 'package:n_plus_one/features/bank_account_adding/presentation/bloc/bank_list_bloc/bank_list_states.dart';
 import 'package:n_plus_one/features/spaces_hub/domain/entities/bank_entity.dart';
-
-import 'search_bar.dart';
 
 Future<dynamic> customShowModalBottomSheet(
     BuildContext context, MediaQueryData mediaQuery) {

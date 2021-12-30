@@ -5,13 +5,14 @@ import 'package:n_plus_one/core/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/core/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/core/ui_kit/widgets/search_bar.dart';
 import 'package:n_plus_one/features/auth/domain/entities/country_entity.dart';
+import 'package:n_plus_one/features/auth/presentation/bloc/register_bloc/register_bloc.dart';
 
 import '../bloc/country_list_bloc/country_list_bloc.dart';
 
 Future<dynamic> customShowModalBottomSheet(
     BuildContext context, MediaQueryData mediaQuery) {
   BlocProvider.of<CountryListBloc>(context, listen: false)
-    ..add(CountryListLoadEvent());
+    ..add(CountryListLoadEvent(context));
   return showModalBottomSheet(
     backgroundColor: AppColors.gray2,
     shape: RoundedRectangleBorder(
@@ -82,18 +83,13 @@ class CountryModalBottomSheet extends StatelessWidget {
             const SizedBox(height: 12),
             BlocBuilder<CountryListBloc, CountryListState>(
               builder: (context, state) {
-                if (state is CountryListLoadingState) {
-                  return Expanded(
-                    child: Center(
-                        child:
-                            CircularProgressIndicator(color: AppColors.white)),
-                  );
-                } else if (state is CountryListLoadedState) {
+                if (state is CountryListLoaded) {
                   final country = state.countries;
                   return Expanded(
-                      child: CountryListView(
-                    countryList: country,
-                  ));
+                    child: CountryListView(
+                      countryList: country,
+                    ),
+                  );
                 } else if (state is CountryListSearchState) {
                   final country = state.countries;
                   if (country.length == 0) {
@@ -109,11 +105,6 @@ class CountryModalBottomSheet extends StatelessWidget {
                       countryList: country,
                     ));
                   }
-                } else if (state is CountryListErrorState) {
-                  return Text(
-                    'No Internet Connection',
-                    style: AppTextStyles.regular16pt,
-                  );
                 } else {
                   return SizedBox();
                 }
@@ -143,8 +134,8 @@ class CountryListView extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           onTap: () {
-            // BlocProvider.of<BankAccountAddingBloc>(context, listen: false)
-            //   ..add(CountryListChooseEvent(countryList[index]));
+            BlocProvider.of<RegisterBloc>(context, listen: false)
+              ..add(AddCountryEvent(country: countryList[index]));
             Navigator.of(context).pop();
           },
           child: Padding(
@@ -153,17 +144,26 @@ class CountryListView extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(4),
-                  child: Container(
+                  child: SizedBox(
                     height: 40,
                     width: 40,
-                    color: AppColors.white.withOpacity(0.2),
-                    child: Image.network(countryList[index].imageUrl),
+                    child: Center(
+                      child: Text(
+                        countryList[index].flagEmoji,
+                        style: TextStyle(
+                          fontSize: 28,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-                const SizedBox(width: 12),
-                Text(
-                  countryList[index].countryName,
-                  style: AppTextStyles.regular16pt,
+                const SizedBox(width: 16),
+                Flexible(
+                  child: Text(
+                    countryList[index].countryName,
+                    style: AppTextStyles.regular16pt,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ],
             ),

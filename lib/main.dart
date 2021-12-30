@@ -13,6 +13,8 @@ import 'core/localization/generated/l10n.dart';
 import 'package:n_plus_one/core/ui_kit/constants/colors.dart';
 
 // Bloc
+import 'features/auth/presentation/bloc/country_list_bloc/country_list_bloc.dart';
+import 'features/auth/presentation/bloc/register_bloc/register_bloc.dart';
 import 'features/bank_account_adding/presentation/bloc/bank_account_adding_bloc/bank_account_adding_bloc.dart';
 import 'features/bank_account_adding/presentation/bloc/bank_list_bloc/bank_list_bloc.dart';
 import 'features/spaces_hub/presentation/bloc/spaces_hub_bloc/spaces_hub_bloc.dart';
@@ -50,6 +52,11 @@ class MyApp extends StatelessWidget {
         BlocProvider<BankListBloc>(create: (context) => di.sl<BankListBloc>()),
         BlocProvider<BankAccountAddingBloc>(
             create: (context) => di.sl<BankAccountAddingBloc>()),
+
+        // Auth Bloc
+        BlocProvider<CountryListBloc>(
+            create: (context) => di.sl<CountryListBloc>()),
+        BlocProvider<RegisterBloc>(create: (context) => di.sl<RegisterBloc>()),
       ],
 
       // App
