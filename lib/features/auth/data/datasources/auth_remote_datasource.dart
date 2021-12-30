@@ -90,6 +90,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       }
       throw ServerException();
     } catch (error) {
+      if (error is DioError && error.response!.statusCode == 500) {
+        throw RegisterException();
+      }
       throw ServerException();
     }
   }

@@ -17,7 +17,7 @@ class RegisterCountryAddedState extends RegisterState {
   });
 
   @override
-  List<Object> get props => [country];
+  List<CountryEntity> get props => [country];
 }
 
 class RegisterFailedState extends RegisterState {
@@ -31,4 +31,13 @@ class RegisterFailedState extends RegisterState {
   List<Object> get props => [errorMessage];
 }
 
-class RegisterLoadingState extends RegisterState {}
+class RegisterLoadingState extends RegisterState {
+  final CountryEntity country;
+
+  RegisterLoadingState({
+    required this.country,
+  });
+
+  @override
+  List<CountryEntity> get props => [country];
+}

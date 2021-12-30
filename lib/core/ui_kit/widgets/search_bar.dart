@@ -5,9 +5,11 @@ import 'package:n_plus_one/core/ui_kit/constants/text_styles.dart';
 
 class SearchBar extends StatelessWidget {
   final Function onSearch;
+  final String hintText;
   const SearchBar({
     Key? key,
     required this.onSearch,
+    required this.hintText,
   }) : super(key: key);
 
   @override
@@ -31,7 +33,7 @@ class SearchBar extends StatelessWidget {
               style: AppTextStyles.regular16pt,
               onChanged: (value) => onSearch(value),
               decoration: InputDecoration(
-                hintText: 'Search',
+                hintText: hintText,
                 hintStyle: AppTextStyles.regular16pt.copyWith(
                   color: AppColors.white.withOpacity(0.5),
                 ),

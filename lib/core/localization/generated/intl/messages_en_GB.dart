@@ -34,8 +34,21 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select Country"),
         "countryChoosingPageMainText": MessageLookupByLibrary.simpleMessage(
             "Before you continue choose your country"),
+        "countryChoosingPageNoInternetConnectionFailure":
+            MessageLookupByLibrary.simpleMessage("No Internet Connection"),
+        "countryChoosingPageRegisterFailure":
+            MessageLookupByLibrary.simpleMessage(
+                "Email is invalid or already in use."),
         "countryChoosingPageSecondaryText": MessageLookupByLibrary.simpleMessage(
             "The registration process may differ from the choice of the country"),
+        "countryChoosingPageServerFailure":
+            MessageLookupByLibrary.simpleMessage("Server Failure"),
+        "countryModalBottomSheetNoResults":
+            MessageLookupByLibrary.simpleMessage("No results"),
+        "countryModalBottomSheetSearchHintText":
+            MessageLookupByLibrary.simpleMessage("Search"),
+        "countryModalBottomSheetTitle":
+            MessageLookupByLibrary.simpleMessage("Select country"),
         "loginPageEmailTextFieldHintText":
             MessageLookupByLibrary.simpleMessage("Email here"),
         "loginPageEmailTextFieldTitle":
@@ -47,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginPageForgotPasswordButton":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "loginPageLoginButton": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginPageNoInternetConnectionFailure":
+            MessageLookupByLibrary.simpleMessage("No Internet Connection"),
         "loginPagePasswordNotMatchFailure":
             MessageLookupByLibrary.simpleMessage("Invalid password"),
         "loginPagePasswordTextFieldHintText":
@@ -55,13 +70,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Password"),
         "loginPagePasswordUserNotFoundFailure":
             MessageLookupByLibrary.simpleMessage(
-                "Email is invalid or already in use"),
+                "Email is invalid or not exist"),
         "loginPagePasswordValidationPasswordIsTooShort": m0,
         "loginPageServerFailure":
             MessageLookupByLibrary.simpleMessage("Server Failure"),
         "loginPageSignInButton":
             MessageLookupByLibrary.simpleMessage("Sign In"),
         "loginPageTitle": MessageLookupByLibrary.simpleMessage("Login"),
+        "signinPageByPressingSignInYouAgreeTo":
+            MessageLookupByLibrary.simpleMessage(
+                "By pressing \"Sign In\", you agree to "),
         "signinPageEmailTextFieldHintText":
             MessageLookupByLibrary.simpleMessage("Email here"),
         "signinPageEmailTextFieldTitle":
@@ -70,18 +88,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter valid email"),
         "signinPageEmailValidationTextFieldIsEmpty":
             MessageLookupByLibrary.simpleMessage("Please enter some text"),
-        "signinPagePasswordNotMatchFailure":
-            MessageLookupByLibrary.simpleMessage("Invalid password"),
+        "signinPageNploneAgreement":
+            MessageLookupByLibrary.simpleMessage("N+1\'s User Agreement"),
         "signinPagePasswordTextFieldHintText":
             MessageLookupByLibrary.simpleMessage("Password here"),
         "signinPagePasswordTextFieldTitle":
             MessageLookupByLibrary.simpleMessage("Password"),
-        "signinPagePasswordUserNotFoundFailure":
-            MessageLookupByLibrary.simpleMessage(
-                "Email is invalid or already in use"),
         "signinPagePasswordValidationPasswordIsTooShort": m1,
-        "signinPageServerFailure":
-            MessageLookupByLibrary.simpleMessage("Server Failure"),
+        "signinPageRepeatPasswordTextFieldHintText":
+            MessageLookupByLibrary.simpleMessage("Password here"),
+        "signinPageRepeatPasswordTextFieldTitle":
+            MessageLookupByLibrary.simpleMessage("Repeat password"),
+        "signinPageRepeatPasswordValidationPasswordsNotMatch":
+            MessageLookupByLibrary.simpleMessage("Passwords must match"),
         "signinPageSignInButton":
             MessageLookupByLibrary.simpleMessage("Sign In"),
         "signinPageTitle": MessageLookupByLibrary.simpleMessage("Sign In"),

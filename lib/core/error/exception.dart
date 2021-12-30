@@ -29,7 +29,7 @@ class PasswordNotMatchException implements Exception {
   }
 }
 
-class RegistrationException implements Exception {
+class RegisterException implements Exception {
   void call() {
     print("Registration Exception");
   }

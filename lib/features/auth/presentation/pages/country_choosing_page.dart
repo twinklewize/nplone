@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:n_plus_one/core/localization/generated/l10n.dart';
 import 'package:n_plus_one/core/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/core/ui_kit/constants/text_styles.dart';
+import 'package:n_plus_one/features/auth/domain/entities/country_entity.dart';
 import 'package:n_plus_one/features/auth/presentation/bloc/register_bloc/register_bloc.dart';
 import 'package:n_plus_one/features/auth/presentation/widgets/country_dropdown_list.dart';
 import 'package:n_plus_one/core/ui_kit/widgets/long_filled_button.dart';
@@ -48,13 +49,15 @@ class CountryChoosingPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 4),
-                    state is RegisterCountryAddedState
+                    state is RegisterCountryAddedState ||
+                            state is RegisterLoadingState
                         ? CountryDropdownList(
                             defaultText: S
                                 .of(context)
                                 .countryChoosingPageDropdownHintText,
-                            text: state.country.countryName,
-                            flagEmoji: state.country.flagEmoji,
+                            text: (state.props[0] as CountryEntity).countryName,
+                            flagEmoji:
+                                (state.props[0] as CountryEntity).flagEmoji,
                             onTap: () =>
                                 customShowModalBottomSheet(context, mediaQuery),
                           )
@@ -69,6 +72,30 @@ class CountryChoosingPage extends StatelessWidget {
                   ],
                 ),
               ),
+
+              const SizedBox(height: 16),
+
+              state is RegisterFailedState
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        state.errorMessage,
+                        style: AppTextStyles.regular16pt
+                            .copyWith(color: AppColors.red),
+                      ),
+                    )
+                  : const SizedBox(),
+
+              const Spacer(),
+
+              // Loading
+              state is RegisterLoadingState
+                  ? Expanded(
+                      child: Center(
+                          child: CircularProgressIndicator(
+                      color: AppColors.blue,
+                    )))
+                  : const SizedBox(),
 
               const Spacer(),
 
@@ -100,10 +127,12 @@ class CountryChoosingPage extends StatelessWidget {
                   ),
                   onPressed: state is RegisterCountryAddedState
                       ? () {
-                          Navigator.pushReplacementNamed(
-                            context,
-                            '/onboarding',
-                          );
+                          BlocProvider.of<RegisterBloc>(context, listen: false)
+                            ..add(
+                              UserRegisterEvent(
+                                context: context,
+                              ),
+                            );
                         }
                       : () {},
                 ),

@@ -20,27 +20,35 @@
     "loginPageEmailValidationNotValidEmail": "Please enter valid email",
     "loginPagePasswordValidationPasswordIsTooShort": "Please enter at least {minPasswordLength} characters",
     "loginPageServerFailure": "Server Failure",
+    "loginPageNoInternetConnectionFailure": "No Internet Connection",
     "loginPagePasswordNotMatchFailure": "Invalid password",
-    "loginPagePasswordUserNotFoundFailure": "Email is invalid or already in use",
+    "loginPagePasswordUserNotFoundFailure": "Email is invalid or not exist",
 
     "signinPageTitle": "Sign In",
     "signinPageEmailTextFieldTitle": "Email",
     "signinPageEmailTextFieldHintText": "Email here",
     "signinPagePasswordTextFieldTitle": "Password",
+    "signinPageRepeatPasswordTextFieldTitle": "Repeat password",
     "signinPagePasswordTextFieldHintText": "Password here",
+    "signinPageRepeatPasswordTextFieldHintText": "Password here",
+    "signinPageByPressingSignInYouAgreeTo": "By pressing \"Sign In\", you agree to ",
+    "signinPageNploneAgreement": "N+1's User Agreement",
     "signinPageSignInButton": "Sign In",
     "signinPageEmailValidationTextFieldIsEmpty": "Please enter some text",
     "signinPageEmailValidationNotValidEmail": "Please enter valid email",
     "signinPagePasswordValidationPasswordIsTooShort": "Please enter at least {minPasswordLength} characters",
-    "signinPageServerFailure": "Server Failure",
-    "signinPagePasswordNotMatchFailure": "Invalid password",
-    "signinPagePasswordUserNotFoundFailure": "Email is invalid or already in use",
+    "signinPageRepeatPasswordValidationPasswordsNotMatch": "Passwords must match",
 
-
+    "countryChoosingPageServerFailure": "Server Failure",
+    "countryChoosingPageNoInternetConnectionFailure": "No Internet Connection",
+    "countryChoosingPageRegisterFailure": "Email is invalid or already in use.",
     "countryChoosingPageMainText": "Before you continue choose your country",
     "countryChoosingPageDropdownHintText": "Select Country",
     "countryChoosingPageSecondaryText": "The registration process may differ from the choice of the country",
-    "countryChoosingPageContinueButton": "Continue"
+    "countryChoosingPageContinueButton": "Continue",
+    "countryModalBottomSheetTitle": "Select country",
+    "countryModalBottomSheetNoResults": "No results",
+    "countryModalBottomSheetSearchHintText": "Search"
 
     
 }

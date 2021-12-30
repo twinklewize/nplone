@@ -28,9 +28,6 @@ class AuthRepositoryImpl implements AuthRepository {
         tokenInfo = await remoteDataSource.googleSignIn(googleToken);
         return Right(LoginSuccess());
       } catch (exception) {
-        // if (exception is AuthException) {
-        //   return Left(AuthFailure(message: exception.message));
-        // }
         return Left(ServerFailure());
       }
     }
@@ -61,7 +58,10 @@ class AuthRepositoryImpl implements AuthRepository {
       try {
         await remoteDataSource.register(userRegister);
         return Right(RegisterSuccess());
-      } on ServerException {
+      } catch (exception) {
+        if (exception is RegisterException) {
+          return Left(RegisterFailure());
+        }
         return Left(ServerFailure());
       }
     }

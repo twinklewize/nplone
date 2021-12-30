@@ -129,7 +129,10 @@ class _AdminsPageState extends State<AdminsAndParticipantsPage> {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            child: SearchBar(onSearch: onSearch),
+            child: SearchBar(
+              onSearch: onSearch,
+              hintText: 'Search',
+            ),
           ),
           const SizedBox(height: 12),
           widget.adminsView

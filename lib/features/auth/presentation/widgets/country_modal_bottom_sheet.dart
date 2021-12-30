@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:n_plus_one/core/localization/generated/l10n.dart';
 import 'package:n_plus_one/core/ui_kit/constants/colors.dart';
 import 'package:n_plus_one/core/ui_kit/constants/text_styles.dart';
 import 'package:n_plus_one/core/ui_kit/widgets/search_bar.dart';
@@ -54,7 +55,7 @@ class CountryModalBottomSheet extends StatelessWidget {
                 const SizedBox(width: 52),
                 Spacer(),
                 Text(
-                  "Select country",
+                  S.of(context).countryModalBottomSheetTitle,
                   style: AppTextStyles.bold20pt,
                 ),
                 Spacer(),
@@ -78,7 +79,10 @@ class CountryModalBottomSheet extends StatelessWidget {
             // Search Bar
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: SearchBar(onSearch: onSearch),
+              child: SearchBar(
+                onSearch: onSearch,
+                hintText: S.of(context).countryModalBottomSheetSearchHintText,
+              ),
             ),
             const SizedBox(height: 12),
             BlocBuilder<CountryListBloc, CountryListState>(
@@ -95,7 +99,7 @@ class CountryModalBottomSheet extends StatelessWidget {
                   if (country.length == 0) {
                     return Center(
                       child: Text(
-                        'No results',
+                        S.of(context).countryModalBottomSheetNoResults,
                         style: AppTextStyles.regular16pt,
                       ),
                     );

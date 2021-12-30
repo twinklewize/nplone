@@ -27,6 +27,6 @@ class PasswordNotMatchFailure extends Failure {
   String get message => "Password Not Match Failure";
 }
 
-class RegistrationFailure extends Failure {
+class RegisterFailure extends Failure {
   String get message => "Registration Failure";
 }

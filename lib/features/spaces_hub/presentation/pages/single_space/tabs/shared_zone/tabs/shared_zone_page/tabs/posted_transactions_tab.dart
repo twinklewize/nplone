@@ -41,7 +41,10 @@ class PostedTransactionsTab extends StatelessWidget {
             // Search Bar
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              child: SearchBar(onSearch: (value) {}),
+              child: SearchBar(
+                onSearch: (value) {},
+                hintText: 'Search',
+              ),
             ),
 
             // Date

@@ -8,14 +8,11 @@ abstract class RegisterEvent extends Equatable {
 }
 
 class UserRegisterEvent extends RegisterEvent {
-  final UserRegisterEntity userRegisterEntity;
-
-  UserRegisterEvent(
-    this.userRegisterEntity,
-  );
+  final BuildContext context;
+  UserRegisterEvent({required this.context});
 
   @override
-  List<Object> get props => [userRegisterEntity];
+  List<Object> get props => [context];
 }
 
 class AddEmailAndPasswordEvent extends RegisterEvent {

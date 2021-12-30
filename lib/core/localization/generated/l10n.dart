@@ -231,6 +231,16 @@ class S {
     );
   }
 
+  /// `No Internet Connection`
+  String get loginPageNoInternetConnectionFailure {
+    return Intl.message(
+      'No Internet Connection',
+      name: 'loginPageNoInternetConnectionFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Invalid password`
   String get loginPagePasswordNotMatchFailure {
     return Intl.message(
@@ -241,10 +251,10 @@ class S {
     );
   }
 
-  /// `Email is invalid or already in use`
+  /// `Email is invalid or not exist`
   String get loginPagePasswordUserNotFoundFailure {
     return Intl.message(
-      'Email is invalid or already in use',
+      'Email is invalid or not exist',
       name: 'loginPagePasswordUserNotFoundFailure',
       desc: '',
       args: [],
@@ -291,11 +301,51 @@ class S {
     );
   }
 
+  /// `Repeat password`
+  String get signinPageRepeatPasswordTextFieldTitle {
+    return Intl.message(
+      'Repeat password',
+      name: 'signinPageRepeatPasswordTextFieldTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Password here`
   String get signinPagePasswordTextFieldHintText {
     return Intl.message(
       'Password here',
       name: 'signinPagePasswordTextFieldHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password here`
+  String get signinPageRepeatPasswordTextFieldHintText {
+    return Intl.message(
+      'Password here',
+      name: 'signinPageRepeatPasswordTextFieldHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By pressing "Sign In", you agree to `
+  String get signinPageByPressingSignInYouAgreeTo {
+    return Intl.message(
+      'By pressing "Sign In", you agree to ',
+      name: 'signinPageByPressingSignInYouAgreeTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `N+1's User Agreement`
+  String get signinPageNploneAgreement {
+    return Intl.message(
+      'N+1\'s User Agreement',
+      name: 'signinPageNploneAgreement',
       desc: '',
       args: [],
     );
@@ -342,31 +392,41 @@ class S {
     );
   }
 
+  /// `Passwords must match`
+  String get signinPageRepeatPasswordValidationPasswordsNotMatch {
+    return Intl.message(
+      'Passwords must match',
+      name: 'signinPageRepeatPasswordValidationPasswordsNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Server Failure`
-  String get signinPageServerFailure {
+  String get countryChoosingPageServerFailure {
     return Intl.message(
       'Server Failure',
-      name: 'signinPageServerFailure',
+      name: 'countryChoosingPageServerFailure',
       desc: '',
       args: [],
     );
   }
 
-  /// `Invalid password`
-  String get signinPagePasswordNotMatchFailure {
+  /// `No Internet Connection`
+  String get countryChoosingPageNoInternetConnectionFailure {
     return Intl.message(
-      'Invalid password',
-      name: 'signinPagePasswordNotMatchFailure',
+      'No Internet Connection',
+      name: 'countryChoosingPageNoInternetConnectionFailure',
       desc: '',
       args: [],
     );
   }
 
-  /// `Email is invalid or already in use`
-  String get signinPagePasswordUserNotFoundFailure {
+  /// `Email is invalid or already in use.`
+  String get countryChoosingPageRegisterFailure {
     return Intl.message(
-      'Email is invalid or already in use',
-      name: 'signinPagePasswordUserNotFoundFailure',
+      'Email is invalid or already in use.',
+      name: 'countryChoosingPageRegisterFailure',
       desc: '',
       args: [],
     );
@@ -407,6 +467,36 @@ class S {
     return Intl.message(
       'Continue',
       name: 'countryChoosingPageContinueButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select country`
+  String get countryModalBottomSheetTitle {
+    return Intl.message(
+      'Select country',
+      name: 'countryModalBottomSheetTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No results`
+  String get countryModalBottomSheetNoResults {
+    return Intl.message(
+      'No results',
+      name: 'countryModalBottomSheetNoResults',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get countryModalBottomSheetSearchHintText {
+    return Intl.message(
+      'Search',
+      name: 'countryModalBottomSheetSearchHintText',
       desc: '',
       args: [],
     );

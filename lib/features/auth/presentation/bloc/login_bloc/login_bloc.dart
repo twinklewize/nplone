@@ -35,6 +35,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         return S.of(context).loginPageServerFailure;
       case UserNotFoundFailure:
         return S.of(context).loginPagePasswordUserNotFoundFailure;
+      case NoInternetConnectionFailure:
+        return S.of(context).loginPageNoInternetConnectionFailure;
       case PasswordNotMatchFailure:
         return S.of(context).loginPagePasswordNotMatchFailure;
       default:

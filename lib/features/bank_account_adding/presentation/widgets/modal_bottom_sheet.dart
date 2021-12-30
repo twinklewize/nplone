@@ -79,7 +79,10 @@ class ModalBottomSheet extends StatelessWidget {
             // Search Bar
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: SearchBar(onSearch: onSearch),
+              child: SearchBar(
+                onSearch: onSearch,
+                hintText: 'Search',
+              ),
             ),
             const SizedBox(height: 12),
             BlocBuilder<BankListBloc, BankListState>(

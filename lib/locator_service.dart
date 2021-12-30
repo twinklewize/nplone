@@ -39,7 +39,7 @@ Future<void> init() async {
     () => LoginBloc(loginUsecase: sl()),
   );
   sl.registerFactory(
-    () => RegisterBloc(registerUsecase: sl()),
+    () => RegisterBloc(registerUsecase: sl(), loginUsecase: sl()),
   );
   sl.registerFactory(
     () => GoogleSigninBloc(googleSingInUsecase: sl()),
