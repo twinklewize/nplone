@@ -19,7 +19,7 @@ dependencies:
   expandable: ^5.0.1
 
   # state-managment
-  flutter_bloc: ^8.0.0
+  flutter_bloc: ^8.0.1
 
   # compare objects with Properties
   equatable: ^2.0.3
