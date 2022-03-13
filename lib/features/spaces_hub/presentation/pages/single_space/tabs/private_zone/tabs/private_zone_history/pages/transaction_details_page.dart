@@ -49,7 +49,7 @@ class _TransactionDetailsPageState extends State<TransactionDetailsPage> {
               Container(
                 width: MediaQuery.of(context).size.width - 24,
                 decoration: BoxDecoration(
-                  color: AppColors.frontGray2,
+                  color: AppColors.gray2,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(

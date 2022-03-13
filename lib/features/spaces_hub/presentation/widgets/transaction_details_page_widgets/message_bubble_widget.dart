@@ -71,7 +71,7 @@ class MessageBubbleWidget extends StatelessWidget {
                       Text(
                         formattedDateTime,
                         style: AppTextStyles.regular12pt.copyWith(
-                          color: AppColors.frontGray2,
+                          color: AppColors.gray3rd,
                         ),
                       ),
                       SizedBox(width: 12),
@@ -114,7 +114,7 @@ class MessageBubbleWidget extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                color: AppColors.frontGray2,
+                color: AppColors.gray2,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,7 +176,7 @@ class MessageBubbleWidget extends StatelessWidget {
                         Text(
                           formattedDateTime,
                           style: AppTextStyles.regular12pt.copyWith(
-                            color: AppColors.frontGray2,
+                            color: AppColors.gray3rd,
                           ),
                         ),
                         SizedBox(width: 12),

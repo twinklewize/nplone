@@ -60,7 +60,7 @@ class PrivateZoneAccountsTab extends StatelessWidget {
                 width: MediaQuery.of(context).size.width - 24,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  color: AppColors.frontGray2,
+                  color: AppColors.gray2,
                 ),
                 child: Column(
                   children: [
@@ -184,7 +184,7 @@ class PrivateZoneAccountsTab extends StatelessWidget {
                         width: MediaQuery.of(context).size.width - 24,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
-                          color: AppColors.frontGray2,
+                          color: AppColors.gray2,
                         ),
                         child: Column(
                           children: [

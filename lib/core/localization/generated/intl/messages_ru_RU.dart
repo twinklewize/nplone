@@ -43,8 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginPagePasswordTextFieldTitle":
             MessageLookupByLibrary.simpleMessage("Пароль"),
         "loginPagePasswordUserNotFoundFailure":
-            MessageLookupByLibrary.simpleMessage(
-                "Email неверный или уже используется"),
+            MessageLookupByLibrary.simpleMessage("Email неверный"),
         "loginPagePasswordValidationPasswordIsTooShort": m0,
         "loginPageServerFailure":
             MessageLookupByLibrary.simpleMessage("Ошибка сервера"),

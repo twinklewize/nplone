@@ -130,6 +130,9 @@ class CountryChoosingPage extends StatelessWidget {
                   ),
                   onPressed: state is RegisterCountryAddedState
                       ? () {
+                          // TO DO: убрать заглушку для регистрации
+                          Navigator.pushNamedAndRemoveUntil(context,
+                              '/onboarding', (Route<dynamic> route) => false);
                           BlocProvider.of<RegisterBloc>(context, listen: false)
                             ..add(
                               UserRegisterEvent(

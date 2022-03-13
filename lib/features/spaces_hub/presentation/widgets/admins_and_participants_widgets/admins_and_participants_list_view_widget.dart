@@ -20,6 +20,7 @@ class AdminsAndParticipantsListViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
+        key: UniqueKey(),
         itemCount: participantsList.length,
         itemBuilder: (context, index) {
           return Column(
@@ -71,7 +72,7 @@ class AdminsAndParticipantsListViewWidget extends StatelessWidget {
                                 : Text(
                                     participantsList[index].position,
                                     style: AppTextStyles.regular12pt
-                                        .copyWith(color: AppColors.gray3),
+                                        .copyWith(color: AppColors.gray3rd),
                                   ),
                             const SizedBox(height: 8),
                             MediaButtons(

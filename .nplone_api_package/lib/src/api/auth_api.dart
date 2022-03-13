@@ -13,7 +13,6 @@ import 'package:nplone_api/src/model/user_login.dart';
 import 'package:nplone_api/src/model/user_register.dart';
 
 class AuthApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
@@ -21,10 +20,10 @@ class AuthApi {
   const AuthApi(this._dio, this._serializers);
 
   /// Аутентификация через аккаунт Google
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [googleToken] 
+  /// * [googleToken]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,7 +33,7 @@ class AuthApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TokenInfo] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<TokenInfo>> googleSignIn({ 
+  Future<Response<TokenInfo>> googleSignIn({
     required GoogleToken googleToken,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -62,10 +61,9 @@ class AuthApi {
     try {
       const _type = FullType(GoogleToken);
       _bodyData = _serializers.serialize(googleToken, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -91,7 +89,6 @@ class AuthApi {
         _response.data!,
         specifiedType: _responseType,
       ) as TokenInfo;
-
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -114,10 +111,10 @@ class AuthApi {
   }
 
   /// Войти под пользователем
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [userLogin] 
+  /// * [userLogin]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -127,7 +124,7 @@ class AuthApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TokenInfo] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<TokenInfo>> login({ 
+  Future<Response<TokenInfo>> login({
     required UserLogin userLogin,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -155,10 +152,9 @@ class AuthApi {
     try {
       const _type = FullType(UserLogin);
       _bodyData = _serializers.serialize(userLogin, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -184,7 +180,6 @@ class AuthApi {
         _response.data!,
         specifiedType: _responseType,
       ) as TokenInfo;
-
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -207,10 +202,10 @@ class AuthApi {
   }
 
   /// Зарегистрировать нового пользователя в системе
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [userRegister] 
+  /// * [userRegister]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -220,7 +215,7 @@ class AuthApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> registerUser({ 
+  Future<Response<void>> registerUser({
     required UserRegister userRegister,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -248,10 +243,9 @@ class AuthApi {
     try {
       const _type = FullType(UserRegister);
       _bodyData = _serializers.serialize(userRegister, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioError(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -271,5 +265,4 @@ class AuthApi {
 
     return _response;
   }
-
 }

@@ -12,6 +12,7 @@ class SuccessfullPage extends StatelessWidget {
       backgroundColor: AppColors.gray1,
       appBar: appBar(context),
       body: GestureDetector(
+        behavior: HitTestBehavior.translucent,
         onTapDown: (_) {
           Navigator.pushReplacementNamed(
             context,
@@ -22,7 +23,6 @@ class SuccessfullPage extends StatelessWidget {
           child: Column(
             children: [
               Spacer(),
-
               // Image
               Image.asset('assets/images/successfull_card_image.png'),
               const SizedBox(height: 16),

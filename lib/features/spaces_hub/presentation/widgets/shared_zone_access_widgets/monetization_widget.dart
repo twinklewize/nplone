@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'list_tile_with_switch_widget.dart';
-import 'switch_with_textfield_idget.dart';
+import 'switch_with_textfield_widget.dart';
 
 class MonetizationWidget extends StatefulWidget {
   final Function(bool value) onSwitch;

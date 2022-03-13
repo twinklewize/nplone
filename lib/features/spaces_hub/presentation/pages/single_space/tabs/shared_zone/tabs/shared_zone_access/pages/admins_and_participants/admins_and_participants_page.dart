@@ -71,6 +71,7 @@ class AdminsAndParticipantsPage extends StatefulWidget {
 
 class _AdminsPageState extends State<AdminsAndParticipantsPage> {
   late List<AdminAndParticipantEntity> participantsList;
+  bool isInitialized = false;
 
   @override
   void initState() {
@@ -79,15 +80,22 @@ class _AdminsPageState extends State<AdminsAndParticipantsPage> {
   }
 
   @override
+  void didChangeDependencies() {
+    if (!isInitialized) {
+      if (ModalRoute.of(context) == null)
+        widget.adminsView = false;
+      else {
+        final routeArgs =
+            ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+        widget.adminsView = routeArgs['admins'] == 'false' ? false : true;
+      }
+    }
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     // Admins or participants
-    if (ModalRoute.of(context) == null)
-      widget.adminsView = false;
-    else {
-      final routeArgs =
-          ModalRoute.of(context)!.settings.arguments as Map<String, String>;
-      widget.adminsView = routeArgs['admins'] == 'false' ? false : true;
-    }
 
     final Function(String value) onSearch = (value) {
       setState(() {

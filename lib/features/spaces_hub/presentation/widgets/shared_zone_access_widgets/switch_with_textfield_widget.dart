@@ -64,8 +64,8 @@ class _SwitchWithTextfieldWidgetState extends State<SwitchWithTextfieldWidget> {
         CupertinoSlidingSegmentedControl(
             padding: EdgeInsets.all(4),
             thumbColor: widget.activeState
-                ? AppColors.gray3
-                : AppColors.gray3.withOpacity(0.2),
+                ? AppColors.gray3rd
+                : AppColors.gray3rd.withOpacity(0.2),
             backgroundColor: widget.activeState
                 ? AppColors.gray3
                 : AppColors.gray3.withOpacity(0.2),

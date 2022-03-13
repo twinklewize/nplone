@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:n_plus_one/core/error_and_success/exception.dart';
 import 'package:n_plus_one/core/error_and_success/success.dart';
@@ -56,18 +55,19 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   Future<TokenInfoModel> login(UserLoginEntity userLogin) async {
     try {
       Response<TokenInfo> response = await _authApi.login(
-          userLogin: UserLogin((UserLoginBuilder userLoginBuilder) {
-        userLoginBuilder.password = userLogin.password;
-        userLoginBuilder.email = userLogin.email;
-      }));
-      if (response.statusCode == 200) {
-        return TokenInfoModel.fromTokenInfo(tokenInfo: response.data!);
-      }
-      throw ServerException();
+        userLogin: UserLogin((UserLoginBuilder userLoginBuilder) {
+          userLoginBuilder.password = userLogin.password;
+          userLoginBuilder.email = userLogin.email;
+        }),
+      );
+      return TokenInfoModel.fromTokenInfo(tokenInfo: response.data!);
     } catch (error) {
+      print(error.toString());
       if (error is DioError &&
           error.response != null &&
           error.response!.statusCode == 401) {
+        print(error.message);
+        print(error.response!.data);
         String detail = json.decode(error.response!.data)['detail'];
         if (detail == 'Password does not match') {
           throw PasswordNotMatchException();
@@ -99,6 +99,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       throw ServerException();
     } catch (error) {
       if (error is DioError && error.response!.statusCode == 500) {
+        print(error.message);
+        print(error.response!.data);
         throw RegisterException();
       }
       throw ServerException();

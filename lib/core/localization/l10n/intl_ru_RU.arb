@@ -20,5 +20,5 @@
     "loginPagePasswordValidationPasswordIsTooShort": "Минимальная длина пароля {minPasswordLength} символа",
     "loginPageServerFailure": "Ошибка сервера",
     "loginPagePasswordNotMatchFailure": "Неверный пароль",
-    "loginPagePasswordUserNotFoundFailure": "Email неверный или уже используется"
+    "loginPagePasswordUserNotFoundFailure": "Email неверный"
 }

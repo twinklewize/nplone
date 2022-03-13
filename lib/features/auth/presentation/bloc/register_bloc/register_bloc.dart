@@ -61,10 +61,11 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
             ),
           );
 
-          // Login Failure
           loginFailureOrSuccess.fold(
+            // Login Failure
             (failure) => emit(RegisterFailedState(
                 errorMessage: _mapFailureToMessage(failure, event.context))),
+            // Login Success
             (success) {
               // Onboarding
               Navigator.pushNamedAndRemoveUntil(event.context, '/onboarding',
